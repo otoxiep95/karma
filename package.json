@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "live-server": "live-server --open=code",
     "dev-sass": "node-sass code/css/scss/style.scss code/css/main.css --watch",
-    "live-sass": "npm run dev-sass | npm run live-server"
+    "live-sass": "npm run dev-sass | npm run autoprefixer | npm run live-server"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,9 @@
   "homepage": "https://github.com/mathildefrachon/my-webdev-config#readme",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "autoprefixer": "^9.4.9",
+    "eslint": "^5.14.1",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.2"
   }
 }

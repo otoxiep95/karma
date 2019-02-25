@@ -5,3 +5,20 @@ nav {
 
 body h1 {
   color: darkred; }
+
+::-webkit-input-placeholder {
+  color: gray; }
+
+:-ms-input-placeholder {
+  color: gray; }
+
+::-ms-input-placeholder {
+  color: gray; }
+
+::placeholder {
+  color: gray; }
+
+input {
+  background-color: darkcyan; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUJBQXFCO0VBQ3JCLFlBQVk7RUFDWixZQUFZLEVBQUU7O0FBRWhCO0VBQ0UsY0FBYyxFQUFFOztBQUVsQjtFQUNFLFdBQVcsRUFBRTs7QUFEZjtFQUNFLFdBQVcsRUFBRTs7QUFEZjtFQUNFLFdBQVcsRUFBRTs7QUFEZjtFQUNFLFdBQVcsRUFBRTs7QUFFZjtFQUNFLDBCQUEwQixFQUFFIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsibmF2IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMjB2aDsgfVxuXG5ib2R5IGgxIHtcbiAgY29sb3I6IGRhcmtyZWQ7IH1cblxuOjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiBncmF5OyB9XG5cbmlucHV0IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogZGFya2N5YW47IH1cbiJdfQ== */

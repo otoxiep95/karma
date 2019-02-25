@@ -1,0 +1,143 @@
+/* ABOUT SCREEN */
+@import "partial-variables";
+
+/* CONTAINERS */
+
+.not-phone {
+  display: none;
+  @include for-tablet-landscape-up {
+    display: block;
+  }
+}
+
+.about--wrapper {
+  // ALL SIZES
+  position: relative;
+  // MOBILE UP TO TABLET
+  padding: 15% 15%;
+  @include size(100vw, 100vh);
+  @include for-tablet-landscape-up {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-gap: 10%;
+    padding: 10% 20% 10% 20%;
+  }
+
+  &__1,
+  &__2 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  ul,
+  h3 {
+    padding: 3rem 0;
+  }
+  p,
+  h3 {
+    color: $dark-green;
+    span {
+      color: white;
+      font-family: Khand;
+      font-size: 1.8rem;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
+      font-weight: 500;
+    }
+  }
+  &__5 {
+    h3 {
+      font-weight: 600;
+    }
+  }
+}
+
+.about--img {
+  @include size(auto, auto);
+  max-height: 500px;
+  max-width: 100%;
+  outline: solid 4px white;
+  align-self: center;
+  justify-self: end;
+  &__1 {
+    @include centered;
+    @include for-tablet-landscape-up {
+      place-self: center;
+    }
+  }
+  &__5 {
+    max-width: 400px;
+  }
+}
+
+.about--text {
+  // ATTENTION ONLY UNTIL TABLET
+  margin-top: 10vh;
+  &__wrapper {
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: start;
+    width: 100%;
+  }
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 3rem;
+    text-align: center;
+    align-self: end;
+
+    &__5 {
+      margin-bottom: 5rem;
+    }
+  }
+  &__work-with {
+    // @include for-tablet-landscape-up {
+    margin-bottom: 3rem;
+    // }
+  }
+}
+
+.about--icons {
+  width: 18%;
+  padding: 1.5%;
+  @include for-tablet-landscape-up {
+    width: 10%;
+    padding: 1%;
+  }
+  &__container {
+    margin-top: 10vh;
+  }
+  &__container__5 {
+    margin: auto;
+    width: 50%;
+    height: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: relative;
+  }
+}
+
+/* SLIDING */
+.slide-anim {
+  visibility: hidden;
+  visibility: visible; /*For old IE browsers IE6-8 */
+}
+.slide-anim .slide {
+  visibility: visible;
+  animation: slide 1s;
+}
+.slide-anim::after {
+  /* useful when its child elements are float:left; */
+  content: "";
+  display: table;
+  clear: both;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,259 @@
+@media screen and (max-width: 50em) {
+  /* 797 PIXELS MOBILE TABLET VERT */
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  a {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.45rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .portrait {
+    height: 55vh;
+  }
+
+  .landscape {
+    height: 30vh;
+    margin-bottom: 35vh;
+  }
+
+  /* NAV BARS */
+
+  #top-nav,
+  #bottom-nav {
+    padding: 5% 5%;
+  }
+
+  /* WELCOME PAGE */
+
+  #logo-front {
+    width: 200px;
+    height: 150px;
+  }
+
+  /* ABOUT PAGE */
+
+  #about-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  .about-slides-mob {
+    width: 85vw;
+    height: 100vh;
+    margin: 0 7.5vw;
+    scroll-snap-align: center;
+  }
+
+  .about-desc {
+    margin: 0;
+    width: 100%;
+    padding: 30vh 2.5vw 0 2.5vw;
+  }
+
+  .about-img h1 {
+    text-align: center;
+    margin-top: 7%;
+  }
+
+  /*IMAGES*/
+  .img-about {
+    width: 100%;
+    outline: 2px solid white;
+  }
+
+  /* ICONS*/
+  #about-screen .icons-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  #about-screen .icons {
+    width: 20%;
+  }
+
+  .icons-adobe {
+    width: 15%;
+    padding: 1%;
+  }
+
+  /* ABOUT 1 */
+
+  #about1-mobile {
+    position: relative;
+  }
+
+  #hej {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: calc(50% - 100px);
+  }
+
+  /* ABOUT 6 CONTACT */
+
+  #about6-mobile .about-desc {
+    padding: 15vh 0 0 0;
+    text-align: center;
+  }
+
+  #about6-mobile .img-about {
+    width: 80%;
+  }
+
+  #about6-mobile p {
+    padding: 0 15% 0 15%;
+  }
+
+  #about6-mobile .icons {
+    width: 12%;
+  }
+
+  /* CONTACT PAGE */
+
+  #contact-form input {
+    font-size: 1.2rem;
+  }
+
+  #contact-screen .logo {
+    opacity: 0.7;
+  }
+
+  .adress-container {
+    margin-top: 15%;
+  }
+
+  .adress {
+    padding: 10% 0 0 5%;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .contact-screen .icons-container {
+    margin: 0 0 50px 0;
+  }
+
+  .contact-screen .icons-container .icons:nth-child(1) {
+    margin-right: 2%;
+    margin-top: 4%;
+  }
+
+  /* PROJECT PAGE */
+
+  #gallery {
+    padding: 25vh 2vw 20vh 2vw;
+  }
+
+  .project-wrapper {
+    margin: auto 5vw;
+  }
+
+  .project-img {
+    margin: 0 auto;
+  }
+
+  .width-load {
+    width: 70vw;
+    height: 55vh;
+    margin: 0 5vw;
+  }
+
+  /* PROJECT MENU */
+
+  .cat-link-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .cat-link h1 {
+    padding: 5rem 1rem 2rem 1rem;
+  }
+
+  .cat-projects-wrapper {
+    display: none;
+  }
+
+  .cat-desc {
+    display: none;
+  }
+
+  .cat-keywords {
+    padding: 1%;
+  }
+
+  /* SUBPAGES */
+
+  #oneProject #menu #bottom_nav {
+    background-color: #052d29;
+    opacity: 0.9;
+    padding: 4% 5%;
+    height: 10vh;
+  }
+
+  .images {
+    padding: 3%;
+    margin-bottom: 25vh;
+  }
+
+  #dot_nav {
+    top: 60vh;
+  }
+
+  /* LINKS SUB */
+
+  #oneProject #a_projects {
+    display: none;
+  }
+
+  #crossI {
+    z-index: 30;
+    display: block;
+    left: 8vw;
+    top: 5vh;
+    opacity: 0;
+    transition: all ease 1s;
+  }
+
+  #crossM {
+    left: 8vw;
+    display: block;
+  }
+
+  #plus {
+    /*INFOS*/
+    right: 8vw;
+  }
+
+  #previous {
+    left: calc(35vw - 15px);
+  }
+
+  #next {
+    right: calc(35vw - 15px);
+  }
+
+  /* END MEDIA QUERY */
+}

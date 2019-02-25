@@ -1,0 +1,160 @@
+/* ABOUT SCREEN */
+
+/* SLIDING */
+
+.slide-anim {
+  visibility: hidden;
+  visibility: visible; /*For old IE browsers IE6-8 */
+}
+.slide-anim .slide {
+  visibility: visible;
+  animation: slide 1s;
+}
+.slide-anim::after {
+  /* useful when its child elements are float:left; */
+  content: "";
+  display: table;
+  clear: both;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINERS */
+
+#about-wrapper {
+  height: 100vh;
+  width: 100vw;
+  /* scroll-behavior: smooth;
+    overflow-y: scroll; */
+  /* scroll-snap-type: y mandatory;*/
+}
+.about-slides-desk {
+  width: 100vw;
+  height: 100vh;
+  padding: 10vh 10vw 0 10vw;
+  /* scroll-snap-align:center; */
+}
+
+.right-container li {
+  color: white;
+}
+
+.about-desc,
+.about-img {
+  width: 70%;
+  margin: 10% 15% 0% 15%;
+  height: fit-content;
+  text-align: center;
+}
+
+.left-container {
+  float: left;
+}
+
+.right-container {
+  float: right;
+}
+
+.right-container,
+.left-container {
+  width: 50%;
+  height: 90%;
+  position: relative;
+}
+
+/* ABOUT 1 & 2: DESC */
+
+#hej {
+  width: 200px;
+  color: white;
+}
+
+#about-screen h1 {
+  color: white;
+}
+
+#about-screen h3 {
+  font-weight: 600;
+}
+
+.work-with {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#about-screen p,
+#about-screen h3 {
+  color: #06443f;
+  padding: 0 0 1rem 0;
+}
+
+span {
+  color: white;
+  font-family: Khand;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.icons-front {
+  width: 10%;
+  padding: 1%;
+}
+
+.icons-adobe {
+  width: 10%;
+  padding: 1%;
+}
+
+.icons-container {
+  width: 100%;
+  text-align: center;
+}
+
+.content-right,
+.content-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 70%;
+}
+
+.content-right {
+  height: fit-content;
+}
+
+.content-left {
+  outline: solid 4px white;
+  height: auto;
+}
+
+/* ABOUT 5: CONTACT */
+
+#frachounette {
+  height: 45%;
+  width: auto;
+}
+
+#about5 .icons {
+  width: 10%;
+  margin-top: 7%;
+}
+
+#about5 .icons-container {
+  text-align: left;
+}
+
+#about5 .left-container,
+#about5 .right-container {
+  height: 100%;
+}

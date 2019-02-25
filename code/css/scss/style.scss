@@ -1,11 +1,229 @@
-nav {
-  background-color: red;
-  width: 100vw;
-  height: 20vh;
+@import "partial-variables";
+@import "about";
+@import "sides";
+@import "subpage";
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
 }
 
-body {
-  h1 {
-    color: darkred;
+a {
+  @include links($font-xs, white);
+}
+
+h1 {
+  @include title($font-large, white, $line-large);
+}
+
+h2 {
+  @include title($font-normal, white, $line-normal);
+}
+
+h3 {
+  @include title($font-small, white, $line-small);
+}
+
+p {
+  @include text($font-normal, white);
+  @include for-phone-only {
+    @include text($font-small, white);
+  }
+}
+
+ul {
+  color: white;
+}
+
+li {
+  @include liste($font-normal, white);
+}
+
+.buttons {
+  @include size(35px, 35px);
+  padding: 0;
+  margin: 0;
+  &--cross {
+    @include size(20px, 20px);
+    top: 2vw;
+  }
+  &--cross,
+  &--sub {
+    position: absolute;
+  }
+
+  .icons--img {
+    @include size(100%, 100%);
+  }
+}
+
+/* SCREENS */
+
+.screen {
+  @include size(100vw, 100vh);
+  position: absolute;
+  top: 0;
+  transition: $transition-forward;
+  /* IF BREAKS WITH SLIDE TRY TRANSFORM TRANSLATE X */
+  &__welcome {
+    @include blackground-image(
+      "background_site_light.jpg",
+      rgba($dark-green, 0.6)
+    );
+    background-blend-mode: overlay;
+  }
+  &__gallery {
+    left: -100vw;
+    background-color: $dark-green;
+    #gallery {
+      @include scroll-div(scroll, hidden, auto, 100vh);
+      padding: 15vh 2vw 15vh 2vw;
+    }
+  }
+  &__about {
+    height: auto;
+    left: 100vw;
+    background-color: $mint-green;
+    scroll-behavior: smooth;
+  }
+
+  //SIDES
+  &__side {
+    position: fixed;
+    z-index: z(sides);
+    top: 0;
+    overflow-x: hidden;
+    box-shadow: $box-shadow;
+    transition: $transition-normal;
+    &__filter {
+      background-color: #689793;
+      left: 0;
+    }
+    &__contact {
+      right: 0;
+      background-color: $black-green;
+    }
+    &--wrapper {
+      transition: $transition-fast; // opacity text
+      height: 100%;
+      display: grid;
+      &__contact {
+        padding: 8vh 8vh 8vh 4vh;
+        grid-template-rows: 1fr 8fr 8fr;
+      }
+      &__filter {
+        padding: 8vh 0 8vh 8vh;
+        grid-template-rows: 10fr 10fr 1fr 8fr;
+      }
+    }
+  }
+}
+
+/* WELCOMING PAGE */
+
+#logo-front {
+  @include centered;
+  @include for-tablet-landscape-up {
+    @include size(400px, 300px);
+  }
+  @include size(300px, auto);
+}
+
+/* NAV BARS */
+
+.c-menu {
+  @include size(100vw, 8vh);
+  position: fixed;
+  left: 0;
+  z-index: z(menu);
+  background-color: none;
+  padding: 2% 0;
+  &--top {
+    top: 0;
+    &__link {
+      padding-top: 0.5rem;
+    }
+    &__link:hover {
+      border-bottom: solid 1.3px white;
+    }
+  }
+  &--bottom {
+    bottom: 0;
+    &__link {
+      padding-bottom: 0.5rem;
+    }
+    &__link:hover {
+      border-top: solid 1.3px white;
+    }
+  }
+  &__link {
+    @include size(100px, 25px);
+    transition: $transition-fast;
+    &--left {
+      float: left;
+      text-align: end;
+      padding-left: 2%;
+    }
+    &--right {
+      float: right;
+      text-align: start;
+      padding-right: 2%;
+    }
+  }
+}
+
+/* PROJECT PAGE */
+
+.project {
+  &--wrapper {
+    @include size(45vw, 70vh);
+    display: inline-block;
+    margin: 0 2vw;
+    box-shadow: $box-shadow;
+    transition: $transition-fast;
+    border: $border;
+    filter: contrast(0.9);
+    &:hover {
+      transform: scale(1.03);
+      filter: contrast(1);
+    }
+  }
+  &--link {
+    @include size(auto, 100%);
+    position: relative;
+    display: block;
+  }
+  &--img {
+    @include size(auto, 100%);
+  }
+  &--title {
+    @include size(fit-content, fit-content);
+    margin-left: 3rem;
+    text-shadow: $text-shadow;
+    position: absolute;
+    bottom: 3rem;
+    z-index: 10;
+  }
+}
+
+/* LOADER */
+
+.loader {
+  @include centered;
+  @include size(50px, 50px);
+  border: 8px solid white;
+  border-top: 8px solid $dark-green;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
