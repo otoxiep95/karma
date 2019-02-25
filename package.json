@@ -15,16 +15,8 @@
     "dist-clear": "rm -r -f dist/*",
     "build-static-path": "cp -a code/img dist/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mathildefrachon/portfolio-freelance.git"
-  },
   "author": "Mathilde Frachon",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mathildefrachon/portfolio-freelance/issues"
-  },
-  "homepage": "https://github.com/mathildefrachon/portfolio-freelance#readme",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.4.9",
