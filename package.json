@@ -12,18 +12,19 @@
     "build-parcel": "parcel build code/index.html --public-url .",
     "build": "npm run dist-clear && npm run build-parcel && npm run build-static-path",
     "build-server": "cd dist && live-server --no-browser",
-    "dist-clear": "rm -r -f dist/*"
+    "dist-clear": "rm -r -f dist/*",
+    "build-static-path": "cp -a code/img dist/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mathildefrachon/my-webdev-config.git"
+    "url": "git+https://github.com/mathildefrachon/portfolio-freelance.git"
   },
   "author": "Mathilde Frachon",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mathildefrachon/my-webdev-config/issues"
+    "url": "https://github.com/mathildefrachon/portfolio-freelance/issues"
   },
-  "homepage": "https://github.com/mathildefrachon/my-webdev-config#readme",
+  "homepage": "https://github.com/mathildefrachon/portfolio-freelance#readme",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.4.9",
