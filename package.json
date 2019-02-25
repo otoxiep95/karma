@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "live-server": "live-server --open=code",
+    "dev-sass": "node-sass code/css/scss/style.scss code/css/main.css --watch",
+    "live-sass": "npm run dev-sass | npm run live-server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/mathildefrachon/my-webdev-config/issues"
   },
-  "homepage": "https://github.com/mathildefrachon/my-webdev-config#readme"
+  "homepage": "https://github.com/mathildefrachon/my-webdev-config#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
 }

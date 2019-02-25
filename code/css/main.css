@@ -1,11 +1,7 @@
-body {
-  background-color: red;
-}
-
 nav {
-  background-color: orange;
-}
+  background-color: red;
+  width: 100vw;
+  height: 20vh; }
 
-h1 {
-  color: darkred;
-}
+body h1 {
+  color: darkred; }
