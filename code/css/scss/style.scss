@@ -1,5 +1,6 @@
 // import all partial placed inside /modules
 @import "modules/variables";
+@import "modules/gallery";
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
@@ -32,6 +33,24 @@ h2 {
   }
 }
 
+h3 {
+  @include title($font-normal, $line-small, $lightbeige);
+  @include for-tablet-portrait-up {
+    @include title($font-large, $line-Xsmall, $green);
+  }
+}
+
+h4 {
+  font-size: $font-small;
+  line-height: $line-small;
+  color: $lightbeige;
+  font-weight: 600;
+  font-style: italic;
+  @include for-tablet-portrait-up {
+    @include title($font-normal, $line-Xsmall, $green);
+  }
+}
+
 p {
   @include text($font-small, $line-small, $coral);
   @include size(fit-content, fit-content);
@@ -41,7 +60,6 @@ p {
 }
 
 a {
-  text-decoration: none;
   @include links($font-normal, $coral);
   @include size(fit-content, fit-content);
 }
@@ -92,12 +110,12 @@ $color-link: (
 }
 
 .menu-main {
+  display: grid;
   &__container {
     background-color: $orange;
     width: 100vw;
     height: 100vh;
     z-index: z(modal);
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     @include for-tablet-portrait-up {
@@ -140,6 +158,35 @@ $color-link: (
     // display: none;
     @include for-tablet-portrait-up {
       display: block;
+    }
+  }
+}
+
+/* ============================================ */
+/* =============== BOTTOM MENU ================ */
+/* ============================================ */
+
+.menu-bottom {
+  @include size(100vw, 7vh);
+  background-color: $lightbeige;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed;
+  bottom: 0;
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+  &__link {
+    @include size(100%, 100%);
+    &__img {
+      @include size(30%, 100%);
+      background-color: $green;
+      &--map {
+        margin: auto;
+      }
+      &--menu {
+        margin-left: 70%;
+      }
     }
   }
 }

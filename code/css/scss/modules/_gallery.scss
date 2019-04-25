@@ -1,0 +1,112 @@
+@import "variables";
+
+body {
+  @include for-tablet-portrait-up {
+    padding: 0 5vw;
+  }
+}
+
+.menu-main--desk {
+  display: none;
+  @include for-tablet-portrait-up {
+    display: grid;
+  }
+}
+
+.desk-only {
+  display: none;
+  @include for-tablet-portrait-up {
+    display: block;
+  }
+}
+
+.gallery {
+  @include size(100vw, 100vh);
+  @include for-tablet-portrait-up {
+    @include size(90vw, 100vh);
+    margin-top: 10vh;
+  }
+  background-color: $lightgreen;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 30vh);
+  &__item {
+    @include size(100%, 30vh);
+    background-color: orange;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    @include for-tablet-portrait-up {
+      grid-template-columns: 1fr 2fr;
+    }
+    &__img {
+      @include size(100%, 100%);
+      background-color: $green;
+    }
+    &__infos {
+      @include size(100%, 100%);
+      background-color: $beige;
+      padding: 1.2rem;
+      text-align: center;
+      display: grid;
+      grid-template-rows: 1fr 2fr 1.5fr;
+      @include for-tablet-portrait-up {
+        padding: 5.3rem 3.3rem 3.3rem;
+        text-align: start;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 2.1rem;
+        grid-column-gap: 3.3rem;
+      }
+      &--up {
+        grid-row: 1/2;
+        @include for-tablet-portrait-up {
+          grid-column: 2/-1;
+        }
+      }
+      &--text {
+        grid-row: 2/3;
+        place-self: center;
+        @include for-tablet-portrait-up {
+          grid-column: 1/2;
+          grid-row: 1/-1;
+          justify-self: start;
+        }
+      }
+      &--bottom {
+        grid-row: 3/4;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 33%);
+        @include for-tablet-portrait-up {
+          grid-column: 2/-1;
+          grid-row: 3/4;
+        }
+      }
+    }
+  }
+}
+
+.gallery__item__infos--text {
+  h3 {
+    @include for-phone-only {
+      padding: 0;
+    }
+    padding-top: 0;
+  }
+  h4 {
+    @include for-phone-only {
+      padding: 0;
+    }
+    padding-top: 0;
+  }
+  p {
+    max-width: 450px;
+    @include text($font-small, $line-small, $green);
+    padding-bottom: 0;
+  }
+}
+
+.badge {
+  &__container {
+    @include size(100%, 100%);
+    background-color: $orange;
+  }
+}
