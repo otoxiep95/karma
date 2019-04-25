@@ -1,0 +1,295 @@
+////////////////////////////////////
+
+/* COLORS */
+
+$lightbeige: #f9ecd7;
+$beige: #f1e0c2;
+$darkbeige: #efd4a8;
+$blackbeige: #b29d7f;
+
+$lightbrown: #ccb7a8;
+$brown: #d0ad8e;
+$darkbrown: #a88267;
+$blackbrown: #4c3b30;
+
+$lightcoral: #ef8e86;
+$coral: #e2685b;
+$darkcoral: #b24a42;
+$blackcoral: #682c29;
+
+$lightorange: #ed9d7a;
+$orange: #e38655;
+$darkorange: #ba6945;
+$blackorange: #7a3f27;
+
+$lightgreen: #9aafa2;
+$green: #6b927a;
+$darkgreen: #4f6d59;
+$blackgreen: #324437;
+
+////////////////////////////////////////
+
+/* STYLE ELEMENTS */
+
+$box-shadow: 2px 3px 23px -4px $blackcoral;
+$border: white 3px solid;
+$text-shadow: 1px 1px 4px rgba(114, 146, 127, 0.822);
+
+////////////////////////////////////////
+
+/* -------------GENERAL STYLE SHEET----------------- */
+
+/* FONT SIZE */
+
+// large title
+$font-xl: 3.3rem;
+//title desktop
+$font-large: 2.7rem;
+// body desktop & title mobile & links
+$font-normal: 2.1rem;
+// body mobile
+$font-small: 1.6rem;
+
+/* FONT WEIGHT */
+
+$extrabold: 800;
+$bold: 700;
+$semibold: 600;
+$regular: 400;
+$light: 300;
+
+/* LINE HEIGHT */
+$line-xl: 4.3rem;
+$line-large: 3.3rem;
+$line-normal: 3.3rem;
+$line-small: 2.6rem;
+
+/////////////////////////////////////////////
+
+/* EFFECT TRANSITIONS */
+
+$transition-normal: all ease 1s;
+$transition-forward: all ease 1s forwards;
+$transition-fast: all ease 0.3s;
+$transition-slow: all ease 2s;
+$transition-super-slow: all ease 3s;
+
+//////////////////////////////////////////////
+
+/* ------------- MIXINS STYLE----------------- */
+
+@mixin links($size, $color) {
+  text-decoration: none;
+  color: $color;
+  font-size: $size;
+}
+
+@mixin largetitle($color) {
+  color: $color;
+  font-size: $font-xl;
+  font-weight: $bold;
+  line-height: $line-xl;
+  padding-top: calc(3 * #{$line-xl});
+  padding-bottom: calc(2 * #{$line-xl});
+}
+
+@mixin title($size, $line-height, $color) {
+  color: $color;
+  font-size: $size;
+  font-weight: 700;
+  line-height: $line-height;
+  padding-top: calc(3 * #{$line-height});
+  padding-bottom: calc(2 * #{$line-height});
+}
+
+@mixin text($size, $line-height, $color) {
+  color: $color;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $semibold;
+  padding-bottom: $line-height;
+}
+
+@mixin liste($size, $color) {
+  color: $color;
+  font-size: $size;
+  letter-spacing: 0.4rem;
+  font-weight: 400;
+}
+
+/* -------------- MIXINS FUNCTIONS ------------------- */
+
+@mixin centered($element) {
+  position: relative;
+  #{$element} {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+@mixin vertical-align($element) {
+  position: relative;
+  #{$element} {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin blackground-image($url, $color) {
+  background: url($url), $color;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin scroll-div($x, $y, $width, $height) {
+  width: $width;
+  height: $height;
+  overflow-x: $x;
+  overflow-y: $y;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+// Z-INDEXES
+
+$z-layers: (
+  default: 1,
+  menu: 5,
+  overlay: 10,
+  sides: 15,
+  modal: 40
+);
+
+// _functions.scss
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+/* -------------- MIXINS RESPONSIVENESS ------------------- */
+
+// MOBILE FIRST
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-portait-only {
+  @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-only {
+  @media (min-width: 900px) and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-desktop-only {
+  @media (min-width: 1200px) and (max-width: 1799px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+// DESKTOP FIRST
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-down {
+  @media (max-width: 1799px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-only {
+  @media (max-width: 1799px) and (min-width: 1200px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin for-small-desktop-down {
+  @media (max-width: 1499px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-down {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-only {
+  @media (max-width: 1199px) and (min-width: 900px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin for-tablet-HD-portrait-down {
+  @media (max-width: 1199px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-down {
+  @media (max-width: 899px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin for-tablet-HD-portrait-only {
+  @media (max-width: 1199px) and (min-width: 900px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-only {
+  @media (max-width: 1199px) and (min-width: 600px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}

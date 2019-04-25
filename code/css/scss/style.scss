@@ -1,13 +1,145 @@
 // import all partial placed inside /modules
+@import "modules/variables";
+
+/* ============================================ */
+/* =============== GENERAL ==================== */
+/* ============================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Nunito, sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
 
 body {
-  background-color: lightblue;
-  nav {
-    width: 100%;
-    height: 10%;
-    background-color: darkcyan;
+  background-color: $lightbeige;
+}
+
+h1 {
+  @include largetitle($coral);
+  @include size(fit-content, fit-content);
+}
+
+h2 {
+  @include title($font-normal, $line-small, $coral);
+  @include size(fit-content, fit-content);
+  @include for-tablet-portrait-up {
+    @include title($font-large, $line-large, $coral);
   }
-  h1 {
-    color: coral;
+}
+
+p {
+  @include text($font-small, $line-small, $coral);
+  @include size(fit-content, fit-content);
+  @include for-tablet-portrait-up {
+    @include text($font-normal, $line-normal, $coral);
+  }
+}
+
+a {
+  text-decoration: none;
+  @include links($font-normal, $coral);
+  @include size(fit-content, fit-content);
+}
+
+.button {
+  @include centered(a);
+}
+
+/* ============================================ */
+/* =============== LAUNCHING ==================== */
+/* ============================================ */
+
+.launching {
+  background-color: $beige;
+  @include size(100vw, 100vh);
+  padding: 3vw 3vh;
+  &__button-container {
+    @include size(94%, 50px);
+    background-color: $lightbeige;
+    @include for-tablet-portrait-up {
+      @include size(300px, 50px);
+    }
+  }
+}
+
+/* ============================================ */
+/* =============== MENU ==================== */
+/* ============================================ */
+
+$color-link: (
+  eat: $coral,
+  shop: $darkbeige,
+  stay: $orange,
+  travel: $green,
+  discover: $coral,
+  party: $darkbeige,
+  chill: $brown,
+  other: $orange
+);
+
+@each $name, $color in $color-link {
+  .menu-main__link--#{$name} {
+    background-color: $color;
+    @include for-tablet-portrait-up {
+      background-color: inherit;
+    }
+  }
+}
+
+.menu-main {
+  &__container {
+    background-color: $orange;
+    width: 100vw;
+    height: 100vh;
+    z-index: z(modal);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    @include for-tablet-portrait-up {
+      background-color: $lightbeige;
+      height: 10vh;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+  &__logo {
+    display: none;
+    @include for-tablet-portrait-up {
+      display: block;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    @include size(100%, 100%);
+    @include centered(h1);
+    h1 {
+      font-size: $font-normal;
+      color: $lightbeige;
+      font-weight: 400;
+      padding: 0;
+      @include for-tablet-portrait-up {
+        @include links($font-small, $coral);
+      }
+    }
+  }
+}
+
+/* ============================================ */
+/* =============== ABOUT ==================== */
+/* ============================================ */
+
+.about-main {
+  &__container {
+    @include size(100%, auto);
+    padding: 3vw 3vh;
+    // display: none;
+    @include for-tablet-portrait-up {
+      display: block;
+    }
   }
 }
