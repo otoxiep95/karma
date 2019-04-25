@@ -34,6 +34,9 @@
     .desk-only {
       display: block; } }
 
+/* ============================================ */
+/* =============== GALLERY ==================== */
+/* ============================================ */
 .gallery {
   width: 100vw;
   height: 100vh;
@@ -42,7 +45,7 @@
   grid-template-rows: repeat(auto-fill, 30vh); }
   @media (min-width: 600px) {
     .gallery {
-      width: 90vw;
+      width: 80vw;
       height: 100vh;
       margin-top: 10vh; } }
   .gallery__item {
@@ -96,6 +99,9 @@
             grid-column: 2/-1;
             grid-row: 3/4; } }
 
+/* ============================================ */
+/* =============== STYLE TEXT ================= */
+/* ============================================ */
 .gallery__item__infos--text h3 {
   padding-top: 0; }
   @media (max-width: 599px) {
@@ -117,10 +123,52 @@
   padding-bottom: 2.6rem;
   padding-bottom: 0; }
 
+/* ============================================ */
+/* ================ BADGES ==================== */
+/* ============================================ */
 .badge__container {
   width: 100%;
   height: 100%;
   background-color: #e38655; }
+
+/* ============================================ */
+/* ================ FILTER ==================== */
+/* ============================================ */
+.filter__container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f1e0c2;
+  position: absolute;
+  top: -12vh;
+  z-index: 5;
+  right: calc(50vw - 50px); }
+  @media (min-width: 600px) {
+    .filter__container {
+      top: 60vh;
+      right: 5vw; } }
+
+.filter__modal {
+  position: relative;
+  bottom: 0;
+  padding: 1.6rem;
+  z-index: 15;
+  width: 100vw;
+  height: 30vh;
+  background-color: #f9ecd7; }
+  .filter__modal h2 {
+    color: #d0ad8e;
+    padding-top: 1.6rem;
+    padding-bottom: 0.8rem; }
+
+.filter__liste {
+  width: auto;
+  height: 60%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  background-color: #ef8e86; }
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
@@ -356,11 +404,12 @@ a {
 .menu-bottom {
   width: 100vw;
   height: 7vh;
-  background-color: #f9ecd7;
+  background-color: #efd4a8;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: fixed;
-  bottom: 0; }
+  bottom: 0;
+  z-index: 45; }
   @media (min-width: 600px) {
     .menu-bottom {
       display: none; } }
@@ -370,8 +419,14 @@ a {
     .menu-bottom__link__img {
       width: 30%;
       height: 100%;
-      background-color: #6b927a; }
+      border: solid 3px #f9ecd7; }
       .menu-bottom__link__img--map {
         margin: auto; }
       .menu-bottom__link__img--menu {
         margin-left: 70%; }
+
+.menu-bottom__modal {
+  width: 100vw;
+  height: 55vh;
+  position: relative;
+  background-color: #324437; }

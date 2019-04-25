@@ -168,11 +168,12 @@ $color-link: (
 
 .menu-bottom {
   @include size(100vw, 7vh);
-  background-color: $lightbeige;
+  background-color: $darkbeige;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: fixed;
   bottom: 0;
+  z-index: z(bottommenu);
   @include for-tablet-portrait-up {
     display: none;
   }
@@ -180,7 +181,7 @@ $color-link: (
     @include size(100%, 100%);
     &__img {
       @include size(30%, 100%);
-      background-color: $green;
+      border: solid 3px $lightbeige;
       &--map {
         margin: auto;
       }
@@ -188,5 +189,17 @@ $color-link: (
         margin-left: 70%;
       }
     }
+  }
+}
+
+.menu-bottom {
+  &__modal {
+    @include size(100vw, 55vh);
+    position: relative;
+    background-color: $blackgreen;
+  }
+  &__container {
+    //position: absolute;
+    //top: 0;
   }
 }

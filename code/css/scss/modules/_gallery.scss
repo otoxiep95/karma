@@ -20,10 +20,14 @@ body {
   }
 }
 
+/* ============================================ */
+/* =============== GALLERY ==================== */
+/* ============================================ */
+
 .gallery {
   @include size(100vw, 100vh);
   @include for-tablet-portrait-up {
-    @include size(90vw, 100vh);
+    @include size(80vw, 100vh);
     margin-top: 10vh;
   }
   background-color: $lightgreen;
@@ -84,6 +88,10 @@ body {
   }
 }
 
+/* ============================================ */
+/* =============== STYLE TEXT ================= */
+/* ============================================ */
+
 .gallery__item__infos--text {
   h3 {
     @include for-phone-only {
@@ -104,9 +112,50 @@ body {
   }
 }
 
+/* ============================================ */
+/* ================ BADGES ==================== */
+/* ============================================ */
+
 .badge {
   &__container {
     @include size(100%, 100%);
     background-color: $orange;
+  }
+}
+
+/* ============================================ */
+/* ================ FILTER ==================== */
+/* ============================================ */
+
+.filter {
+  &__container {
+    @include size(100px, 100px);
+    border-radius: 50%;
+    background-color: $beige;
+    position: absolute;
+    top: -12vh;
+    z-index: z(menu);
+    right: calc(50vw - 50px);
+    @include for-tablet-portrait-up {
+      top: 60vh;
+      right: 5vw;
+    }
+  }
+  &__modal {
+    position: relative;
+    bottom: 0;
+    padding: 1.6rem;
+    z-index: z(sides);
+    @include size(100vw, 30vh);
+    background-color: $lightbeige;
+    h2 {
+      color: $brown;
+      padding-top: 1.6rem;
+      padding-bottom: 0.8rem;
+    }
+  }
+  &__liste {
+    @include scroll-div(auto, hidden, auto, 60%);
+    background-color: $lightcoral;
   }
 }
