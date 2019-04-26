@@ -22,6 +22,9 @@
   body {
     padding: 0 5vw; } }
 
+* {
+  transition: 1s all ease; }
+
 .menu-main--desk {
   display: none; }
   @media (min-width: 600px) {
@@ -141,25 +144,26 @@
   background-color: #f1e0c2;
   position: absolute;
   top: -12vh;
-  z-index: 5;
-  right: calc(50vw - 50px); }
+  right: calc(50vw - 50px);
+  z-index: 5; }
   @media (min-width: 600px) {
     .filter__container {
-      top: 60vh;
-      right: 5vw; } }
+      top: 0vh;
+      right: 0vw; } }
 
 .filter__modal {
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  top: 0vh;
   padding: 1.6rem;
-  z-index: 15;
   width: 100vw;
-  height: 30vh;
+  height: 0vh;
   background-color: #f9ecd7; }
   .filter__modal h2 {
     color: #d0ad8e;
     padding-top: 1.6rem;
-    padding-bottom: 0.8rem; }
+    padding-bottom: 0.8rem;
+    opacity: 0;
+    transition: 0.3s opacity ease; }
 
 .filter__liste {
   width: auto;
@@ -168,7 +172,68 @@
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
-  background-color: #ef8e86; }
+  background-color: none; }
+  @media (min-width: 600px) {
+    .filter__liste {
+      display: none; } }
+
+.menu-bottom__modal {
+  position: fixed;
+  bottom: 0; }
+
+.map__container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4f6d59;
+  z-index: 15; }
+
+@media (min-width: 600px) {
+  .filter__modal {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f1e0c2;
+    position: fixed;
+    top: 60vh;
+    right: 5vw; } }
+
+.morphing {
+  animation: morphing 1s 0s ease-in-out forwards;
+  transition: all ease; }
+
+.morphingClose {
+  animation: morphingClose 1s 0s ease-in-out forwards;
+  transition: all ease; }
+
+@keyframes morphing {
+  0% {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; }
+  70% {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px; }
+  93% {
+    width: 495px;
+    height: 195px;
+    border-radius: 5px; }
+  100% {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px; } }
+
+@keyframes morphingClose {
+  0% {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px; }
+  100% {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; } }
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
@@ -427,6 +492,5 @@ a {
 
 .menu-bottom__modal {
   width: 100vw;
-  height: 55vh;
-  position: relative;
+  height: 7vh;
   background-color: #324437; }

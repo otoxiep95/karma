@@ -6,6 +6,10 @@ body {
   }
 }
 
+* {
+  transition: 1s all ease;
+}
+
 .menu-main--desk {
   display: none;
   @include for-tablet-portrait-up {
@@ -128,34 +132,114 @@ body {
 /* ============================================ */
 
 .filter {
+  // BUTTON
   &__container {
     @include size(100px, 100px);
     border-radius: 50%;
     background-color: $beige;
     position: absolute;
     top: -12vh;
-    z-index: z(menu);
     right: calc(50vw - 50px);
+    z-index: z(menu);
     @include for-tablet-portrait-up {
-      top: 60vh;
-      right: 5vw;
+      top: 0vh;
+      right: 0vw;
     }
   }
   &__modal {
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    top: 0vh;
     padding: 1.6rem;
-    z-index: z(sides);
-    @include size(100vw, 30vh);
+    // z-index: z(sides);
+    @include size(100vw, 0vh);
     background-color: $lightbeige;
     h2 {
       color: $brown;
       padding-top: 1.6rem;
       padding-bottom: 0.8rem;
+      //display: none;
+      opacity: 0;
+      transition: 0.3s opacity ease;
     }
   }
   &__liste {
     @include scroll-div(auto, hidden, auto, 60%);
-    background-color: $lightcoral;
+    background-color: none;
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+}
+
+.menu-bottom__modal {
+  position: fixed;
+  bottom: 0;
+}
+
+.map__container {
+  position: absolute;
+  top: 0;
+  @include size(100%, 100%);
+  background-color: $darkgreen;
+  z-index: z(sides);
+}
+
+// morphing modal filter desktop
+
+.filter__modal {
+  @include for-tablet-portrait-up {
+    @include size(100px, 100px);
+    border-radius: 50%;
+    background-color: $beige;
+    position: fixed;
+    top: 60vh;
+    right: 5vw;
+  }
+}
+
+.morphing {
+  animation: morphing 1s 0s ease-in-out forwards;
+  transition: all ease;
+}
+
+.morphingClose {
+  animation: morphingClose 1s 0s ease-in-out forwards;
+  transition: all ease;
+}
+
+@keyframes morphing {
+  0% {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  70% {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+  }
+  93% {
+    width: 495px;
+    height: 195px;
+    border-radius: 5px;
+  }
+  100% {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+  }
+}
+
+@keyframes morphingClose {
+  0% {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+  }
+
+  100% {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
 }

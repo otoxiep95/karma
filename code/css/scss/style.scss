@@ -194,8 +194,8 @@ $color-link: (
 
 .menu-bottom {
   &__modal {
-    @include size(100vw, 55vh);
-    position: relative;
+    @include size(100vw, 7vh);
+    // position: relative;
     background-color: $blackgreen;
   }
   &__container {
