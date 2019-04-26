@@ -84,8 +84,8 @@
             <div class="button__filter filter filter__container">
                   <a href=""></a>
             </div> 
-            <h2>Select your filter:</h2>
-            <div class="filter__liste">
+            <h2 class="opacity">Select your filter:</h2>
+            <div class="filter__liste opacity">
             <a class="filter__link" href=""> <img class="filter__link__img" src="" alt=""></a>
             <a class="filter__link" href=""> <img class="filter__link__img" src="" alt=""></a>
             <a class="filter__link" href=""> <img class="filter__link__img" src="" alt=""></a>
@@ -96,7 +96,9 @@
     <!--////////////////////////////////////////////-->
     <!--==================== MAP ===================-->
     <!--////////////////////////////////////////////-->      
-        <div class="map__container"></div>
+        <div class="map__container">
+          <div class="map opacity"></div>
+        </div>
 
     <!--////////////////////////////////////////////-->
     <!--=================== MENU ===================-->
@@ -110,7 +112,7 @@
             <div class="menu-bottom__link__img menu-bottom__link__img--map"></div>
             <!-- <img class="menu-bottom__img" src="" alt=""> -->
             </a>
-            <a class="menu-bottom__link">
+            <a class="menu-bottom__link menu-bottom__link--burger">
                 <div class="menu-bottom__link__img menu-bottom__link__img--menu"></div>
                 <!-- <img class="menu-bottom__img" src="" alt=""> -->
             </a>   
@@ -118,6 +120,22 @@
   
     </div>
      <!--============ END BOTTOM MENU ===============-->
+
+    <!--////////////////////////////////////////////-->
+    <!--=============== BURGER MENU ================-->
+    <!--////////////////////////////////////////////-->
+
+    <div class="burger-menu">
+      <a href="#" class="burger-menu--link burger-menu--link__close">CLOSE</a>
+      <img src="" alt="" class="burger-menu--logo">
+      <div class="burger-menu--link__container">
+        <a  class="burger-menu--link">ABOUT</a>
+        <a href="index.html#about1" class="burger-menu--link"><pre>   Who are we ?</pre></a>
+        <a href="index.html#about2" class="burger-menu--link"><pre>   Why doing this ?</pre></a>
+        <a href="index.html#about3" class="burger-menu--link"><pre>   How does it work ?</pre></a>
+        <a href="index.html#about4" class="burger-menu--link">CONTACT US</a>
+      </div>
+    </div>
 
     <!--================= END BODY ==================-->
 

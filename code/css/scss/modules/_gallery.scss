@@ -1,4 +1,5 @@
 @import "variables";
+@import "classes";
 
 body {
   @include for-tablet-portrait-up {
@@ -128,6 +129,65 @@ body {
 }
 
 /* ============================================ */
+/* =============== BOTTOM MENU ================ */
+/* ============================================ */
+
+.menu-bottom {
+  @include size(100vw, 7vh);
+  background-color: $darkbeige;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed;
+  bottom: 0;
+  z-index: z(bottommenu);
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+  &__link {
+    @include size(100%, 100%);
+    &__img {
+      @include size(30%, 100%);
+      border: solid 3px $lightbeige;
+      &--map {
+        margin: auto;
+      }
+      &--menu {
+        margin-left: 70%;
+      }
+    }
+  }
+}
+
+.menu-bottom {
+  &__modal {
+    @include size(100vw, 7vh);
+    position: fixed;
+    bottom: 0;
+    @include for-tablet-portrait-up {
+      @include size(0vh, 0vw);
+    }
+    background-color: $blackgreen;
+  }
+}
+
+.map__container {
+  position: absolute;
+  top: 0;
+  @include size(100%, 100%);
+  background-color: $darkgreen;
+  z-index: z(sides);
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+  @include centered(".map");
+  .map {
+    width: 80%;
+    height: 70%;
+    background-color: $brown;
+  }
+}
+
+/* ============================================ */
 /* ================ FILTER ==================== */
 /* ============================================ */
 
@@ -158,30 +218,51 @@ body {
       padding-top: 1.6rem;
       padding-bottom: 0.8rem;
       //display: none;
-      opacity: 0;
+      // opacity: 0;
       transition: 0.3s opacity ease;
     }
   }
   &__liste {
     @include scroll-div(auto, hidden, auto, 60%);
-    background-color: none;
+    background-color: $darkbrown;
     @include for-tablet-portrait-up {
       display: none;
     }
   }
 }
 
-.menu-bottom__modal {
-  position: fixed;
-  bottom: 0;
-}
+/* ============================================ */
+/* ============== BURGER MENU ================= */
+/* ============================================ */
 
-.map__container {
-  position: absolute;
+.burger-menu {
+  //display: none;
+  @include size(0vw, 100vh);
+  background-color: $darkorange;
+  position: fixed;
   top: 0;
-  @include size(100%, 100%);
-  background-color: $darkgreen;
-  z-index: z(sides);
+  bottom: 0;
+  right: 0vw;
+  z-index: z(menu);
+
+  &--link {
+    color: $lightbeige;
+    display: block;
+    font-size: $font-small;
+    padding-bottom: 1.6rem;
+    opacity: 0;
+    &__close {
+      width: 100px;
+      text-align: right;
+      padding: 1.6rem;
+      margin-left: calc(100% - 100px);
+    }
+    &__container {
+      width: 100%;
+      padding: 3.3rem;
+      height: fit-content;
+    }
+  }
 }
 
 // morphing modal filter desktop
