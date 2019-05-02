@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: $lightbeige;
+  background-color: $verylightbeige;
   @include size(100vw, auto);
 }
 
@@ -69,6 +69,8 @@ a {
 
 .button {
   @include centered(a);
+  border-radius: $round-corner;
+  // box-shadow: $box-shadow;
 }
 
 * {
@@ -94,14 +96,39 @@ a {
 /* ============================================ */
 
 .launching {
-  background-color: $beige;
+  //background-color: $beige;
+  @include background-image("background-img/png-launch-illu.png", none);
   @include size(100%, 100vh);
   padding: 3vw 3vh;
+  //for desk
+  @include for-tablet-portrait-up {
+    background-image: none;
+    padding: 0;
+    margin: 13vh 0vw;
+  }
+  &__img {
+    @include size(50%, auto);
+    float: left;
+  }
+  &__title {
+    @include for-tablet-portrait-up {
+      width: 40%;
+      padding: 20% 5%;
+      padding-right: 10%;
+      float: right;
+    }
+  }
+
   &__button-container {
-    @include size(94%, 50px);
-    background-color: $lightbeige;
+    @include size(90%, 45px);
+    position: fixed;
+    bottom: 3vh;
+    background-color: white;
+    @include box-shadow($shadow-straight, $beige, 1);
+    //for desk
     @include for-tablet-portrait-up {
       @include size(300px, 50px);
+      display: none;
     }
   }
 }
@@ -123,7 +150,8 @@ $color-link: (
 
 @each $name, $color in $color-link {
   .menu-main__link--#{$name} {
-    background-color: $color;
+    background-blend-mode: multiply;
+    background-color: rgba($color, 1);
     @include for-tablet-portrait-up {
       background-color: inherit;
     }
@@ -141,8 +169,16 @@ $color-link: (
     z-index: z(modal);
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    //bg shadow
+    @include background-image(
+      "background-img/png-main-menu_shadow.svg",
+      white
+    ); //doesnt work
+
     @include for-tablet-portrait-up {
-      background-color: $lightbeige;
+      background: none;
+      background-color: $verylightbeige;
+      @include box-shadow($ourshadow, $brown, 0.4);
       height: 10vh;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr;
       grid-template-rows: 1fr;

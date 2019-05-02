@@ -2,6 +2,8 @@
 
 /* COLORS */
 
+$verylightbeige: #f7f2eb;
+
 $lightbeige: #f9ecd7;
 $beige: #f1e0c2;
 $darkbeige: #efd4a8;
@@ -31,9 +33,14 @@ $blackgreen: #324437;
 
 /* STYLE ELEMENTS */
 
-$box-shadow: 2px 3px 23px -4px $blackcoral;
+$box-shadow: 2px 3px 23px 1px;
+// type shadow
+$shadow-straight: 2px 3px 0px 1px;
+$shadow-blured: 2px 3px 23px 1px;
+$ourshadow: 0px -2px 23px 1px;
 $border: white 3px solid;
 $text-shadow: 1px 1px 4px rgba(114, 146, 127, 0.822);
+$round-corner: 100px;
 
 ////////////////////////////////////////
 
@@ -147,7 +154,7 @@ $transition-super-slow: all ease 3s;
   height: $height;
 }
 
-@mixin blackground-image($url, $color) {
+@mixin background-image($url, $color) {
   background: url($url), $color;
   background-size: cover;
   background-repeat: no-repeat;
@@ -160,6 +167,10 @@ $transition-super-slow: all ease 3s;
   overflow-y: $y;
   white-space: nowrap;
   scroll-behavior: smooth;
+}
+
+@mixin box-shadow($type-shadow, $color, $opacity) {
+  box-shadow: $type-shadow rgba($color, $opacity);
 }
 
 // Z-INDEXES
