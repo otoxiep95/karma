@@ -7,24 +7,6 @@ body {
   }
 }
 
-* {
-  transition: 1s all ease;
-}
-
-.menu-main--desk {
-  display: none;
-  @include for-tablet-portrait-up {
-    display: grid;
-  }
-}
-
-.desk-only {
-  display: none;
-  @include for-tablet-portrait-up {
-    display: block;
-  }
-}
-
 /* ============================================ */
 /* =============== GALLERY ==================== */
 /* ============================================ */
@@ -38,6 +20,10 @@ body {
   background-color: $lightgreen;
   display: grid;
   grid-template-rows: repeat(auto-fill, 30vh);
+  a {
+    @include size(100%, 100%);
+    grid-column: 1/-1;
+  }
   &__item {
     @include size(100%, 30vh);
     background-color: orange;

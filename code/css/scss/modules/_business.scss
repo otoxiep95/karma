@@ -1,0 +1,169 @@
+@import "variables";
+@import "classes";
+
+.button__rate,
+.button__other-rate {
+  @include centered(a);
+  position: absolute;
+  a {
+    @include size(fit-content, fit-content);
+    text-align: center;
+  }
+}
+
+// RATE //
+
+.button__other-rate {
+  right: 7%;
+  z-index: 50;
+}
+
+.rate {
+  &__header {
+    @include size(100vw, 20vh);
+    &--title {
+      @include size(90%, 100%);
+    }
+  }
+}
+
+// business
+
+.business {
+  @include for-tablet-portrait-up {
+    margin-top: 20vh;
+    // overflow-y: hidden;
+  }
+  &__template {
+    @include size(100vw, auto);
+    min-height: 100vh;
+    @include for-tablet-portrait-up {
+      @include size(100%, auto);
+    }
+  }
+  &__template--header {
+    @include size(100%, 20%);
+    display: grid;
+    grid-gap: 1.6rem;
+    grid-template-rows: 1fr auto;
+    @include for-tablet-portrait-up {
+      @include size(35%, auto);
+      position: fixed;
+    }
+    &__img {
+      @include size(100%, 140px);
+      border: solid 2px $green;
+      grid-column: 1/-1;
+      grid-row: 1/2;
+      @include for-tablet-portrait-up {
+        @include size(100%, auto);
+        min-height: 250px;
+      }
+    }
+    &__text {
+      @include size(100%, auto);
+      max-height: 200px;
+      padding: 3vh 3vw;
+      @include for-tablet-portrait-up {
+        padding: 1.6rem;
+      }
+      grid-column: 1/-1;
+      grid-row: 2/3;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr 1fr;
+      grid-column-gap: 13%;
+      grid-row-gap: 0.8rem;
+    }
+  }
+  &__title {
+    grid-column: 1/2;
+    //padding: 0vw 3vw;
+    //padding: 2.6rem 3vw 0 3vw;
+    //padding-top: 2.6rem;
+    padding: 0;
+    align-self: end;
+  }
+  &__subtitle {
+    grid-column: 1/2;
+    color: $coral;
+    //padding: 1.6rem 3vw 0 3vw;
+    //padding: 0vw 3vw;
+    //padding-top: 1.6rem;
+    padding: 0;
+    align-self: end;
+  }
+  &__infos {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: $lightcoral;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h4 {
+      padding: 0;
+      align-self: end;
+      justify-self: end;
+    }
+  }
+  &__contact {
+    grid-column: 2/3;
+    background-color: $lightorange;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &__description {
+    padding: 2.6rem 3vw 5.2rem 3vw;
+  }
+  &__rate {
+    padding: 3vh 3vw;
+    @include size(90%, auto);
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20vh;
+    &--title {
+      padding: 0;
+      padding-bottom: 1.6rem;
+    }
+    &--badges {
+      @include size(100%, 12vh);
+      background-color: $green;
+    }
+  }
+}
+
+@include for-tablet-portrait-up {
+  .business {
+    // &__img {
+    //   float: left;
+    // }
+    &__template--header {
+      float: left;
+      &__img {
+        grid-row: 2/3;
+      }
+      &__text {
+        grid-row: 1/2;
+      }
+    }
+    &__template--content {
+      padding-top: 100px;
+      position: fixed;
+      right: 0;
+    }
+    &__desktop {
+      @include scroll-div(hidden, scroll, 50vw, 100%);
+      float: right;
+      background-color: $lightbrown;
+      white-space: inherit;
+    }
+    &__rate {
+      margin-bottom: 5.2rem;
+    }
+    &__map {
+      @include size(80%, 450px);
+      margin: auto;
+      background-color: $lightgreen;
+    }
+  }
+}

@@ -1,30 +1,34 @@
 "use strict";
 
-let buttonFilter = document.querySelector(".button__filter");
 let modalFilter = document.querySelector(".filter__modal");
 let titleFilter = document.querySelector(".filter__modal h2");
 let listFilter = document.querySelector(".filter__liste");
 let isopen = false;
-
 let bottomModal = document.querySelector(".menu-bottom__modal");
-let mapButton = document.querySelector(".menu-bottom__link--map");
-let burgerButton = document.querySelector(".menu-bottom__link--burger");
 let burgerModal = document.querySelector(".burger-menu");
-let crossBurger = document.querySelector(".burger-menu--link__close");
 let linksBurger = document.querySelectorAll(".burger-menu--link");
 let mainMap = document.querySelector(".map__container .map");
-
 let letsGo = document.querySelector(".launching__button-link");
 let menuMain = document.querySelector(".menu-main");
 
-window.addEventListener("DOMContentLoaded", init);
+//let galleryItem = document.querySelector(".gallery__item");
 
-function init() {
-  buttonFilter.addEventListener("click", openCloseFilterModal);
-  mapButton.addEventListener("click", openCloseMapModal);
-  burgerButton.addEventListener("click", openBurgerMenu);
-  crossBurger.addEventListener("click", closeBurgerMenu);
-  letsGo.addEventListener("click", openMainMenu);
+window.onload = initInteraction();
+
+function initInteraction() {
+  let buttonFilter = document.querySelector(".button__filter");
+  let mapButton = document.querySelector(".menu-bottom__link--map");
+  let burgerButton = document.querySelector(".menu-bottom__link--burger");
+  let crossBurger = document.querySelector(".burger-menu--link__close");
+  if (buttonFilter) {
+    buttonFilter.addEventListener("click", openCloseFilterModal);
+  }
+  if ((mapButton, burgerButton, crossBurger)) {
+    mapButton.addEventListener("click", openCloseMapModal);
+    burgerButton.addEventListener("click", openBurgerMenu);
+    crossBurger.addEventListener("click", closeBurgerMenu);
+  }
+  //galleryItem.addEventListener("click", gotoSubpage);
 }
 
 function openCloseFilterModal() {
@@ -92,10 +96,9 @@ function closeBurgerMenu() {
   }, 1000);
 }
 
-function openMainMenu() {
-  console.log("open menuMain");
-  menuMain.style.display = "grid";
-}
+// function gotoSubpage(){
+
+// }
 
 /* ---------------------- EFFECT FUNCTIONS ------------------- */
 

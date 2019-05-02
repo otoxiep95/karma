@@ -3,9 +3,9 @@
 let letsGo = document.querySelector(".launching__button-link");
 let menuMain = document.querySelector(".menu-main");
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", initIndex);
 
-function init() {
+function initIndex() {
   letsGo.addEventListener("click", openMainMenu);
 }
 
