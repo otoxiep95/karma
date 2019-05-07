@@ -19,26 +19,28 @@ body {
   }
   background-color: none;
   display: grid;
-  grid-template-rows: repeat(auto-fill, 30vh);
+  grid-template-rows: repeat(auto-fill, 170px);
   a {
     @include size(100%, 100%);
     grid-column: 1/-1;
   }
   &__item {
-    @include size(100%, 30vh);
-    background-color: orange;
+    @include size(100%, 170px);
     display: grid;
     grid-template-columns: 50% 50%;
     @include for-tablet-portrait-up {
       grid-template-columns: 1fr 2fr;
     }
     &__img {
-      @include size(100%, 100%);
+      @include size(auto, 100%);
       background-color: $green;
+      background-size: auto 170px;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     &__infos {
       @include size(100%, 100%);
-      background-color: $beige;
+      background-color: $coral;
       padding: 1.2rem;
       text-align: center;
       display: grid;
@@ -87,18 +89,28 @@ body {
   h3 {
     @include for-phone-only {
       padding: 0;
+      font-size: 1.6rem;
+      line-height: inherit;
     }
     padding-top: 0;
   }
   h4 {
     @include for-phone-only {
       padding: 0;
+      font-size: 1.4rem;
+      line-height: inherit;
     }
     padding-top: 0;
   }
   p {
     max-width: 450px;
     @include text($font-small, $line-small, $green);
+    padding-bottom: 0;
+  }
+}
+
+.gallery__item__infos--up {
+  p {
     padding-bottom: 0;
   }
 }
@@ -110,7 +122,7 @@ body {
 .badge {
   &__container {
     @include size(100%, 100%);
-    background-color: $orange;
+    //background-color: $orange;
   }
 }
 
