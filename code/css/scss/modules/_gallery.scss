@@ -17,7 +17,7 @@ body {
     @include size(80vw, 100vh);
     margin: 23vh 5vw;
   }
-  background-color: $lightgreen;
+  background-color: none;
   display: grid;
   grid-template-rows: repeat(auto-fill, 30vh);
   a {
@@ -120,25 +120,33 @@ body {
 
 .menu-bottom {
   @include size(100vw, 7vh);
-  background-color: $darkbeige;
+  background-color: $verylightbeige;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: fixed;
   bottom: 0;
+  padding: 0 3vw;
   z-index: z(bottommenu);
+  @include box-shadow($ourshadow-mobile, $brown, 0.2);
   @include for-tablet-portrait-up {
     display: none;
   }
   &__link {
     @include size(100%, 100%);
+    &--map {
+      text-align: center;
+    }
+    &--return {
+      transform: scale(-1);
+    }
+    &--burger {
+      text-align: right;
+    }
     &__img {
-      @include size(30%, 100%);
-      border: solid 3px $lightbeige;
-      &--map {
-        margin: auto;
-      }
-      &--menu {
-        margin-left: 70%;
+      @include size(25%, 100%);
+      @include centered(img);
+      img {
+        @include size(100%, auto);
       }
     }
   }
@@ -180,37 +188,45 @@ body {
 .filter {
   // BUTTON
   &__container {
-    @include size(100px, 100px);
+    @include size(85px, 85px);
     border-radius: 50%;
-    background-color: $beige;
+    background-color: $verylightbeige;
+    @include box-shadow($ourshadow-mobile, $brown, 0.3);
     position: absolute;
-    top: -12vh;
-    right: calc(50vw - 50px);
-    z-index: z(menu);
+    top: -10vh;
+    right: calc(50vw - 42.5px);
+    //z-index: z(menu);
     @include for-tablet-portrait-up {
       top: 0vh;
       right: 0vw;
+    }
+    display: grid;
+    img {
+      width: 36px;
+      height: auto;
+      margin: auto;
+      margin-top: calc(45% - 18px);
     }
   }
   &__modal {
     position: absolute;
     top: 0vh;
     padding: 1.6rem;
-    // z-index: z(sides);
+    z-index: z(menu);
     @include size(100vw, 0vh);
-    background-color: $lightbeige;
+    background-color: $verylightbeige;
+    @include box-shadow($ourshadow-mobile, $brown, 0.3); // ADD on JS
     h2 {
-      color: $brown;
+      color: $lightbrown;
       padding-top: 1.6rem;
       padding-bottom: 0.8rem;
-      //display: none;
-      // opacity: 0;
+
       transition: 0.3s opacity ease;
     }
   }
   &__liste {
     @include scroll-div(auto, hidden, auto, 60%);
-    background-color: $darkbrown;
+    background-color: none;
     @include for-tablet-portrait-up {
       display: none;
     }

@@ -14,8 +14,7 @@
 <g id="bg">
 </g>
 <g id="ui">
-	
-		<path fill="#ccb7a8" stroke="#ccb7a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M3.062,55.245h71.404L41.695,86.963L50.002,95l46.936-45.434L50.002,4.133l-8.307,8.037l32.771,31.718H3.062V55.245z"/>
+	<path fill="#CCB7A8" d="M92.147,44.53H25.578L56.13,13.981L48.387,6.24L4.626,50l43.761,43.76l7.743-7.741L25.578,55.47h66.569
+		V44.53z"/>
 </g>
 </svg>
