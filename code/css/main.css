@@ -147,8 +147,6 @@
     height: 100%; }
     .menu-bottom__link--map {
       text-align: center; }
-    .menu-bottom__link--return {
-      transform: scale(-1); }
     .menu-bottom__link--burger {
       text-align: right; }
     .menu-bottom__link__img {
