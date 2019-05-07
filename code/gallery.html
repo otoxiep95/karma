@@ -13,30 +13,43 @@
     <title>Karma</title>
   </head>
   <body>
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDlycuKRSg_s_hwCSFfWwWFTr4yBFcoPvc",
+          authDomain: "databasetest-23ff0.firebaseapp.com",
+          databaseURL: "https://databasetest-23ff0.firebaseio.com",
+          projectId: "databasetest-23ff0",
+          storageBucket: "databasetest-23ff0.appspot.com",
+          messagingSenderId: "498203589663"
+        };
+        firebase.initializeApp(config);
+      </script>
     <!--////////////////////////////////////////////-->
     <!--=============== MAIN MENU ==================-->
     <!--////////////////////////////////////////////-->
     <div class="menu-main--desk menu-main__container">
         <img src="" alt="" class="menu-main__logo" />
-        <a href="gallery.html" class="menu-main__link menu-main__link--eat"
+        <a href="gallery.html?category=EAT" class="menu-main__link menu-main__link--eat"
           ><h1>EAT</h1></a
         >
-        <a href="gallery.html" class="menu-main__link menu-main__link--shop"
+        <a href="gallery.html?category=SHOP" class="menu-main__link menu-main__link--shop"
           ><h1>SHOP</h1></a
         >
-        <a href="gallery.html" class="menu-main__link menu-main__link--stay"
-          ><h1>STAY</h1></a
+        <a href="gallery.html?category=CLOTHE" class="menu-main__link menu-main__link--stay"
+          ><h1>CLOTHE</h1></a
         >
-        <a href="gallery.html" class="menu-main__link menu-main__link--travel"
+        <a href="gallery.html?category=TRAVEL" class="menu-main__link menu-main__link--travel"
           ><h1>TRAVEL</h1></a
         >
-        <a href="gallery.html" class="menu-main__link menu-main__link--discover"
+        <a href="gallery.html?category=DISCOVER" class="menu-main__link menu-main__link--discover"
           ><h1>DISCOVER</h1></a
         >
-        <a href="gallery.html" class="menu-main__link menu-main__link--party"
-          ><h1>PARTY</h1></a
+        <a href="gallery.html?category=HOUSE" class="menu-main__link menu-main__link--party"
+          ><h1>HOUSE</h1></a
         >
-        <a href="gallery.html" class="menu-main__link menu-main__link--chill"
+        <a href="gallery.html?category=CHILL" class="menu-main__link menu-main__link--chill"
           ><h1>CHILL</h1></a
         >
         <a href="gallery.html" class="menu-main__link menu-main__link--other"
@@ -50,26 +63,7 @@
     <!--////////////////////////////////////////////-->
   
     <div class="gallery gallery__container">
-      <a href="business.html">  
-      <div class="gallery__item">
-        <div class="gallery__item__img">
-        </div>
-        <div class="gallery__item__infos">
-          <div class="gallery__item__infos--text">
-            <h3>Name</h3>
-            <h4>Food type</h3>
-            <p class="desk-only">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.nulla facilisi.</p>
-          </div>
-          <div class="gallery__item__infos--up">
-              <img class="price" src="" alt="">
-              <img class="distance" src="" alt="">
-          </div>
-          <div class="gallery__item__infos--bottom badge badge__container">
-            <img class="badge__img" src="" alt="">
-          </div>
-        </div>
-      </div>
-    </a>
+      
     </div>
      <!--============== END GALLERY ================-->
 
@@ -89,7 +83,7 @@
                   <img src="assets/ui/icons/nav/filter-44.svg" alt="" class="button__filter__img">
             </div> 
             <h2 class="opacity">Select your filter:</h2>
-            <div class="filter__liste opacity">
+            <div class="filter__list opacity">
             <a class="filter__link" href=""> <img class="filter__link__img" src="" alt=""></a>
             <a class="filter__link" href=""> <img class="filter__link__img" src="" alt=""></a>
             <a class="filter__link" href=""> <img class="filter__link__img" src="" alt=""></a>
@@ -143,8 +137,32 @@
     </div>
      <!--============ END BURGER MENU ===============-->
 
+     <template class="gallery__item__template">
+        <a data-link_to_subpage href="business.html">  
+            <div class="gallery__item">
+              <div data-image class="gallery__item__img">
+              </div>
+              <div class="gallery__item__infos">
+                <div class="gallery__item__infos--text">
+                  <h3 data-name>Name</h3>
+                  <h4 data-type>Food type</h3>
+                  <p data-short_desc class="desk-only">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.nulla facilisi.</p>
+                </div>
+                <div class="gallery__item__infos--up">
+                    <img data-price class="price" src="" alt="">
+                    <p data-distance class="distance"></p>
+                </div>
+                <div data-badges_container class="gallery__item__infos--bottom badge badge__container">
+                  <!-- <img class="badge__img" src="" alt=""> -->
+                </div>
+              </div>
+            </div>
+          </a>
+     </template>
+
     <!--================= END BODY ==================-->
 
     <script src="js/interaction.js "></script>
+    <script src="js/gallery.js"></script>
   </body>
 </html>
