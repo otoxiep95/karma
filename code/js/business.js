@@ -128,7 +128,7 @@ function buildBusiness() {
       business.shortDescription = data.shortDescription;
       business.longDescription = data.longDescription;
       business.location = data.location;
-      business.image = data.image;
+      business.image = business.image + data.image;
       business.contact = data.contact;
       business.price = data.price;
       business.distance = data.distance;
@@ -144,6 +144,7 @@ function buildBusiness() {
 function showBusiness(business) {
   businessName.textContent = business.name;
   businessType.textContent = business.type;
+  businessImage.style.backgroundImage = "url(" + business.image + ")";
   businessLongDesc.textContent = business.longDescription;
   businessLocationMaps.forEach(gmap => {
     gmap.src = business.location;
