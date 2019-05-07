@@ -122,7 +122,7 @@ function createObject() {
     business.name = data.name;
     business.type = data.type;
     business.shortDescription = data.shortDescription;
-    business.image = data.image;
+    business.image = business.image + data.image;
     business.location = data.location;
     business.badges = data.badges;
     business.filtersArray = [];
@@ -144,7 +144,8 @@ function displayListBusiness(business) {
 
   clone.querySelector("[data-link_to_subpage]").href =
     "business.html?category=" + catId + "&key=" + business.key;
-  clone.querySelector("[data-image]").textContent = "";
+  clone.querySelector("[data-image]").style.backgroundImage =
+    "url(" + business.image + ")";
   clone.querySelector("[data-name]").textContent = business.name;
   clone.querySelector("[data-type]").textContent = business.type;
   clone.querySelector("[data-short_desc]").textContent =
