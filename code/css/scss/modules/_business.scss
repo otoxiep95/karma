@@ -180,3 +180,27 @@
     }
   }
 }
+
+// GOOGLE MAP STYLING //
+
+.map {
+  //@include size(100%, 100%);
+  .mapouter {
+    width: 100%;
+    height: 100%;
+  }
+  .gmap_canvas {
+    width: 100%;
+    height: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    .profile-photo {
+      display: none;
+    }
+  }
+  a {
+    font-size: 0.9rem;
+  }
+}
