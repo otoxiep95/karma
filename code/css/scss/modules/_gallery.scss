@@ -19,30 +19,42 @@ body {
   }
   background-color: none;
   display: grid;
-  grid-template-rows: repeat(auto-fill, 30vh);
+  grid-template-rows: repeat(auto-fill, 170px);
+  @include for-tablet-portrait-up {
+    grid-template-rows: repeat(auto-fill, 300px);
+    grid-row-gap: 6%;
+  }
   a {
     @include size(100%, 100%);
     grid-column: 1/-1;
   }
   &__item {
-    @include size(100%, 30vh);
-    background-color: orange;
+    @include size(100%, 170px);
     display: grid;
     grid-template-columns: 50% 50%;
     @include for-tablet-portrait-up {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 33% 66%;
+      @include size(100%, 300px);
+      @include box-shadow($ourshadow, $brown, 0.4);
+      border-radius: 25px;
     }
     &__img {
-      @include size(100%, 100%);
-      background-color: $green;
+      @include size(auto, 100%);
+      background-size: auto 300px;
+      background-position: right;
+      background-repeat: no-repeat;
+      @include for-tablet-portrait-up {
+        border-radius: 25px 0 0 25px;
+      }
     }
     &__infos {
       @include size(100%, 100%);
-      background-color: $beige;
+      background-color: none;
       padding: 1.2rem;
       text-align: center;
       display: grid;
       grid-template-rows: 1fr 2fr 1.5fr;
+      border-radius: 0 50px 50px 0;
       @include for-tablet-portrait-up {
         padding: 5.3rem 3.3rem 3.3rem;
         text-align: start;
@@ -63,6 +75,7 @@ body {
         @include for-tablet-portrait-up {
           grid-column: 1/2;
           grid-row: 1/-1;
+          @include size(100%, 100%);
           justify-self: start;
         }
       }
@@ -87,18 +100,31 @@ body {
   h3 {
     @include for-phone-only {
       padding: 0;
+      font-size: 1.6rem;
+      line-height: inherit;
     }
+    color: $coral;
     padding-top: 0;
   }
   h4 {
     @include for-phone-only {
       padding: 0;
+      font-size: 1.4rem;
+      line-height: inherit;
     }
+    color: $coral;
     padding-top: 0;
   }
   p {
     max-width: 450px;
     @include text($font-small, $line-small, $green);
+    padding-bottom: 0;
+    color: $coral;
+  }
+}
+
+.gallery__item__infos--up {
+  p {
     padding-bottom: 0;
   }
 }
@@ -110,7 +136,7 @@ body {
 .badge {
   &__container {
     @include size(100%, 100%);
-    background-color: $orange;
+    //background-color: $orange;
   }
 }
 
@@ -137,7 +163,7 @@ body {
       text-align: center;
     }
     &--return {
-      transform: scale(-1);
+      //transform: scale(-1);
     }
     &--burger {
       text-align: right;
@@ -160,7 +186,7 @@ body {
     @include for-tablet-portrait-up {
       @include size(0vh, 0vw);
     }
-    background-color: $blackgreen;
+    background-color: $verylightbeige;
   }
 }
 
@@ -168,16 +194,16 @@ body {
   position: absolute;
   top: 0;
   @include size(100%, 100%);
-  background-color: $darkgreen;
+  //background-color: $darkgreen;
   z-index: z(sides);
   @include for-tablet-portrait-up {
     display: none;
   }
   @include centered(".map");
   .map {
-    width: 80%;
-    height: 70%;
-    background-color: $brown;
+    width: 100%;
+    height: 85%;
+    //background-color: $brown;
   }
 }
 
@@ -186,19 +212,22 @@ body {
 /* ============================================ */
 
 .filter {
-  // BUTTON
+  //////// BUTTON /////////
   &__container {
-    @include size(85px, 85px);
+    // mobile
+    @include size(100px, 100px);
     border-radius: 50%;
     background-color: $verylightbeige;
     @include box-shadow($ourshadow-mobile, $brown, 0.3);
     position: absolute;
-    top: -10vh;
-    right: calc(50vw - 42.5px);
-    //z-index: z(menu);
+    top: -60px;
+    right: calc(50vw - 50px);
+    clip-path: polygon(-30px -30px, 160px -30px, 160px 61px, 0 61px);
+    // for desktop
     @include for-tablet-portrait-up {
       top: 0vh;
       right: 0vw;
+      box-shadow: none;
     }
     display: grid;
     img {
@@ -220,7 +249,6 @@ body {
       color: $lightbrown;
       padding-top: 1.6rem;
       padding-bottom: 0.8rem;
-
       transition: 0.3s opacity ease;
     }
   }
@@ -240,7 +268,7 @@ body {
 .burger-menu {
   //display: none;
   @include size(0vw, 100vh);
-  background-color: $darkorange;
+  background-color: $coral;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -273,7 +301,7 @@ body {
   @include for-tablet-portrait-up {
     @include size(100px, 100px);
     border-radius: 50%;
-    background-color: $beige;
+    background-color: $verylightbeige;
     position: fixed;
     top: 60vh;
     right: 5vw;

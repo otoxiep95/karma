@@ -44,15 +44,29 @@
   &__template--header {
     @include size(100%, 20%);
     display: grid;
-    grid-gap: 1.6rem;
+    //grid-gap: 1.6rem;
     grid-template-rows: 1fr auto;
     @include for-tablet-portrait-up {
       @include size(35%, auto);
       position: fixed;
     }
     &__img {
-      @include size(100%, 140px);
-      border: solid 2px $green;
+      @include size(100%, 170px);
+      //background: cover no-repeat center;
+      background-size: cover;
+      background-position: center;
+      background-position: no-repeat;
+      // clip-path: polygon(
+      //   50% at 50% 0%,
+      //   50% at 90% 20%,
+      //   50% at 100% 60%,
+      //   50% at 75% 100%,
+      //   50% at 25% 100%,
+      //   50% at 0% 60%,
+      //   50% at 10% 20%
+      // );
+      clip-path: url(#myClip);
+      //border-radius: 20px;
       grid-column: 1/-1;
       grid-row: 1/2;
       @include for-tablet-portrait-up {
@@ -63,40 +77,37 @@
     &__text {
       @include size(100%, auto);
       max-height: 200px;
-      padding: 3vh 3vw;
+      padding: 5vh 3vw 2vh 3vw;
       @include for-tablet-portrait-up {
         padding: 1.6rem;
       }
       grid-column: 1/-1;
       grid-row: 2/3;
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 2fr 1fr;
       grid-template-rows: 1fr 1fr;
-      grid-column-gap: 13%;
-      grid-row-gap: 0.8rem;
+      //grid-column-gap: 13%;
+      //grid-row-gap: 0.8rem;
     }
   }
   &__title {
     grid-column: 1/2;
-    //padding: 0vw 3vw;
-    //padding: 2.6rem 3vw 0 3vw;
-    //padding-top: 2.6rem;
+    font-size: 1.8rem;
     padding: 0;
     align-self: end;
   }
   &__subtitle {
     grid-column: 1/2;
-    color: $coral;
-    //padding: 1.6rem 3vw 0 3vw;
-    //padding: 0vw 3vw;
-    //padding-top: 1.6rem;
+    font-size: 1.8rem;
+    //font-weight: 400;
+    color: $brown;
     padding: 0;
     align-self: end;
   }
   &__infos {
     grid-column: 2/3;
     grid-row: 1/2;
-    background-color: $lightcoral;
+    //background-color: $lightcoral;
     display: grid;
     grid-template-columns: 1fr 1fr;
     h4 {
@@ -107,7 +118,7 @@
   }
   &__contact {
     grid-column: 2/3;
-    background-color: $lightorange;
+    //background-color: $lightorange;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -121,13 +132,15 @@
     border-radius: 10px;
     margin: auto;
     margin-bottom: 20vh;
+    @include box-shadow($ourshadow-mobile, $brown, 0.3);
     &--title {
       padding: 0;
       padding-bottom: 1.6rem;
+      color: $brown;
     }
     &--badges {
       @include size(100%, 12vh);
-      background-color: $green;
+      //background-color: $green;
     }
   }
 }
@@ -165,5 +178,29 @@
       margin: auto;
       background-color: $lightgreen;
     }
+  }
+}
+
+// GOOGLE MAP STYLING //
+
+.map {
+  //@include size(100%, 100%);
+  .mapouter {
+    width: 100%;
+    height: 100%;
+  }
+  .gmap_canvas {
+    width: 100%;
+    height: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    .profile-photo {
+      display: none;
+    }
+  }
+  a {
+    font-size: 0.9rem;
   }
 }
