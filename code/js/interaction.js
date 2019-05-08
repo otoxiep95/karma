@@ -2,7 +2,7 @@
 
 let modalFilter = document.querySelector(".filter__modal");
 let titleFilter = document.querySelector(".filter__modal h2");
-let listFilter = document.querySelector(".filter__liste");
+let listFilter = document.querySelector(".filter__list");
 let isopen = false;
 let bottomModal = document.querySelector(".menu-bottom__modal");
 let burgerModal = document.querySelector(".burger-menu");
@@ -21,6 +21,7 @@ function initInteraction() {
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
   if (buttonFilter) {
+    console.log("button filter clicked");
     buttonFilter.addEventListener("click", openCloseFilterModal);
   }
   if ((mapButton, burgerButton, crossBurger)) {
@@ -43,6 +44,8 @@ function openCloseFilterModal() {
       modalFilter.style.height = "30vh";
       modalFilter.style.top = "-30vh";
     }
+    titleFilter.classList.remove("none");
+    listFilter.classList.remove("none");
     setTimeout(opacity, 1000, titleFilter);
     setTimeout(opacity, 1000, listFilter);
     isopen = true;
@@ -56,8 +59,11 @@ function openCloseFilterModal() {
       modalFilter.style.height = "0vh";
       modalFilter.style.top = "0vh";
     }
+
     opacityNo(titleFilter);
     opacityNo(listFilter);
+    titleFilter.classList.add("none");
+    listFilter.classList.add("none");
     //listFilter.style.display = "none";
     isopen = false;
   }
@@ -79,7 +85,7 @@ function openCloseMapModal() {
 
 function openBurgerMenu() {
   console.log("open burger");
-  burgerModal.style.width = "76vw";
+  burgerModal.style.width = "83vw";
   setTimeout(function() {
     linksBurger.forEach(function(link) {
       link.style.opacity = "1";
