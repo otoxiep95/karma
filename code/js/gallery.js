@@ -152,6 +152,19 @@ function displayListBusiness(business) {
     business.shortDescription;
   //clone.querySelector("[data-price]")
   clone.querySelector("[data-distance]").textContent = business.distance;
+  // MAKE OPACITIES IN PRICE ICONS
+  let priceTag = business.price;
+  switch (priceTag) {
+    case 1:
+      break;
+    case 2:
+      break;
+    case 3:
+      break;
+
+    default:
+      break;
+  }
   let badgesList = clone.querySelector("[data-badges_container]");
   business.filtersArray.forEach(filter => {
     // let li = document.createElement("li");
