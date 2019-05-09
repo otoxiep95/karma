@@ -83,13 +83,31 @@
           <h2 data-name class="business__title">BUSINESS</h2>
           <h3 data-type class="business__subtitle">Food</h3>
           <div class="business__infos">
-            <img src="" alt="" class="business__price" />
-            <h4 data-distance class="business__km">1km</h4>
+            <p data-price class="price">$$$</p>
+            <p data-distance class="distance">1.5km</p>
           </div>
           <div class="business__contact">
-            <img src="" alt="" class="business__contact--call" />
-            <img src="" alt="" class="business__contact--fb" />
-            <img src="" alt="" class="business__contact--website" />
+            <a href="" class="business__contact--link">
+              <img
+                src="assets/ui/icons/contact/phone-red-35.svg"
+                alt=""
+                class="business__contact--call"
+              />
+            </a>
+            <a href="" class="business__contact--link">
+              <img
+                src="assets/ui/icons/contact/facebook-red-36.svg"
+                alt=""
+                class="business__contact--fb"
+              />
+            </a>
+            <a href="" class="business__contact--link">
+              <img
+                src="assets/ui/icons/contact/website-37.svg"
+                alt=""
+                class="business__contact--website"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -103,7 +121,15 @@
           <h3 class="business__rate--title">
             According to your votes <br />this place is:
           </h3>
-          <div class="business__rate--badges"></div>
+          <div class="badge__container business__rate--badges">
+            <img class="badge__img" src="assets/badges/vegetarian.svg" alt="" />
+            <img class="badge__img" src="assets/badges/vegan.svg" alt="" />
+            <img
+              class="badge__img"
+              src="assets/badges/localProducts.svg"
+              alt=""
+            />
+          </div>
         </div>
         <div class="business__map desk-only">
           <div class="mapouter">
@@ -134,8 +160,10 @@
       <!--================= FILTERS ==================-->
       <!--////////////////////////////////////////////-->
       <div class="filter filter__modal filter__modal--rate">
-        <div class="button__rate filter filter__container">
-          <a href="rate.html">Rate</a>
+        <div class="button__rate filter__container">
+          <a href="rate.html"
+            ><img src="assets/ui/icons/nav/rate-50.svg" alt=""
+          /></a>
         </div>
       </div>
       <!--////////////////////////////////////////////-->

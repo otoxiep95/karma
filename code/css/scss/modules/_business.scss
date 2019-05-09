@@ -8,6 +8,14 @@
   a {
     @include size(fit-content, fit-content);
     text-align: center;
+    width: 40px;
+    height: auto;
+    margin: auto;
+    margin-top: calc(40% - 20px);
+    img {
+      width: 40px;
+      height: auto;
+    }
   }
 }
 
@@ -32,7 +40,6 @@
 .business {
   @include for-tablet-portrait-up {
     margin-top: 20vh;
-    // overflow-y: hidden;
   }
   &__template {
     @include size(100vw, auto);
@@ -44,7 +51,6 @@
   &__template--header {
     @include size(100%, 20%);
     display: grid;
-    //grid-gap: 1.6rem;
     grid-template-rows: 1fr auto;
     @include for-tablet-portrait-up {
       @include size(35%, auto);
@@ -52,21 +58,10 @@
     }
     &__img {
       @include size(100%, 170px);
-      //background: cover no-repeat center;
       background-size: cover;
       background-position: center;
       background-position: no-repeat;
-      // clip-path: polygon(
-      //   50% at 50% 0%,
-      //   50% at 90% 20%,
-      //   50% at 100% 60%,
-      //   50% at 75% 100%,
-      //   50% at 25% 100%,
-      //   50% at 0% 60%,
-      //   50% at 10% 20%
-      // );
       clip-path: url(#myClip);
-      //border-radius: 20px;
       grid-column: 1/-1;
       grid-row: 1/2;
       @include for-tablet-portrait-up {
@@ -84,10 +79,9 @@
       grid-column: 1/-1;
       grid-row: 2/3;
       display: grid;
+      grid-gap: 0.8rem;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 1fr 1fr;
-      //grid-column-gap: 13%;
-      //grid-row-gap: 0.8rem;
     }
   }
   &__title {
@@ -99,7 +93,6 @@
   &__subtitle {
     grid-column: 1/2;
     font-size: 1.8rem;
-    //font-weight: 400;
     color: $brown;
     padding: 0;
     align-self: end;
@@ -107,20 +100,31 @@
   &__infos {
     grid-column: 2/3;
     grid-row: 1/2;
-    //background-color: $lightcoral;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    h4 {
-      padding: 0;
-      align-self: end;
-      justify-self: end;
+    justify-self: end;
+    height: fit-content;
+    align-self: end;
+    p {
+      padding-bottom: 0;
     }
   }
   &__contact {
     grid-column: 2/3;
-    //background-color: $lightorange;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.8rem;
+    justify-self: end;
+    height: fit-content;
+    width: 100%;
+    align-self: center;
+    &--link {
+      @include size(20px, 20px);
+      justify-self: end;
+      img {
+        @include size(100%, 100%);
+      }
+    }
   }
   &__description {
     padding: 2.6rem 3vw 5.2rem 3vw;

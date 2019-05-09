@@ -395,7 +395,15 @@
   .button__other-rate a {
     width: fit-content;
     height: fit-content;
-    text-align: center; }
+    text-align: center;
+    width: 40px;
+    height: auto;
+    margin: auto;
+    margin-top: calc(40% - 20px); }
+    .button__rate a img,
+    .button__other-rate a img {
+      width: 40px;
+      height: auto; }
 
 .button__other-rate {
   right: 7%;
@@ -453,6 +461,7 @@
     grid-column: 1/-1;
     grid-row: 2/3;
     display: grid;
+    grid-gap: 0.8rem;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr; }
     @media (min-width: 600px) {
@@ -476,16 +485,29 @@
   grid-column: 2/3;
   grid-row: 1/2;
   display: grid;
-  grid-template-columns: 1fr 1fr; }
-  .business__infos h4 {
-    padding: 0;
-    align-self: end;
-    justify-self: end; }
+  grid-template-columns: 1fr 1fr;
+  justify-self: end;
+  height: fit-content;
+  align-self: end; }
+  .business__infos p {
+    padding-bottom: 0; }
 
 .business__contact {
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.8rem;
+  justify-self: end;
+  height: fit-content;
+  width: 100%;
+  align-self: center; }
+  .business__contact--link {
+    width: 20px;
+    height: 20px;
+    justify-self: end; }
+    .business__contact--link img {
+      width: 100%;
+      height: 100%; }
 
 .business__description {
   padding: 2.6rem 3vw 5.2rem 3vw; }
