@@ -197,15 +197,21 @@ function displayListBusiness(business) {
   clone.querySelector("[data-short_desc]").textContent =
     business.shortDescription;
   //clone.querySelector("[data-price]")
-  //clone.querySelector("[data-distance]").textContent = business.distance;
+  clone.querySelector("[data-distance]").textContent = business.distance;
   // MAKE OPACITIES IN PRICE ICONS
   let priceTag = business.price;
+  const priceSecIcon = clone.querySelector(".price .secPrice");
+  const priceThirdIcon = clone.querySelector(".price .thirdPrice");
+
   switch (priceTag) {
-    case 1:
+    case "1":
+      priceSecIcon.style.opacity = "0.4";
+      priceThirdIcon.style.opacity = "0.4";
       break;
-    case 2:
+    case "2":
+      priceThirdIcon.style.opacity = "0.4";
       break;
-    case 3:
+    case "3":
       break;
 
     default:
@@ -213,10 +219,11 @@ function displayListBusiness(business) {
   }
   let badgesList = clone.querySelector("[data-badges_container]");
   business.filtersArray.forEach(filter => {
-    // let li = document.createElement("li");
-    // li.textContent = filter;
-    // console.log(li);
-    // badgesList.appendChild(li);
+    console.log(filter);
+    let badgeImg = document.createElement("img");
+    badgeImg.classList.add("badge__img");
+    badgeImg.src = "assets/badges/" + filter + ".svg";
+    badgesList.appendChild(badgeImg);
   });
   gallery.appendChild(clone);
 }
@@ -234,15 +241,21 @@ function displayFilteredList(filteredList) {
     clone.querySelector("[data-short_desc]").textContent =
       business.shortDescription;
     //clone.querySelector("[data-price]")
-    //clone.querySelector("[data-distance]").textContent = business.distance;
+    clone.querySelector("[data-distance]").textContent = business.distance;
     // MAKE OPACITIES IN PRICE ICONS
     let priceTag = business.price;
+    const priceSecIcon = clone.querySelector(".price .secPrice");
+    const priceThirdIcon = clone.querySelector(".price .thirdPrice");
+
     switch (priceTag) {
-      case 1:
+      case "1":
+        priceSecIcon.style.opacity = "0.4";
+        priceThirdIcon.style.opacity = "0.4";
         break;
-      case 2:
+      case "2":
+        priceThirdIcon.style.opacity = "0.4";
         break;
-      case 3:
+      case "3":
         break;
 
       default:
@@ -250,10 +263,11 @@ function displayFilteredList(filteredList) {
     }
     let badgesList = clone.querySelector("[data-badges_container]");
     business.filtersArray.forEach(filter => {
-      // let li = document.createElement("li");
-      // li.textContent = filter;
-      // console.log(li);
-      // badgesList.appendChild(li);
+      console.log(filter);
+      let badgeImg = document.createElement("img");
+      badgeImg.classList.add("badge__img");
+      badgeImg.src = "assets/badges/" + filter + ".svg";
+      badgesList.appendChild(badgeImg);
     });
     gallery.appendChild(clone);
   });
