@@ -99,13 +99,17 @@ const Business = {
 
     full_badges.forEach(filter => {
       averageRate = filter.rate / filter.votes;
-
+      badge = filter.name;
       console.log(averageRate, filter.name);
       if (averageRate > 5) {
         console.log(averageRate, filter.name);
-        this.filtersArray.push(filter.name);
+        this.filtersArray.push(badge);
+        if (!listOfFilters.includes(badge)) {
+          listOfFilters.push(badge);
+        }
       }
     });
+    console.log(listOfFilters);
   }
 };
 
