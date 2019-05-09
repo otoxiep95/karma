@@ -260,7 +260,7 @@
     padding-bottom: 0.8rem;
     transition: 0.3s opacity ease; }
 
-.filter__liste {
+.filter__list {
   width: auto;
   height: 60%;
   overflow-x: auto;
@@ -269,7 +269,7 @@
   scroll-behavior: smooth;
   background-color: none; }
   @media (min-width: 600px) {
-    .filter__liste {
+    .filter__list {
       display: none; } }
 
 /* ============================================ */

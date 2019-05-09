@@ -252,7 +252,7 @@ body {
       transition: 0.3s opacity ease;
     }
   }
-  &__liste {
+  &__list {
     @include scroll-div(auto, hidden, auto, 60%);
     background-color: none;
     @include for-tablet-portrait-up {
