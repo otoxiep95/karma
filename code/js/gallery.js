@@ -152,7 +152,7 @@ function displayListBusiness(business) {
   clone.querySelector("[data-short_desc]").textContent =
     business.shortDescription;
   //clone.querySelector("[data-price]")
-  clone.querySelector("[data-distance]").textContent = business.distance;
+  //clone.querySelector("[data-distance]").textContent = business.distance;
   // MAKE OPACITIES IN PRICE ICONS
   let priceTag = business.price;
   switch (priceTag) {

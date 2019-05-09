@@ -89,6 +89,12 @@
         @media (min-width: 600px) {
           .gallery__item__infos--up {
             grid-column: 2/-1; } }
+        .gallery__item__infos--up .price {
+          float: left;
+          font-size: 1.2rem; }
+        .gallery__item__infos--up .distance {
+          float: right;
+          font-size: 1.2rem; }
       .gallery__item__infos--text {
         grid-row: 2/3;
         place-self: center; }
@@ -100,9 +106,7 @@
             height: 100%;
             justify-self: start; } }
       .gallery__item__infos--bottom {
-        grid-row: 3/4;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 33%); }
+        grid-row: 3/4; }
         @media (min-width: 600px) {
           .gallery__item__infos--bottom {
             grid-column: 2/-1;
@@ -146,6 +150,12 @@
 /* ================ BADGES ==================== */
 /* ============================================ */
 .badge__container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 33%); }
+
+.badge__img {
   width: 100%;
   height: 100%; }
 
@@ -248,7 +258,7 @@
 .filter__modal {
   position: absolute;
   top: 0vh;
-  padding: 1.6rem;
+  padding: 0.8rem 1.6rem 0;
   z-index: 5;
   width: 100vw;
   height: 0vh;
@@ -257,10 +267,10 @@
   .filter__modal h2 {
     color: #ccb7a8;
     padding-top: 1.6rem;
-    padding-bottom: 0.8rem;
+    padding-bottom: 1.6rem;
     transition: 0.3s opacity ease; }
 
-.filter__liste {
+.filter__list {
   width: auto;
   height: 60%;
   overflow-x: auto;
@@ -269,8 +279,15 @@
   scroll-behavior: smooth;
   background-color: none; }
   @media (min-width: 600px) {
-    .filter__liste {
+    .filter__list {
       display: none; } }
+  .filter__list a {
+    width: 30%;
+    height: auto;
+    display: inline-block; }
+    .filter__list a img {
+      width: 100%;
+      height: 100%; }
 
 /* ============================================ */
 /* ============== BURGER MENU ================= */
