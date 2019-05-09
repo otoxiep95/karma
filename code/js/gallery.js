@@ -5,6 +5,7 @@ const gallery = document.querySelector(".gallery__container");
 const filterList = document.querySelector(".filter__list");
 
 let listOfBusinesses = [];
+let listOfFilters = [];
 
 const Business = {
   key: "",
