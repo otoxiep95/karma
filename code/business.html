@@ -83,7 +83,9 @@
           <h2 data-name class="business__title">BUSINESS</h2>
           <h3 data-type class="business__subtitle">Food</h3>
           <div class="business__infos">
-            <p data-price class="price">$$$</p>
+            <p data-price class="price">
+              $<span class="secPrice">$</span><span class="thirdPrice">$</span>
+            </p>
             <p data-distance class="distance">1.5km</p>
           </div>
           <div class="business__contact">
@@ -121,15 +123,10 @@
           <h3 class="business__rate--title">
             According to your votes <br />this place is:
           </h3>
-          <div class="badge__container business__rate--badges">
-            <img class="badge__img" src="assets/badges/vegetarian.svg" alt="" />
-            <img class="badge__img" src="assets/badges/vegan.svg" alt="" />
-            <img
-              class="badge__img"
-              src="assets/badges/localProducts.svg"
-              alt=""
-            />
-          </div>
+          <div
+            data-badges_container
+            class="badge__container business__rate--badges"
+          ></div>
         </div>
         <div class="business__map desk-only">
           <div class="mapouter">

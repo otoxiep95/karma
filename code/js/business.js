@@ -146,6 +146,37 @@ function showBusiness(business) {
   businessType.textContent = business.type;
   businessImage.style.backgroundImage = "url(" + business.image + ")";
   businessLongDesc.textContent = business.longDescription;
+
+  document.querySelector("[data-distance]").textContent = business.distance;
+
+  let priceTag = business.price;
+  const priceSecIcon = document.querySelector(".price .secPrice");
+  const priceThirdIcon = document.querySelector(".price .thirdPrice");
+
+  switch (priceTag) {
+    case "1":
+      priceSecIcon.style.opacity = "0.4";
+      priceThirdIcon.style.opacity = "0.4";
+      break;
+    case "2":
+      priceThirdIcon.style.opacity = "0.4";
+      break;
+    case "3":
+      break;
+
+    default:
+      break;
+  }
+
+  let badgesList = document.querySelector("[data-badges_container]");
+  business.filtersArray.forEach(filter => {
+    console.log(filter);
+    let badgeImg = document.createElement("img");
+    badgeImg.classList.add("badge__img");
+    badgeImg.src = "assets/badges/" + filter + ".svg";
+    badgesList.appendChild(badgeImg);
+  });
+
   businessLocationMaps.forEach(gmap => {
     gmap.src = business.location;
   });
