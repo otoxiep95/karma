@@ -795,7 +795,7 @@ a {
   z-index: 40;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  background: url("background-img/png-main-menu_shadow.svg"), white;
+  background: url("background-img/png-main-menu_shadows.png"), white;
   background-size: cover;
   background-repeat: no-repeat; }
   @media (min-width: 600px) {

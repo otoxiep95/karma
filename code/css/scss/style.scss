@@ -202,7 +202,7 @@ $color-link: (
     grid-template-rows: 1fr 1fr 1fr 1fr;
     //bg shadow
     @include background-image(
-      "background-img/png-main-menu_shadow.svg",
+      "background-img/png-main-menu_shadows.png",
       white
     ); //doesnt work
 
