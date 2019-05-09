@@ -3,7 +3,7 @@ const database = firebase.database();
 let catId = urlParams.get("category");
 const gallery = document.querySelector(".gallery__container");
 const filterList = document.querySelector(".filter__list");
-const filterListLinks = document.querySelectorAll(".filter__list a");
+const filterListLinks = document.querySelectorAll(".filter__list img");
 
 let listOfBusinesses = [];
 let listOfFilters = [];
@@ -111,6 +111,7 @@ const Business = {
           let filterBadgeLink = document.createElement("a");
           filterBadgeLink.dataset.filter = badge;
           filterBadgeImg.src = "assets/badges/" + badge + ".svg";
+          filterBadgeLink.addEventListener("click", clickedFilter);
           filterBadgeLink.appendChild(filterBadgeImg);
           filterList.appendChild(filterBadgeLink);
         }
@@ -120,9 +121,9 @@ const Business = {
   }
 };
 
-filterListLinks.forEach(element =>
-  element.addEventListener("click", clickedFilter)
-);
+// filterListLinks.forEach(element =>
+//   element.addEventListener("click", clickedFilter)
+// );
 
 function init() {
   createObject();
@@ -153,25 +154,6 @@ function filterBusinessList(filter) {
   }
 
   return filteredBusinessList;
-}
-
-function displayFilteredList(filteredList) {
-  gallery.innerHTML = "";
-  filteredList.forEach(business => {
-    let clone = document.querySelector("template").content.cloneNode(true);
-    clone.querySelector(".business_name").textContent = business.name;
-    clone.querySelector(".business_desc").textContent = business.description;
-    //clone.querySelector("#gmap_canvas").src = business.location;
-    let badgesList = clone.querySelector(".badges_list");
-    console.log(business.filtersArray);
-    business.filtersArray.forEach(filter => {
-      let li = document.createElement("li");
-      li.textContent = filter;
-      console.log(li);
-      badgesList.appendChild(li);
-    });
-    gallery.appendChild(clone);
-  });
 }
 
 function createObject() {
@@ -237,6 +219,44 @@ function displayListBusiness(business) {
     // badgesList.appendChild(li);
   });
   gallery.appendChild(clone);
+}
+
+function displayFilteredList(filteredList) {
+  gallery.innerHTML = "";
+  filteredList.forEach(business => {
+    let clone = document.querySelector("template").content.cloneNode(true);
+    clone.querySelector("[data-link_to_subpage]").href =
+      "business.html?category=" + catId + "&key=" + business.key;
+    clone.querySelector("[data-image]").style.backgroundImage =
+      "url(" + business.image + ")";
+    clone.querySelector("[data-name]").textContent = business.name;
+    clone.querySelector("[data-type]").textContent = business.type;
+    clone.querySelector("[data-short_desc]").textContent =
+      business.shortDescription;
+    //clone.querySelector("[data-price]")
+    //clone.querySelector("[data-distance]").textContent = business.distance;
+    // MAKE OPACITIES IN PRICE ICONS
+    let priceTag = business.price;
+    switch (priceTag) {
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+
+      default:
+        break;
+    }
+    let badgesList = clone.querySelector("[data-badges_container]");
+    business.filtersArray.forEach(filter => {
+      // let li = document.createElement("li");
+      // li.textContent = filter;
+      // console.log(li);
+      // badgesList.appendChild(li);
+    });
+    gallery.appendChild(clone);
+  });
 }
 
 init();
