@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="325.088px" height="478.928px" viewBox="0 0 325.088 478.928" enable-background="new 0 0 325.088 478.928"
+	 xml:space="preserve">
+	 <style>
+	 .wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)repeat-x;
+  position: absolute;
+  animation: swell 7s ease -1.25s infinite;
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  bottom: 0;
+}
+
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+	 
+	 </style>
+
+<g id="ui">
+	<path class="jagged-top" opacity="0.2" fill="#4F6D59" enable-background="new    " d="M325.088,150.362c-31.4-2.885-56.532,11.488-56.532,11.488
+		c-51.386,36.082-162.104,10.44-162.104,10.44c-43.557-5.584-79.716,8.789-106.365,26.346v298.712c4.091-1.54,6.63-2.863,6.63-2.863
+		c76.113-45.601,159.373-11.881,159.373-11.881c74.661,25.969,132.888,3.121,158.997-11.192V150.362z"/>
+	<path opacity="0.3" fill="#4F6D59" enable-background="new    " d="M325.088,470.342V144.395
+		c-30.892,1.07-54.118,17.355-54.118,17.355c-47.173,40.314-159.958,28.291-159.958,28.291
+		c-48.912-0.473-86.027,21.732-110.924,44.066V478h122.448c30.326-5.066,56.756-2.315,70.69,0H302.45
+		C310.64,475.767,318.198,473.148,325.088,470.342z"/>
+	<path opacity="0.4" fill="#4F6D59" enable-background="new    " d="M325.088,168.854c-31.4-3.008-56.532,11.975-56.532,11.975
+		c-51.386,37.611-162.104,10.883-162.104,10.883c-43.557-5.82-79.716,9.162-106.365,27.463V479h325V168.854z"/>
+	<path opacity="0.6" fill="#4F6D59" enable-background="new    " d="M325.088,187.688c-29.602-7.365-56.101,14.363-56.101,14.363
+		c-45.618,32.419-113.461,0-113.461,0c-61.214-16.662-122.16,20.701-155.438,46.881V479h325V187.688z"/>
+</g>
+</svg>

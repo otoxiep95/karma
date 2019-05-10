@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg class="wave" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="325.088px" height="478.928px" viewBox="0 0 325.088 478.928" enable-background="new 0 0 325.088 478.928"
+	 xml:space="preserve">
+ <style type="text/css">
+
+
+#a { animation: swell .5s ease alternate 14; }
+
+
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+	 
+	 </style>
+
+<g id="ui">
+	<path class="wave" opacity="0.6" fill="#4F6D59" enable-background="new    " d="M325.088,187.688c-29.602-7.365-65.5,29.312-65.5,29.312
+		c-54,20-103,24.5-103,24.5c-50.5,8.5-123.222-18.748-156.5,7.432V479h325V187.688z"/>
+</g>
+</svg>
