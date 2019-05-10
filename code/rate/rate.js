@@ -57,48 +57,96 @@ function drag(e) {
     setTranslate(currentX, currentY, dragItem);
   }
 }
+
+///////////////////////////////////////////////////////////////////
+//////////////////====== RATING START ========= ///////////////////
+///////////////////////////////////////////////////////////////////
+
+// FIX VALUE - responsive
 var w = window.innerHeight;
+var containerHeight = document.querySelector(".range__thumb__container")
+  .offsetHeight;
+var marginBottomHeight = (w - containerHeight) / 2;
+
+console.log("margin bottom is:" + marginBottomHeight);
+
+var scaleLevels = containerHeight / 11;
+
+var level0 = marginBottomHeight;
+var level1 = level0 + scaleLevels;
+var level2 = level1 + scaleLevels;
+var level3 = level2 + scaleLevels;
+var level4 = level3 + scaleLevels;
+var level5 = level4 + scaleLevels;
+var level6 = level5 + scaleLevels;
+var level7 = level6 + scaleLevels;
+var level8 = level7 + scaleLevels;
+var level9 = level8 + scaleLevels;
+var level10 = level9 + scaleLevels;
+var level11 = level10 + scaleLevels;
 
 function setTranslate(xPos, yPos, el) {
-  //   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+  // moving value of our rating rectangle
+  var rect_rate_H = document.querySelector(".range__fill").offsetHeight;
+  console.log("height of rating rect is:" + rect_rate_H);
+
+  if (yPos > 0) {
+    // yPos is positive
+    // if you touch the bottom line
+    if (yPos >= containerHeight / 2) {
+      yPos = containerHeight / 2;
+    }
+  }
+
+  if (yPos <= 0) {
+    // yPos is negative
+    // if you touch the top line
+    if (yPos <= -(containerHeight / 2)) {
+      yPos = (containerHeight / 2) * -1;
+    }
+  }
+
+  // dragging thing + rectangle height changing
   el.style.transform = "translateY(" + yPos + "px)";
-  var tamere = yPos + "px";
+  var yPosPixel = yPos + "px";
   document.querySelector(".range__fill").style.height =
-    "calc(69vh - " + tamere + ")";
+    "calc(50vh - " + yPosPixel + ")";
 
-  var rectH = document.querySelector(".range__fill").offsetHeight;
-  var rate = (rectH * 100) / w;
-  console.log(rate);
+  console.log("yPos is:" + yPos);
 
+  // return the rate
   switch (true) {
-    case rate <= 10:
+    case rect_rate_H < level1:
+      console.log("RATE 0 !");
+      break;
+    case level1 <= rect_rate_H && rect_rate_H < level2:
       console.log("RATE 1 !");
       break;
-    case 10 < rate && rate <= 20:
+    case level2 <= rect_rate_H && rect_rate_H < level3:
       console.log("RATE 2 !");
       break;
-    case 20 < rate && rate <= 30:
+    case level3 <= rect_rate_H && rect_rate_H < level4:
       console.log("RATE 3 !");
       break;
-    case 40 < rate && rate <= 50:
+    case level4 <= rect_rate_H && rect_rate_H < level5:
       console.log("RATE 4 !");
       break;
-    case 50 < rate && rate <= 60:
+    case level5 <= rect_rate_H && rect_rate_H < level6:
       console.log("RATE 5 !");
       break;
-    case 60 < rate && rate <= 70:
+    case level6 <= rect_rate_H && rect_rate_H < level7:
       console.log("RATE 6 !");
       break;
-    case 70 < rate && rate <= 80:
+    case level7 <= rect_rate_H && rect_rate_H < level8:
       console.log("RATE 7 !");
       break;
-    case 80 < rate && rate <= 90:
+    case level8 <= rect_rate_H && rect_rate_H < level9:
       console.log("RATE 8 !");
       break;
-    case 90 < rate && rate < 100:
+    case level9 <= rect_rate_H && rect_rate_H < level10:
       console.log("RATE 9 !");
       break;
-    case 100 == rate:
+    case level10 <= rect_rate_H && rect_rate_H < level11:
       console.log("RATE 10 !");
       break;
     default:
