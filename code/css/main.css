@@ -581,6 +581,65 @@
 .none {
   display: none; }
 
+/* COLORS */
+/* STYLE ELEMENTS */
+/* -------------GENERAL STYLE SHEET----------------- */
+/* FONT SIZE */
+/* FONT WEIGHT */
+/* LINE HEIGHT */
+/* EFFECT TRANSITIONS */
+/* ------------- MIXINS STYLE----------------- */
+/* -------------- MIXINS FUNCTIONS ------------------- */
+/* -------------- MIXINS RESPONSIVENESS ------------------- */
+/* DONT TOUCH */
+.range__thumb__container {
+  width: 100%;
+  height: 70vh;
+  margin: 15vh 0;
+  background-color: #e2685b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  touch-action: none; }
+
+.range__thumb {
+  width: 100px;
+  height: 100px;
+  border: 10px solid rgba(154, 175, 162, 0.7);
+  border-radius: 50%;
+  touch-action: none;
+  user-select: none;
+  z-index: 20; }
+
+.range__thumb:active {
+  background-color: #a8dadc; }
+
+.range__thumb:hover {
+  cursor: pointer;
+  border-width: 20px; }
+
+.range__fill {
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  bottom: 0vh;
+  background-image: url("background-img/shape-green-animated.svg"); }
+  .range__fill img {
+    width: 250%;
+    height: auto; }
+
+.range__thumb {
+  background-image: url("background-img/vegan.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.button__submit {
+  width: 100px;
+  height: 25px;
+  background-color: #e2685b; }
+
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
@@ -588,9 +647,6 @@
   box-sizing: border-box;
   margin: 0;
   font-family: Nunito, sans-serif; }
-
-* {
-  transition: 1s all ease; }
 
 :root {
   font-size: 62.5%; }

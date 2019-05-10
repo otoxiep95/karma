@@ -3,11 +3,11 @@
 @import "modules/gallery";
 @import "modules/business";
 @import "modules/classes";
+@import "modules/range";
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +15,7 @@
 }
 
 * {
-  transition: 1s all ease;
+  //transition: 1s all ease;
 }
 
 :root {
