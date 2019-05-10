@@ -13,6 +13,19 @@
     <title>Karma</title>
   </head>
   <body>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDlycuKRSg_s_hwCSFfWwWFTr4yBFcoPvc",
+        authDomain: "databasetest-23ff0.firebaseapp.com",
+        databaseURL: "https://databasetest-23ff0.firebaseio.com",
+        projectId: "databasetest-23ff0",
+        storageBucket: "databasetest-23ff0.appspot.com",
+        messagingSenderId: "498203589663"
+      };
+      firebase.initializeApp(config);
+    </script>
     <div class="button__submit">RATE</div>
 
     <div class="range__thumb__container">
@@ -23,6 +36,7 @@
     </div>
 
     <script src="rate.js"></script>
+    <script src="rateToData.js"></script>
     <!-- <script src="random.js"></script> -->
   </body>
 </html>
