@@ -596,7 +596,6 @@
   width: 100%;
   height: 70vh;
   margin: 15vh 0;
-  background-color: #e2685b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -607,10 +606,11 @@
   width: 100px;
   height: 100px;
   border: 10px solid rgba(154, 175, 162, 0.7);
+  transition: none;
   border-radius: 50%;
   touch-action: none;
   user-select: none;
-  z-index: 20; }
+  z-index: 5; }
 
 .range__thumb:active {
   background-color: #a8dadc; }
@@ -624,10 +624,11 @@
   height: 50vh;
   position: fixed;
   bottom: 0vh;
-  background-image: url("background-img/shape-green-animated.svg"); }
-  .range__fill img {
-    width: 250%;
-    height: auto; }
+  transition: none; }
+  .range__fill svg {
+    width: 200%;
+    height: auto;
+    transform: translateX(-30%); }
 
 .range__thumb {
   background-image: url("background-img/vegan.svg");
@@ -635,10 +636,45 @@
   background-size: contain;
   background-repeat: no-repeat; }
 
+.rate__intro {
+  display: block; }
+
+.rate__conclusion {
+  display: none; }
+
+.rate__intro,
+.rate__conclusion {
+  width: 100vw;
+  height: 100vh;
+  padding: 3vw 3vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f7f2eb;
+  z-index: 10; }
+  .rate__intro--title,
+  .rate__conclusion--title {
+    padding: 2.6rem 0 1.3rem 0; }
+  .rate__intro--business,
+  .rate__conclusion--business {
+    padding: 0; }
+
+.rate__page {
+  display: block;
+  width: 100vw;
+  height: 100vh; }
+
 .button__submit {
-  width: 100px;
-  height: 25px;
-  background-color: #e2685b; }
+  display: none;
+  grid-column: 3/4;
+  width: 100%;
+  height: fit-content;
+  align-self: center; }
+  .button__submit h3 {
+    text-align: center;
+    color: #ccb7a8;
+    padding: 0;
+    margin: auto; }
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
@@ -647,6 +683,9 @@
   box-sizing: border-box;
   margin: 0;
   font-family: Nunito, sans-serif; }
+
+* {
+  transition: 1s all ease; }
 
 :root {
   font-size: 62.5%; }

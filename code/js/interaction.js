@@ -20,6 +20,7 @@ function initInteraction() {
   let mapButton = document.querySelector(".menu-bottom__link--map");
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
+  let rateBadgeLink = document.querySelector(".rate__badge--link");
   if (buttonFilter) {
     console.log("button filter clicked");
     buttonFilter.addEventListener("click", openCloseFilterModal);
@@ -28,6 +29,11 @@ function initInteraction() {
     mapButton.addEventListener("click", openCloseMapModal);
     burgerButton.addEventListener("click", openBurgerMenu);
     crossBurger.addEventListener("click", closeBurgerMenu);
+  }
+  if (rateBadgeLink) {
+    rateBadgeLink.addEventListener("click", e => {
+      openRatePage(e);
+    });
   }
   //galleryItem.addEventListener("click", gotoSubpage);
 }
@@ -105,6 +111,30 @@ function closeBurgerMenu() {
 // function gotoSubpage(){
 
 // }
+
+function openRatePage(e) {
+  e.preventDefault();
+  console.log("open second step");
+  let rateIntro = document.querySelector(".rate__intro");
+  let ratePage = document.querySelector(".rate__page");
+  let filterMenu = document.querySelector(".filter__modal");
+  let rateButton = document.querySelector(".button__submit");
+  opacityNo(rateIntro);
+  opacityNo(filterMenu);
+
+  //opacity(ratePage);
+
+  setTimeout(function() {
+    rateIntro.style.display = "none";
+    filterMenu.style.display = "none";
+    rateButton.style.display = "block";
+    //ratePage.style.display = "inherit";
+  }, 1000);
+}
+
+function openMsgModal() {
+  document.querySelector(".rate__conclusion").style.display = "block";
+}
 
 /* ---------------------- EFFECT FUNCTIONS ------------------- */
 

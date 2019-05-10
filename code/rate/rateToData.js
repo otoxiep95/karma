@@ -27,6 +27,7 @@ document.querySelector(".button__submit").addEventListener("click", e => {
     }
   });
   console.log(badges);
+  openMsgModal();
 });
 
 function updateBadges() {

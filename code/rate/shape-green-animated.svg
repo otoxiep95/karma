@@ -40,13 +40,13 @@ animation: wave 37s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -1.25s infinite;
 
 @keyframes wave {
   0% {
-    transform: translate(-180px);
+    transform: translate(10%);
   }
   50% {
-    transform: translate(180px);
+    transform: translate(-10%);
   }
   100%{
- transform: translate(-180px);
+ transform: translate(10%);
   }
 }
 </style>

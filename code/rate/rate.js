@@ -93,6 +93,11 @@ function setTranslate(xPos, yPos, el) {
 
   if (yPos > 0) {
     // yPos is positive
+    document.querySelectorAll(".rate__shape").forEach(rateShape => {
+      console.log("color path");
+      rateShape.style.fill = "#b24a42";
+    });
+    document.querySelector(".range__thumb").style.borderColor = "#ef8e86";
     // if you touch the bottom line
     if (yPos >= containerHeight / 2) {
       yPos = containerHeight / 2;
@@ -101,6 +106,11 @@ function setTranslate(xPos, yPos, el) {
 
   if (yPos <= 0) {
     // yPos is negative
+    document.querySelectorAll(".rate__shape").forEach(rateShape => {
+      console.log("color path");
+      rateShape.style.fill = "#4F6D59";
+    });
+    document.querySelector(".range__thumb").style.borderColor = "#9aafa2";
     // if you touch the top line
     if (yPos <= -(containerHeight / 2)) {
       yPos = (containerHeight / 2) * -1;
