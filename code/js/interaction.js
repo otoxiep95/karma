@@ -21,6 +21,8 @@ function initInteraction() {
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
   let rateBadgeLink = document.querySelector(".rate__badge--link");
+  let returnLink = document.querySelector(".menu-bottom__link--return");
+  let gallery = document.querySelector(".gallery");
   if (buttonFilter) {
     console.log("button filter clicked");
     buttonFilter.addEventListener("click", openCloseFilterModal);
@@ -30,12 +32,21 @@ function initInteraction() {
     burgerButton.addEventListener("click", openBurgerMenu);
     crossBurger.addEventListener("click", closeBurgerMenu);
   }
+  if (returnLink && gallery) {
+    returnLink.addEventListener("click", e => {
+      returnMainMenu();
+    });
+  }
   if (rateBadgeLink) {
     rateBadgeLink.addEventListener("click", e => {
       openRatePage(e);
     });
   }
   //galleryItem.addEventListener("click", gotoSubpage);
+}
+
+function returnMainMenu() {
+  console.log("gallery button return click");
 }
 
 function openCloseFilterModal() {
@@ -133,7 +144,10 @@ function openRatePage(e) {
 }
 
 function openMsgModal() {
+  let rateButton = document.querySelector(".button__submit");
   document.querySelector(".rate__conclusion").style.display = "block";
+  rateButton.style.display = "none";
+  document.querySelector(".button__submit--rating").style.display = "block";
 }
 
 /* ---------------------- EFFECT FUNCTIONS ------------------- */
