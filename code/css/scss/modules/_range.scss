@@ -1,19 +1,140 @@
 @import "variables";
 
+//////////////////////////
+
+.range__fill {
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  bottom: 0vh;
+  transition: none;
+  svg {
+    width: 200%;
+    height: auto;
+    transform: translateX(-30%);
+    // transform: translate3d(5%, -50%);
+  }
+  // desktop
+  @include for-tablet-portrait-up {
+    position: absolute;
+    @include size(100%, 50%);
+  }
+}
+
+.range__thumb {
+  background-image: url("background-img/vegan.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/////////// DESKTOP STYLE ///////////
+
+.rate__container {
+  // mobile
+  @include size(100vw, 100vh);
+
+  //desktop
+  @include for-tablet-portrait-up {
+    @include size(33vw, 60vh);
+    position: relative;
+    overflow: hidden;
+    @include box-shadow($ourshadow, $brown, 0.4);
+    border-radius: $round-corner;
+  }
+}
+
+@include for-tablet-portrait-up {
+  .rate__content {
+    @include size(100vw, 100vh);
+    margin-top: 20vh;
+    padding: $padding-body-desk;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr 1fr auto;
+    grid-gap: 2.6rem;
+    &__title {
+      grid-column: 1/2;
+      padding: 0;
+    }
+
+    &__rate-window {
+      grid-column: 2/3;
+      grid-row: 1/-1;
+    }
+  }
+}
+
+///////// RATE STEPS STYLE //////////
+
+.rate__intro {
+  display: block;
+}
+
+.rate__conclusion {
+  display: none;
+}
+
+.rate__intro,
+.rate__conclusion {
+  @include size(100%, 100%);
+  padding: 3vw 3vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $verylightbeige;
+  z-index: 10;
+  &--title {
+    padding: 2.6rem 0 1.3rem 0;
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+  &--business {
+    padding: 0;
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+}
+
+.rate__page {
+  display: block;
+  @include size(100%, 100%);
+}
+
+//////// RATE PAGE ///////////
+
+.button__submit,
+.button__submit--rating {
+  display: none;
+  grid-column: 3/4;
+  width: 100%;
+  height: fit-content;
+  align-self: center;
+  h3 {
+    text-align: center;
+    color: $lightbrown;
+    padding: 0;
+    margin: auto;
+  }
+}
+
 /* DONT TOUCH */
 
 .range__thumb__container {
   width: 100%;
   height: 70vh;
   margin: 15vh 0;
-  //background-color: $coral;
   display: flex;
   align-items: center;
   justify-content: center;
-  //overflow: hidden;
   border-radius: 7px;
   touch-action: none;
-  //overflow: hidden;
+  @include for-tablet-portrait-up {
+    height: 70%;
+  }
 }
 .range__thumb {
   width: 100px;
@@ -32,76 +153,4 @@
 .range__thumb:hover {
   cursor: pointer;
   border-width: 20px;
-}
-
-//////////////////////////
-
-.range__fill {
-  width: 100vw;
-  height: 50vh;
-  position: fixed;
-  bottom: 0vh;
-  transition: none;
-  svg {
-    width: 200%;
-    height: auto;
-    transform: translateX(-30%);
-    // transform: translate3d(5%, -50%);
-  }
-}
-
-.range__thumb {
-  background-image: url("background-img/vegan.svg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-///////// INTRO STYLE //////////
-
-.rate__intro {
-  display: block;
-}
-
-.rate__conclusion {
-  display: none;
-}
-
-.rate__intro,
-.rate__conclusion {
-  @include size(100vw, 100vh);
-  padding: 3vw 3vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: $verylightbeige;
-  z-index: 10;
-  &--title {
-    padding: 2.6rem 0 1.3rem 0;
-  }
-  &--business {
-    padding: 0;
-  }
-}
-
-.rate__page {
-  display: block;
-  @include size(100vw, 100vh);
-}
-
-//////// RATE PAGE ///////////
-
-.button__submit,
-.button__submit--rating {
-  display: none;
-  grid-column: 3/4;
-  width: 100%;
-  height: fit-content;
-  align-self: center;
-  h3 {
-    text-align: center;
-    color: $lightbrown;
-    padding: 0;
-    margin: auto;
-  }
 }

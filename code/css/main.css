@@ -163,8 +163,8 @@
 /* =============== BOTTOM MENU ================ */
 /* ============================================ */
 .menu-bottom {
-  width: 100vw;
-  height: 7vh;
+  width: 100%;
+  height: 7%;
   background-color: #f7f2eb;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -175,7 +175,8 @@
   box-shadow: 0px -2px 13px 1px rgba(208, 173, 142, 0.2); }
   @media (min-width: 600px) {
     .menu-bottom {
-      display: none; } }
+      position: absolute;
+      display: block; } }
   .menu-bottom__link {
     width: 100%;
     height: 100%; }
@@ -602,6 +603,107 @@
 /* ------------- MIXINS STYLE----------------- */
 /* -------------- MIXINS FUNCTIONS ------------------- */
 /* -------------- MIXINS RESPONSIVENESS ------------------- */
+.range__fill {
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  bottom: 0vh;
+  transition: none; }
+  .range__fill svg {
+    width: 200%;
+    height: auto;
+    transform: translateX(-30%); }
+  @media (min-width: 600px) {
+    .range__fill {
+      position: absolute;
+      width: 100%;
+      height: 50%; } }
+
+.range__thumb {
+  background-image: url("background-img/vegan.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.rate__container {
+  width: 100vw;
+  height: 100vh; }
+  @media (min-width: 600px) {
+    .rate__container {
+      width: 33vw;
+      height: 60vh;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0px -2px 23px 1px rgba(208, 173, 142, 0.4);
+      border-radius: 10px; } }
+
+@media (min-width: 600px) {
+  .rate__content {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 20vh;
+    padding: 0 5vw;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2.6rem; }
+    .rate__content__title {
+      grid-column: 1/2;
+      padding: 0; }
+    .rate__content__rate-window {
+      grid-column: 2/3;
+      grid-row: 1/-1; } }
+
+.rate__intro {
+  display: block; }
+
+.rate__conclusion {
+  display: none; }
+
+.rate__intro,
+.rate__conclusion {
+  width: 100%;
+  height: 100%;
+  padding: 3vw 3vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f7f2eb;
+  z-index: 10; }
+  .rate__intro--title,
+  .rate__conclusion--title {
+    padding: 2.6rem 0 1.3rem 0; }
+    @media (min-width: 600px) {
+      .rate__intro--title,
+      .rate__conclusion--title {
+        display: none; } }
+  .rate__intro--business,
+  .rate__conclusion--business {
+    padding: 0; }
+    @media (min-width: 600px) {
+      .rate__intro--business,
+      .rate__conclusion--business {
+        display: none; } }
+
+.rate__page {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.button__submit,
+.button__submit--rating {
+  display: none;
+  grid-column: 3/4;
+  width: 100%;
+  height: fit-content;
+  align-self: center; }
+  .button__submit h3,
+  .button__submit--rating h3 {
+    text-align: center;
+    color: #ccb7a8;
+    padding: 0;
+    margin: auto; }
+
 /* DONT TOUCH */
 .range__thumb__container {
   width: 100%;
@@ -612,6 +714,9 @@
   justify-content: center;
   border-radius: 7px;
   touch-action: none; }
+  @media (min-width: 600px) {
+    .range__thumb__container {
+      height: 70%; } }
 
 .range__thumb {
   width: 100px;
@@ -629,65 +734,6 @@
 .range__thumb:hover {
   cursor: pointer;
   border-width: 20px; }
-
-.range__fill {
-  width: 100vw;
-  height: 50vh;
-  position: fixed;
-  bottom: 0vh;
-  transition: none; }
-  .range__fill svg {
-    width: 200%;
-    height: auto;
-    transform: translateX(-30%); }
-
-.range__thumb {
-  background-image: url("background-img/vegan.svg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat; }
-
-.rate__intro {
-  display: block; }
-
-.rate__conclusion {
-  display: none; }
-
-.rate__intro,
-.rate__conclusion {
-  width: 100vw;
-  height: 100vh;
-  padding: 3vw 3vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #f7f2eb;
-  z-index: 10; }
-  .rate__intro--title,
-  .rate__conclusion--title {
-    padding: 2.6rem 0 1.3rem 0; }
-  .rate__intro--business,
-  .rate__conclusion--business {
-    padding: 0; }
-
-.rate__page {
-  display: block;
-  width: 100vw;
-  height: 100vh; }
-
-.button__submit,
-.button__submit--rating {
-  display: none;
-  grid-column: 3/4;
-  width: 100%;
-  height: fit-content;
-  align-self: center; }
-  .button__submit h3,
-  .button__submit--rating h3 {
-    text-align: center;
-    color: #ccb7a8;
-    padding: 0;
-    margin: auto; }
 
 /* ============================================ */
 /* =============== GENERAL ==================== */

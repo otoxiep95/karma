@@ -27,194 +27,214 @@
       firebase.initializeApp(config);
     </script>
 
-    <div class="rate__intro">
-      <h1 class="rate__intro--title">Rate your experience with:</h1>
-      <h1 class="rate__intro--business">NAME</h1>
-      <h2 class="rate__intro--explanation">Choose a category to rate</h2>
-    </div>
-
-    <div class="rate__conclusion">
-      <h1 class="rate__conclusion--title">
-        Thank you for sharing your experience with
+    <div class="rate__content">
+      <h1 class="rate__content__title">
+        How was your experience with:
+        <span class="rate__content__business">Name</span>
       </h1>
-      <h1 class="rate__conclusion--business">NAME</h1>
-      <h2 class="rate__conclusion--explanation">
-        If you want to express your feelings send them a msg:
-      </h2>
-    </div>
+      <!-- <h1 class="rate__content__business">Name</h1> -->
 
-    <div class="rate__page">
-      <div class="range__thumb__container">
-        <div class="range__thumb"></div>
-        <div class="range__fill">
-          <!-- <img src="shape-green-animated.svg" alt="" /> -->
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            width="731.088px"
-            height="647px"
-            viewBox="0 0 731.088 647"
-            enable-background="new 0 0 731.088 647"
-            xml:space="preserve"
-          >
-            <style>
-              path:first-of-type {
-                animation: swell 7s ease -1.25s infinite;
-              }
+      <div class="rate__content__rate-window rate__container">
+        <div class="rate__intro">
+          <h1 class="rate__intro--title">
+            Rate your experience with:
+            <span class="rate__intro--business">Name</span>
+          </h1>
+          <!-- <h1 class="rate__intro--business">NAME</h1> -->
+          <li class="rate__intro--explanation">Choose a category to rate</li>
+          <li class="rate__intro--explanation">Drag the badge</li>
+          <li class="rate__intro--explanation">Validate</li>
+          <li class="rate__intro--explanation">Rate another category</li>
+          <li class="rate__intro--explanation">
+            Submit your rate(s) and send a message.
+          </li>
+        </div>
 
-              path:nth-of-type(2) {
-                animation: swell 9s ease -1.25s infinite;
-              }
+        <div class="rate__conclusion">
+          <h1 class="rate__conclusion--title">
+            Thank you for sharing your experience with
+          </h1>
+          <h1 class="rate__conclusion--business">NAME</h1>
+          <h2 class="rate__conclusion--explanation">
+            If you want to express your feelings send them a msg:
+          </h2>
+        </div>
 
-              path:nth-of-type(3) {
-                animation: swell 11s ease -1.25s infinite;
-              }
+        <div class="rate__page">
+          <div class="range__thumb__container">
+            <div class="range__thumb"></div>
+            <div class="range__fill">
+              <!-- <img src="shape-green-animated.svg" alt="" /> -->
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="731.088px"
+                height="647px"
+                viewBox="0 0 731.088 647"
+                enable-background="new 0 0 731.088 647"
+                xml:space="preserve"
+              >
+                <style>
+                  path:first-of-type {
+                    animation: swell 7s ease -1.25s infinite;
+                  }
 
-              path:nth-of-type(4) {
-                animation: swell 13s ease -1.25s infinite;
-              }
+                  path:nth-of-type(2) {
+                    animation: swell 9s ease -1.25s infinite;
+                  }
 
-              g {
-                animation: wave 37s cubic-bezier(0.36, 0.45, 0.63, 0.53) -1.25s infinite;
-              }
+                  path:nth-of-type(3) {
+                    animation: swell 11s ease -1.25s infinite;
+                  }
 
-              @keyframes swell {
-                0%,
-                100% {
-                  transform: translate3d(0, -15px, 0);
-                }
-                50% {
-                  transform: translate3d(0, 5px, 0);
-                }
-              }
+                  path:nth-of-type(4) {
+                    animation: swell 13s ease -1.25s infinite;
+                  }
 
-              @keyframes wave {
-                0% {
-                  transform: translate(10%);
-                }
-                50% {
-                  transform: translate(-10%);
-                }
-                100% {
-                  transform: translate(10%);
-                }
-              }
-            </style>
-            <g id="ui">
-              <path
-                class="rate__shape"
-                opacity="0.2"
-                fill="#4F6D59"
-                enable-background="new    "
-                d="M797.525,7.337c-75.121-13.321-139.82,14.474-139.82,14.474
+                  g {
+                    animation: wave 37s cubic-bezier(0.36, 0.45, 0.63, 0.53) -1.25s
+                      infinite;
+                  }
+
+                  @keyframes swell {
+                    0%,
+                    100% {
+                      transform: translate3d(0, -15px, 0);
+                    }
+                    50% {
+                      transform: translate3d(0, 5px, 0);
+                    }
+                  }
+
+                  @keyframes wave {
+                    0% {
+                      transform: translate(10%);
+                    }
+                    50% {
+                      transform: translate(-10%);
+                    }
+                    100% {
+                      transform: translate(10%);
+                    }
+                  }
+                </style>
+                <g id="ui">
+                  <path
+                    class="rate__shape"
+                    opacity="0.2"
+                    fill="#4F6D59"
+                    enable-background="new    "
+                    d="M797.525,7.337c-75.121-13.321-139.82,14.474-139.82,14.474
 		C525.364,94.229,261.237,11.295,261.237,11.295C156.404-10.92,65.54,14.572-2.857,49.456L-63.521,739.91
 		c10.265-2.684,16.712-5.201,16.712-5.201c194.431-89.133,390.094,6.6,390.094,6.6c176.363,75.986,323.406,35.687,389.04,8.115
 		L797.525,7.337z"
-              />
-              <path
-                class="rate__shape"
-                opacity="0.3"
-                fill="#4F6D59"
-                enable-background="new    "
-                d="M732.541,756.947L798.736,3.542
+                  />
+                  <path
+                    class="rate__shape"
+                    opacity="0.3"
+                    fill="#4F6D59"
+                    enable-background="new    "
+                    d="M732.541,756.947L798.736,3.542
 		c-74.841-4.083-135.14,28.552-135.14,28.552c-122.952,83.101-394.872,31.203-394.872,31.203
 		C149.828,51.75,55.044,95.147-10.061,141.445l-49.532,563.746l297.895,26.175c74.918-6.497,138.552,6.724,171.977,15.11
 		l265.723,23.346C696.4,766.165,714.668,761.914,732.541,756.947z"
-              />
-              <path
-                class="rate__shape"
-                opacity="0.4"
-                fill="#4F6D59"
-                enable-background="new    "
-                d="M793.77,30.075c-75.094-13.604-139.919,15.601-139.919,15.601
+                  />
+                  <path
+                    class="rate__shape"
+                    opacity="0.4"
+                    fill="#4F6D59"
+                    enable-background="new    "
+                    d="M793.77,30.075c-75.094-13.604-139.919,15.601-139.919,15.601
 		c-132.651,75.955-396.557-9.491-396.557-9.491C152.509,13.417,61.52,40.324-7.028,76.929l-52.754,600.426l790.578,69.462
 		L793.77,30.075z"
-              />
-              <path
-                class="rate__shape"
-                opacity="0.6"
-                fill="#4F6D59"
-                enable-background="new    "
-                d="M789.944,103.612c-69.884-23.298-139.356,21.212-139.356,21.212
+                  />
+                  <path
+                    class="rate__shape"
+                    opacity="0.6"
+                    fill="#4F6D59"
+                    enable-background="new    "
+                    d="M789.944,103.612c-69.884-23.298-139.356,21.212-139.356,21.212
 		c-117.564,65.182-276.009-24.25-276.009-24.25c-145.539-51.6-301.375,21.738-387.65,75.138l-46.711,531.643l790.578,69.462
 		L789.944,103.612z"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!--////////////////////////////////////////////-->
+        <!--=============== BOTTOM MENU ================-->
+        <!--////////////////////////////////////////////-->
+        <div class="menu-bottom">
+          <!--////////////////////////////////////////////-->
+          <!--================= FILTERS ==================-->
+          <!--////////////////////////////////////////////-->
+          <div class="filter filter__modal">
+            <div class="button__filter filter filter__container">
+              <!-- <a href=""></a> -->
+              <img
+                src="../assets/ui/icons/nav/filter-44.svg"
+                alt=""
+                class="button__filter__img"
               />
-            </g>
-          </svg>
+            </div>
+            <h2 class="opacity none">Select your filter:</h2>
+            <div class="filter__list opacity none">
+              <a class="filter__link rate__badge--link" href="">
+                <img
+                  class="filter__link__img"
+                  src="../assets/badges/vegetarian.svg"
+                  alt=""
+              /></a>
+              <a class="filter__link" href="">
+                <img
+                  class="filter__link__img"
+                  src="../assets/badges/vegan.svg"
+                  alt=""
+              /></a>
+              <a class="filter__link" href="">
+                <img
+                  class="filter__link__img"
+                  src="../assets/badges/localProducts.svg"
+                  alt=""
+              /></a>
+              <a class="filter__link" href="">
+                <img
+                  class="filter__link__img"
+                  src="../assets/badges/plasticFree.svg"
+                  alt=""
+              /></a>
+              <a class="filter__link" href="">
+                <img
+                  class="filter__link__img"
+                  src="../assets/badges/organic.svg"
+                  alt=""
+              /></a>
+            </div>
+          </div>
+
+          <!--////////////////////////////////////////////-->
+          <!--=================== MENU ===================-->
+          <!--////////////////////////////////////////////-->
+          <div class="menu-bottom menu-bottom__container">
+            <a class="menu-bottom__link" href="index-rate.html">
+              <img
+                class="menu-bottom__link__img menu-bottom__link__img--return"
+                src="../assets/ui/icons/nav/arrow-bottom-41.svg"
+                alt=""
+              />
+            </a>
+            <div class="button__submit"><h3>Rate</h3></div>
+            <div class="button__submit--rating"><h3>Send</h3></div>
+          </div>
         </div>
+        <!--============ END BOTTOM MENU ===============-->
       </div>
     </div>
-
-    <!--////////////////////////////////////////////-->
-    <!--=============== BOTTOM MENU ================-->
-    <!--////////////////////////////////////////////-->
-    <div class="menu-bottom menu-bottom__modal">
-      <!--////////////////////////////////////////////-->
-      <!--================= FILTERS ==================-->
-      <!--////////////////////////////////////////////-->
-      <div class="filter filter__modal">
-        <div class="button__filter filter filter__container">
-          <!-- <a href=""></a> -->
-          <img
-            src="../assets/ui/icons/nav/filter-44.svg"
-            alt=""
-            class="button__filter__img"
-          />
-        </div>
-        <h2 class="opacity none">Select your filter:</h2>
-        <div class="filter__list opacity none">
-          <a class="filter__link rate__badge--link" href="">
-            <img
-              class="filter__link__img"
-              src="../assets/badges/vegetarian.svg"
-              alt=""
-          /></a>
-          <a class="filter__link" href="">
-            <img
-              class="filter__link__img"
-              src="../assets/badges/vegan.svg"
-              alt=""
-          /></a>
-          <a class="filter__link" href="">
-            <img
-              class="filter__link__img"
-              src="../assets/badges/localProducts.svg"
-              alt=""
-          /></a>
-          <a class="filter__link" href="">
-            <img
-              class="filter__link__img"
-              src="../assets/badges/plasticFree.svg"
-              alt=""
-          /></a>
-          <a class="filter__link" href="">
-            <img
-              class="filter__link__img"
-              src="../assets/badges/organic.svg"
-              alt=""
-          /></a>
-        </div>
-      </div>
-
-      <!--////////////////////////////////////////////-->
-      <!--=================== MENU ===================-->
-      <!--////////////////////////////////////////////-->
-      <div class="menu-bottom menu-bottom__container">
-        <a class="menu-bottom__link" href="index-rate.html">
-          <img
-            class="menu-bottom__link__img menu-bottom__link__img--return"
-            src="../assets/ui/icons/nav/arrow-bottom-41.svg"
-            alt=""
-          />
-        </a>
-        <div class="button__submit"><h3>Rate</h3></div>
-        <div class="button__submit--rating"><h3>Send</h3></div>
-      </div>
-    </div>
-    <!--============ END BOTTOM MENU ===============-->
 
     <script src="../js/interaction.js"></script>
     <script src="rate.js"></script>

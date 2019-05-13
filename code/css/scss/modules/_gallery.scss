@@ -156,17 +156,18 @@ body {
 /* ============================================ */
 
 .menu-bottom {
-  @include size(100vw, 7vh);
+  @include size(100%, 7%); // attention
   background-color: $verylightbeige;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  position: fixed;
+  position: fixed; // attention
   bottom: 0;
   padding: 0 3vw;
   z-index: z(bottommenu);
   @include box-shadow($ourshadow-mobile, $brown, 0.2);
   @include for-tablet-portrait-up {
-    display: none;
+    position: absolute; // for rating
+    display: block; // to change
   }
   &__link {
     @include size(100%, 100%);

@@ -121,7 +121,7 @@ function setTranslate(xPos, yPos, el) {
   el.style.transform = "translateY(" + yPos + "px)";
   var yPosPixel = yPos + "px";
   document.querySelector(".range__fill").style.height =
-    "calc(50vh - " + yPosPixel + ")";
+    "calc(50% - " + yPosPixel + ")";
 
   console.log("yPos is:" + yPos);
 
