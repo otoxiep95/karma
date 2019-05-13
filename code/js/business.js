@@ -8,6 +8,8 @@ const businessImage = document.querySelector("[data-image]");
 const businessLongDesc = document.querySelector("[data-long_desc]");
 const businessLocationMaps = document.querySelectorAll(".gmap_link");
 
+const rateButton = document.querySelector(".button__rate a");
+
 const Business = {
   key: "",
   name: "",
@@ -112,6 +114,7 @@ const Business = {
 
 function init() {
   buildBusiness();
+  rateButton.href = "rate/index-rate.html?category=" + catId + "&key=" + urlKey;
 }
 
 function buildBusiness() {

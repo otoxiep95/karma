@@ -20,7 +20,7 @@ function initInteraction() {
   let mapButton = document.querySelector(".menu-bottom__link--map");
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
-  let rateBadgeLink = document.querySelector(".rate__badge--link");
+  let rateBadgeLink = document.querySelectorAll(".rate__badge--link");
   let returnLink = document.querySelector(".menu-bottom__link--return");
   let gallery = document.querySelector(".gallery");
   if (buttonFilter) {
@@ -41,10 +41,13 @@ function initInteraction() {
     });
   }
   if (rateBadgeLink) {
-    rateBadgeLink.addEventListener("click", e => {
-      openRatePage(e);
+    rateBadgeLink.forEach(badge => {
+      badge.addEventListener("click", e => {
+        openRatePage(e);
+      });
     });
   }
+
   //galleryItem.addEventListener("click", gotoSubpage);
 }
 
