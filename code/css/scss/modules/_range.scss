@@ -169,7 +169,7 @@
 .rate__intro,
 .rate__conclusion {
   @include size(100%, 100%);
-  padding: 3vw 3vh;
+  padding: 6.6rem 3.3rem 1.6rem 3.3rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -186,6 +186,11 @@
     @include for-tablet-portrait-up {
       display: none;
     }
+  }
+  li {
+    @include text(2.1rem, 2.6rem, $coral);
+    list-style-type: none;
+    padding-bottom: 0;
   }
 }
 
