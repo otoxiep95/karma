@@ -1,14 +1,80 @@
 @import "variables";
 
 //////////////////////////
+// RATE CONTENT - BODY  //
+
+.rate__content {
+  position: fixed;
+}
+
+// for desktop
+@include for-tablet-portrait-up {
+  .rate__content {
+    @include size(100vw, 100vh);
+    margin-top: 20vh;
+    padding: $padding-body-desk;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2.6rem;
+    &__title {
+      grid-column: 1/2;
+      padding: 0;
+    }
+    // rate__container
+    &__rate-window {
+      grid-column: 2/3;
+      grid-row: 1/-1;
+    }
+  }
+}
+
+/////////////////////////////////////
+//    RATE CONTAINER / WINDOW      //
+
+.rate__container {
+  // mobile
+  @include size(100vw, 100vh);
+
+  //desktop
+  @include for-tablet-portrait-up {
+    @include size(450px, 570px);
+    position: relative;
+    overflow: hidden;
+    @include box-shadow($ourshadow, $brown, 0.4);
+    border-radius: $round-corner;
+  }
+}
+
+/////////////////////////////////////
+/////////    RANGE STYLE      //////
+
+.rate__page {
+  // general
+  display: block;
+  @include size(100%, 100%);
+  position: absolute;
+}
+
+.range__thumb__container {
+  @include size(100vw, 70vh);
+  margin: 15vh 0;
+  touch-action: none;
+  //position: relative; // for the scale
+  @include for-tablet-portrait-up {
+    width: 100%;
+    height: 399px;
+    margin: 85.5px 0;
+  }
+}
 
 .range__fill {
+  // general
   width: 100vw;
   height: 50vh;
   position: fixed;
   bottom: 0vh;
   transition: none;
-  //border-top: dashed 5px white;
+  // border top
   &:before {
     content: "";
     position: absolute;
@@ -21,60 +87,48 @@
     width: 200%;
     height: auto;
     transform: translateX(-30%);
-    // transform: translate3d(5%, -50%);
   }
   // desktop
   @include for-tablet-portrait-up {
     position: absolute;
-    @include size(100%, 50%);
+    @include size(100%, 285px);
   }
 }
 
-.range__keyword {
-  width: fit-content;
-  height: fit-content;
-  padding: 0;
-  position: absolute;
-  top: -2vh;
-  left: 17vw;
-  padding: 0px 1.6rem;
-  background-color: $verylightbeige;
-}
-
 .range__thumb {
+  @include size(100px, 100px);
+  position: absolute;
+  right: 3vw;
+  top: calc(50% - 50px);
   background-image: url("background-img/vegan.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  position: absolute;
-  right: 3vw;
-  top: calc(50% - 50px);
-}
-
-.range__thumb {
-  width: 100px;
-  height: 100px;
+  border-radius: 50%;
   border: 10px solid rgba($lightgreen, 0.7);
   transition: none;
-  // transition: color 3s ease;
-  border-radius: 50%;
   touch-action: none;
   user-select: none;
   z-index: 5;
 }
-.range__thumb:active {
-  background-color: rgba(168, 218, 220, 1);
-}
+
+// .range__thumb:active {
+//   background-color: rgba(168, 218, 220, 1);
+// }
+
 .range__thumb:hover {
   cursor: pointer;
   border-width: 20px;
 }
 
 .range__scale {
-  position: absolute;
-  left: 3vw;
+  @include size(30px, 100%);
   width: 30px;
-  height: 100%;
+  height: 70vh;
+  //position: fixed;
+  // top: 0;
+  // left: 3vw;
+  margin: 15vh 0 15vh 3vw;
   border-left: 5px solid white;
   display: grid;
   grid-template-rows: repeat(10, 1fr);
@@ -82,51 +136,27 @@
     @include size(25px, 5px);
     background-color: white;
   }
-}
-
-/////////// DESKTOP STYLE ///////////
-
-.rate__container {
-  // mobile
-  @include size(100vw, 100vh);
-
-  //desktop
   @include for-tablet-portrait-up {
-    @include size(33vw, 60vh);
-    position: relative;
-    overflow: hidden;
-    @include box-shadow($ourshadow, $brown, 0.4);
-    border-radius: $round-corner;
+    left: 3%;
+    height: calc(570px - (85.5px * 2));
+    margin: 85.5px 0 85.5px 3%;
   }
 }
 
-.rate__content {
-  position: fixed;
-}
-
-@include for-tablet-portrait-up {
-  .rate__content {
-    @include size(100vw, 100vh);
-    margin-top: 20vh;
-    padding: $padding-body-desk;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    // grid-template-rows: 1fr 1fr 1fr 1fr auto;
-    grid-gap: 2.6rem;
-    &__title {
-      grid-column: 1/2;
-      padding: 0;
-    }
-
-    &__rate-window {
-      grid-column: 2/3;
-      grid-row: 1/-1;
-    }
+.range__keyword {
+  @include size(fit-content, fit-content);
+  position: absolute;
+  top: -2vh;
+  left: 17vw;
+  padding: 0px 1.6rem;
+  background-color: $verylightbeige;
+  @include for-tablet-portrait-up {
+    left: 3%;
   }
 }
 
 ///////// RATE STEPS STYLE //////////
+//////// INTRO AND CONCLUSION ///////
 
 .rate__intro {
   display: block;
@@ -159,12 +189,7 @@
   }
 }
 
-.rate__page {
-  display: block;
-  @include size(100%, 100%);
-}
-
-//////// RATE PAGE ///////////
+//////// BUTTONS ///////////
 
 .button__submit,
 .button__submit--rating {
@@ -179,6 +204,14 @@
     padding: 0;
     margin: auto;
   }
+}
+
+.button__submit--rating {
+  display: none;
+}
+
+.rate-link--next {
+  display: none;
 }
 
 // BADGES
@@ -196,28 +229,4 @@
 .badge--selected {
   background-color: $orange;
   border: solid 3px $orange;
-}
-
-// BUTTONS
-
-.button__submit--rating {
-  display: none;
-}
-
-.rate-link--next {
-  display: none;
-}
-
-/* DONT TOUCH */
-
-.range__thumb__container {
-  width: 100%;
-  height: 70vh;
-  margin: 15vh 0;
-  border-radius: 7px;
-  touch-action: none;
-  position: relative; // for the scale
-  @include for-tablet-portrait-up {
-    height: 70%;
-  }
 }

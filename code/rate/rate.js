@@ -66,11 +66,13 @@ function drag(e) {
 
 // FIX VALUE - responsive
 var w = window.innerHeight;
+var pageHeight = document.querySelector(".rate__page").offsetHeight;
 var containerHeight = document.querySelector(".range__thumb__container")
   .offsetHeight;
-var marginBottomHeight = (w - containerHeight) / 2;
+var marginBottomHeight = (pageHeight - containerHeight) / 2;
 
-//console.log("margin bottom is:" + marginBottomHeight);
+console.log(pageHeight);
+console.log("margin bottom is:" + marginBottomHeight);
 
 var scaleLevels = containerHeight / 11;
 
@@ -122,9 +124,9 @@ function setTranslate(xPos, yPos, el) {
   el.style.transform = "translateY(" + yPos + "px)";
   var yPosPixel = yPos + "px";
   document.querySelector(".range__fill").style.height =
-    "calc(50% - " + yPosPixel + ")";
+    pageHeight / 2 - yPos + "px";
 
-  //console.log("yPos is:" + yPos);
+  // console.log("page height is :" + pageHeight);
 
   // return the rate
   switch (true) {
