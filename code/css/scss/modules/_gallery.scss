@@ -155,50 +155,29 @@ body {
 /* =============== BOTTOM MENU ================ */
 /* ============================================ */
 
-.menu-bottom {
-  @include size(100%, 7%); // attention
-  background-color: $verylightbeige;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  position: fixed; // attention
-  bottom: 0;
-  padding: 0 3vw;
-  z-index: z(bottommenu);
-  @include box-shadow($ourshadow-mobile, $brown, 0.2);
-  @include for-tablet-portrait-up {
-    position: absolute; // for rating
-    display: block; // to change
-  }
-  &__link {
-    @include size(100%, 100%);
-    &--map {
-      text-align: center;
-    }
-    &--return {
-      //transform: scale(-1);
-    }
-    &--burger {
-      text-align: right;
-    }
-    &__img {
-      @include size(25%, 100%);
-      @include centered(img);
-      img {
-        @include size(100%, auto);
-      }
-    }
-  }
-}
+// ----------- containers ---------------- //
 
-.menu-bottom {
-  &__modal {
-    @include size(100vw, 7vh);
-    position: fixed;
-    bottom: 0;
+.menu-bottom__modal {
+  // general
+  position: fixed;
+  bottom: 0;
+  background-color: $verylightbeige;
+  z-index: z(bottommenu);
+  // mobile gallery
+  @include size(100vw, 7vh);
+  // desktop gallery
+  @include for-tablet-portrait-up {
+    @include size(0vh, 0vw);
+  }
+  // rate
+  &--rate {
+    // mobile
+    @include size(100vw, 35vh);
+    // desktop
     @include for-tablet-portrait-up {
-      @include size(0vh, 0vw);
+      @include size(100%, 250px);
+      position: absolute;
     }
-    background-color: $verylightbeige;
   }
 }
 
@@ -225,36 +204,46 @@ body {
 
 .filter {
   //////// BUTTON /////////
-  &__container {
-    // mobile
+  &__button {
+    // general
     @include size(100px, 100px);
     border-radius: 50%;
     background-color: $verylightbeige;
     @include box-shadow($ourshadow-mobile, $brown, 0.3);
     position: absolute;
+    display: grid;
+    // mobile gallery & business
     top: -60px;
     right: calc(50vw - 50px);
     clip-path: polygon(-30px -30px, 160px -30px, 160px 61px, 0 61px);
-    // for desktop
-    @include for-tablet-portrait-up {
-      top: 0vh;
-      right: 0vw;
-      box-shadow: none;
+    a {
+      width: 100%;
+      height: auto;
+      place-self: center;
+      text-align: center;
     }
-    display: grid;
+    // filter icon
     img {
       width: 36px;
       height: auto;
-      margin: auto;
-      margin-top: calc(45% - 18px);
+      margin-bottom: calc(35% - 18px);
+    }
+    &--filter {
+      // mobile
+      // for desktop
+      @include for-tablet-portrait-up {
+        top: 0vh;
+        right: 0vw;
+        box-shadow: none;
+      }
     }
   }
   &__modal {
+    // general
     position: absolute;
     top: 0vh;
     padding: 0.8rem 1.6rem 0;
     z-index: z(menu);
-    @include size(100vw, 0vh);
     background-color: $verylightbeige;
     @include box-shadow($ourshadow-mobile, $brown, 0.3); // ADD on JS
     h2 {
@@ -262,6 +251,37 @@ body {
       padding-top: 1.6rem;
       padding-bottom: 1.6rem;
       transition: 0.3s opacity ease;
+    }
+    // gallery
+    &--gallery {
+      @include size(100vw, 0vh);
+      // desktop gallery
+      @include for-tablet-portrait-up {
+        @include size(100px, 100px);
+        border-radius: 50%;
+        background-color: $verylightbeige;
+        position: fixed;
+        top: 60vh;
+        right: 5vw;
+      }
+    }
+    &--rate {
+      @include size(100vw, 30vh);
+      // top: inherit;
+      // bottom: 0vh;
+      // desktop
+      @include for-tablet-portrait-up {
+        @include size(100%, auto);
+      }
+      h2 {
+        opacity: 1;
+        display: block;
+      }
+      // list
+      div {
+        opacity: 1;
+        display: block;
+      }
     }
   }
   &__list {
@@ -275,6 +295,45 @@ body {
       display: inline-block;
       img {
         @include size(100%, 100%);
+      }
+    }
+  }
+}
+
+// ---------------- bottom ----------------- //
+
+.menu-bottom {
+  @include size(100%, 7%); // attention
+  background-color: $verylightbeige;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed; // attention
+  bottom: 0;
+  padding: 0 3vw;
+  z-index: z(bottommenu);
+  @include box-shadow($ourshadow-mobile, $brown, 0.2);
+  // desktop rate
+  @include for-tablet-portrait-up {
+    position: absolute; // for rating
+    height: 7vh;
+    //display: block; // to change
+  }
+  &__link {
+    @include size(100%, 100%);
+    &--map {
+      text-align: center;
+    }
+    &--return {
+      //transform: scale(-1);
+    }
+    &--burger {
+      text-align: right;
+    }
+    &__img {
+      @include size(25%, 100%);
+      @include centered(img);
+      img {
+        @include size(100%, auto);
       }
     }
   }
@@ -315,17 +374,6 @@ body {
 }
 
 // morphing modal filter desktop
-
-.filter__modal {
-  @include for-tablet-portrait-up {
-    @include size(100px, 100px);
-    border-radius: 50%;
-    background-color: $verylightbeige;
-    position: fixed;
-    top: 60vh;
-    right: 5vw;
-  }
-}
 
 .morphing {
   animation: morphing 1s 0s ease-in-out forwards;

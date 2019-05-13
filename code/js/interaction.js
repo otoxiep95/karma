@@ -1,7 +1,7 @@
 "use strict";
 
-let modalFilter = document.querySelector(".filter__modal");
-let titleFilter = document.querySelector(".filter__modal h2");
+let modalFilter = document.querySelector(".filter__modal--gallery");
+let titleFilter = document.querySelector(".filter__modal--gallery h2");
 let listFilter = document.querySelector(".filter__list");
 let isopen = false;
 let bottomModal = document.querySelector(".menu-bottom__modal");
@@ -16,7 +16,7 @@ let menuMain = document.querySelector(".menu-main");
 window.onload = initInteraction();
 
 function initInteraction() {
-  let buttonFilter = document.querySelector(".button__filter");
+  let buttonFilter = document.querySelector(".filter__button--filter");
   let mapButton = document.querySelector(".menu-bottom__link--map");
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
@@ -25,7 +25,10 @@ function initInteraction() {
   let gallery = document.querySelector(".gallery");
   if (buttonFilter) {
     console.log("button filter clicked");
-    buttonFilter.addEventListener("click", openCloseFilterModal);
+
+    buttonFilter.addEventListener("click", e => {
+      openCloseFilterModal(e);
+    });
   }
   if ((mapButton, burgerButton, crossBurger)) {
     mapButton.addEventListener("click", openCloseMapModal);
@@ -49,10 +52,9 @@ function returnMainMenu() {
   console.log("gallery button return click");
 }
 
-function openCloseFilterModal() {
+function openCloseFilterModal(e) {
+  e.preventDefault();
   if (isopen == false) {
-    console.log("openFilterModal");
-    console.log(screen.width);
     // if on desktop
     if (screen.width > 600) {
       modalFilter.classList.add("morphing");
@@ -130,6 +132,8 @@ function openRatePage(e) {
   let ratePage = document.querySelector(".rate__page");
   let filterMenu = document.querySelector(".filter__modal");
   let rateButton = document.querySelector(".button__submit");
+  let bottomModalRate = document.querySelector(".menu-bottom__modal--rate");
+  bottomModalRate.style.height = "7vh";
   opacityNo(rateIntro);
   opacityNo(filterMenu);
 

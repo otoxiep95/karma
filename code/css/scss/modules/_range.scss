@@ -44,12 +44,16 @@
   }
 }
 
+.rate__content {
+  position: fixed;
+}
+
 @include for-tablet-portrait-up {
   .rate__content {
     @include size(100vw, 100vh);
     margin-top: 20vh;
     padding: $padding-body-desk;
-    position: fixed;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     // grid-template-rows: 1fr 1fr 1fr 1fr auto;

@@ -28,7 +28,7 @@
     </script>
 
     <div class="rate__content">
-      <h1 class="rate__content__title">
+      <h1 class="rate__content__title desk-only">
         How was your experience with:
         <span class="rate__content__business">Name</span>
       </h1>
@@ -42,10 +42,12 @@
           </h1>
           <!-- <h1 class="rate__intro--business">NAME</h1> -->
           <li class="rate__intro--explanation">Choose a category to rate</li>
-          <li class="rate__intro--explanation">Drag the badge</li>
-          <li class="rate__intro--explanation">Validate</li>
-          <li class="rate__intro--explanation">Rate another category</li>
-          <li class="rate__intro--explanation">
+          <li class="rate__intro--explanation desk-only">Drag the badge</li>
+          <li class="rate__intro--explanation desk-only">Validate</li>
+          <li class="rate__intro--explanation desk-only">
+            Rate another category
+          </li>
+          <li class="rate__intro--explanation desk-only">
             Submit your rate(s) and send a message.
           </li>
         </div>
@@ -169,19 +171,11 @@
         <!--////////////////////////////////////////////-->
         <!--=============== BOTTOM MENU ================-->
         <!--////////////////////////////////////////////-->
-        <div class="menu-bottom">
+        <div class="menu-bottom__modal menu-bottom__modal--rate">
           <!--////////////////////////////////////////////-->
           <!--================= FILTERS ==================-->
           <!--////////////////////////////////////////////-->
-          <div class="filter filter__modal">
-            <div class="button__filter filter filter__container">
-              <!-- <a href=""></a> -->
-              <img
-                src="../assets/ui/icons/nav/filter-44.svg"
-                alt=""
-                class="button__filter__img"
-              />
-            </div>
+          <div class="filter filter__modal filter__modal--rate">
             <h2 class="opacity none">Select your filter:</h2>
             <div class="filter__list opacity none">
               <a class="filter__link rate__badge--link" href="">

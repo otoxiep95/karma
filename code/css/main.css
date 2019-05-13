@@ -162,53 +162,25 @@
 /* ============================================ */
 /* =============== BOTTOM MENU ================ */
 /* ============================================ */
-.menu-bottom {
-  width: 100%;
-  height: 7%;
-  background-color: #f7f2eb;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  position: fixed;
-  bottom: 0;
-  padding: 0 3vw;
-  z-index: 45;
-  box-shadow: 0px -2px 13px 1px rgba(208, 173, 142, 0.2); }
-  @media (min-width: 600px) {
-    .menu-bottom {
-      position: absolute;
-      display: block; } }
-  .menu-bottom__link {
-    width: 100%;
-    height: 100%; }
-    .menu-bottom__link--map {
-      text-align: center; }
-    .menu-bottom__link--burger {
-      text-align: right; }
-    .menu-bottom__link__img {
-      width: 25%;
-      height: 100%;
-      position: relative; }
-      .menu-bottom__link__img img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto; }
-      .menu-bottom__link__img img {
-        width: 100%;
-        height: auto; }
-
 .menu-bottom__modal {
-  width: 100vw;
-  height: 7vh;
   position: fixed;
   bottom: 0;
-  background-color: #f7f2eb; }
+  background-color: #f7f2eb;
+  z-index: 45;
+  width: 100vw;
+  height: 7vh; }
   @media (min-width: 600px) {
     .menu-bottom__modal {
       width: 0vh;
       height: 0vw; } }
+  .menu-bottom__modal--rate {
+    width: 100vw;
+    height: 35vh; }
+    @media (min-width: 600px) {
+      .menu-bottom__modal--rate {
+        width: 100%;
+        height: 250px;
+        position: absolute; } }
 
 .map__container {
   position: absolute;
@@ -234,35 +206,37 @@
 /* ============================================ */
 /* ================ FILTER ==================== */
 /* ============================================ */
-.filter__container {
+.filter__button {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: #f7f2eb;
   box-shadow: 0px -2px 13px 1px rgba(208, 173, 142, 0.3);
   position: absolute;
+  display: grid;
   top: -60px;
   right: calc(50vw - 50px);
-  clip-path: polygon(-30px -30px, 160px -30px, 160px 61px, 0 61px);
-  display: grid; }
+  clip-path: polygon(-30px -30px, 160px -30px, 160px 61px, 0 61px); }
+  .filter__button a {
+    width: 100%;
+    height: auto;
+    place-self: center;
+    text-align: center; }
+  .filter__button img {
+    width: 36px;
+    height: auto;
+    margin-bottom: calc(35% - 18px); }
   @media (min-width: 600px) {
-    .filter__container {
+    .filter__button--filter {
       top: 0vh;
       right: 0vw;
       box-shadow: none; } }
-  .filter__container img {
-    width: 36px;
-    height: auto;
-    margin: auto;
-    margin-top: calc(45% - 18px); }
 
 .filter__modal {
   position: absolute;
   top: 0vh;
   padding: 0.8rem 1.6rem 0;
   z-index: 5;
-  width: 100vw;
-  height: 0vh;
   background-color: #f7f2eb;
   box-shadow: 0px -2px 13px 1px rgba(208, 173, 142, 0.3); }
   .filter__modal h2 {
@@ -270,6 +244,31 @@
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
     transition: 0.3s opacity ease; }
+  .filter__modal--gallery {
+    width: 100vw;
+    height: 0vh; }
+    @media (min-width: 600px) {
+      .filter__modal--gallery {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #f7f2eb;
+        position: fixed;
+        top: 60vh;
+        right: 5vw; } }
+  .filter__modal--rate {
+    width: 100vw;
+    height: 30vh; }
+    @media (min-width: 600px) {
+      .filter__modal--rate {
+        width: 100%;
+        height: auto; } }
+    .filter__modal--rate h2 {
+      opacity: 1;
+      display: block; }
+    .filter__modal--rate div {
+      opacity: 1;
+      display: block; }
 
 .filter__list {
   width: auto;
@@ -289,6 +288,43 @@
     .filter__list a img {
       width: 100%;
       height: 100%; }
+
+.menu-bottom {
+  width: 100%;
+  height: 7%;
+  background-color: #f7f2eb;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed;
+  bottom: 0;
+  padding: 0 3vw;
+  z-index: 45;
+  box-shadow: 0px -2px 13px 1px rgba(208, 173, 142, 0.2); }
+  @media (min-width: 600px) {
+    .menu-bottom {
+      position: absolute;
+      height: 7vh; } }
+  .menu-bottom__link {
+    width: 100%;
+    height: 100%; }
+    .menu-bottom__link--map {
+      text-align: center; }
+    .menu-bottom__link--burger {
+      text-align: right; }
+    .menu-bottom__link__img {
+      width: 25%;
+      height: 100%;
+      position: relative; }
+      .menu-bottom__link__img img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto; }
+      .menu-bottom__link__img img {
+        width: 100%;
+        height: auto; }
 
 /* ============================================ */
 /* ============== BURGER MENU ================= */
@@ -317,16 +353,6 @@
       width: 100%;
       padding: 3.3rem;
       height: fit-content; }
-
-@media (min-width: 600px) {
-  .filter__modal {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #f7f2eb;
-    position: fixed;
-    top: 60vh;
-    right: 5vw; } }
 
 .morphing {
   animation: morphing 1s 0s ease-in-out forwards;
@@ -637,13 +663,15 @@
       box-shadow: 0px -2px 23px 1px rgba(208, 173, 142, 0.4);
       border-radius: 10px; } }
 
+.rate__content {
+  position: fixed; }
+
 @media (min-width: 600px) {
   .rate__content {
     width: 100vw;
     height: 100vh;
     margin-top: 20vh;
     padding: 0 5vw;
-    position: fixed;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2.6rem; }
