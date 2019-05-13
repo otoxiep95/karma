@@ -3,7 +3,6 @@
 let modalFilter = document.querySelector(".filter__modal--gallery");
 let titleFilter = document.querySelector(".filter__modal--gallery h2");
 let listFilter = document.querySelector(".filter__list");
-let isopen = false;
 let bottomModal = document.querySelector(".menu-bottom__modal");
 let burgerModal = document.querySelector(".burger-menu");
 let linksBurger = document.querySelectorAll(".burger-menu--link");
@@ -11,7 +10,16 @@ let mainMap = document.querySelector(".map__container .map");
 let letsGo = document.querySelector(".launching__button-link");
 let menuMain = document.querySelector(".menu-main");
 
-//let galleryItem = document.querySelector(".gallery__item");
+let isopen = false;
+
+// RATING VARIABKES
+let rateIntro = document.querySelector(".rate__intro");
+let ratePage = document.querySelector(".rate__page");
+let filterMenu = document.querySelector(".filter__modal");
+let bottomModalRate = document.querySelector(".menu-bottom__modal--rate");
+let rateNextButton = document.querySelector(".rate-link--next");
+let goBackRate = document.querySelector(".menu-bottom__link--rate");
+let rangeThumb = document.querySelector(".range__thumb");
 
 window.onload = initInteraction();
 
@@ -23,6 +31,7 @@ function initInteraction() {
   let rateBadgeLink = document.querySelectorAll(".rate__badge--link");
   let returnLink = document.querySelector(".menu-bottom__link--return");
   let gallery = document.querySelector(".gallery");
+  let rateLink = document.querySelectorAll(".rate-link");
   if (buttonFilter) {
     console.log("button filter clicked");
 
@@ -38,13 +47,6 @@ function initInteraction() {
   if (returnLink && gallery) {
     returnLink.addEventListener("click", e => {
       returnMainMenu();
-    });
-  }
-  if (rateBadgeLink) {
-    rateBadgeLink.forEach(badge => {
-      badge.addEventListener("click", e => {
-        openRatePage(e);
-      });
     });
   }
 
@@ -124,37 +126,51 @@ function closeBurgerMenu() {
   }, 1000);
 }
 
-// function gotoSubpage(){
-
-// }
+let ratePageOpen = false;
+let msgModalOpen = false;
 
 function openRatePage(e) {
   e.preventDefault();
-  console.log("open second step");
-  let rateIntro = document.querySelector(".rate__intro");
-  let ratePage = document.querySelector(".rate__page");
-  let filterMenu = document.querySelector(".filter__modal");
-  let rateButton = document.querySelector(".button__submit");
-  let bottomModalRate = document.querySelector(".menu-bottom__modal--rate");
+
   bottomModalRate.style.height = "7vh";
   opacityNo(rateIntro);
   opacityNo(filterMenu);
+  rateLink.style.display = "none";
+  msgModalOpen = false;
+  ratePageOpen = true;
 
-  //opacity(ratePage);
+  rangeThumb.style.backgroundImage =
+    "url('../css/background-img/" + selectedBadge + ".svg')";
 
   setTimeout(function() {
     rateIntro.style.display = "none";
     filterMenu.style.display = "none";
-    rateButton.style.display = "block";
-    //ratePage.style.display = "inherit";
+    rateNextButton.style.display = "block";
   }, 1000);
 }
 
 function openMsgModal() {
-  let rateButton = document.querySelector(".button__submit");
   document.querySelector(".rate__conclusion").style.display = "block";
-  rateButton.style.display = "none";
+  rateNextButton.style.display = "none";
   document.querySelector(".button__submit--rating").style.display = "block";
+  ratePageOpen = false;
+  msgModalOpen = true;
+}
+
+/* GO BACKSSSS */
+
+goBackRate.addEventListener("click", goBack);
+
+function goBack() {
+  document.querySelector(".rate__conclusion").style.display = "none";
+  rateNextButton.style.display = "none";
+  document.querySelector(".button__submit--rating").style.display = "none";
+  rateIntro.style.display = "block";
+  rateIntro.style.opacity = "1";
+  filterMenu.style.display = "block";
+  filterMenu.style.opacity = "1";
+  rateLink.style.display = "block";
+  bottomModalRate.style.height = "35vh";
 }
 
 /* ---------------------- EFFECT FUNCTIONS ------------------- */

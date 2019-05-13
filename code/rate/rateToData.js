@@ -37,13 +37,30 @@ const userRates = [
 ];
 
 badgeButtons.forEach(element => {
-  element.addEventListener("click", clickedBadge);
+  element.addEventListener("click", e => {
+    clickedBadge(element);
+  });
 });
 
-function clickedBadge(event) {
-  selectedBadge = this.dataset.badge;
+function clickedBadge(element) {
+  selectedBadge = element.dataset.badge;
+  badgeButtons.forEach(badgeButton => {
+    badgeButton.classList.remove("badge--selected");
+  });
   console.log(selectedBadge);
+  element.classList.add("badge--selected");
 }
+
+// click on rate
+// after having a category go to rating
+let rateLink = document.querySelector(".rate-link");
+
+rateLink.addEventListener("click", e => {
+  if (selectedBadge != "") {
+    console.log("badge selected");
+    openRatePage(e);
+  }
+});
 
 function init() {
   console.log(rateFinal);
@@ -60,7 +77,7 @@ function init() {
 }
 init();
 
-document.querySelector(".button__submit").addEventListener("click", e => {
+document.querySelector(".rate-link--next").addEventListener("click", e => {
   console.log(rateFinal);
   userRates.forEach(element => {
     if (element.name === selectedBadge) {
@@ -91,7 +108,7 @@ function updateBadges() {
     badges[i].votes = dataVotes;
   }
   console.log(badges);
-  sendTodata();
+  //sendTodata();
 }
 
 function sendTodata() {
