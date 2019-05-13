@@ -69,7 +69,7 @@ var containerHeight = document.querySelector(".range__thumb__container")
   .offsetHeight;
 var marginBottomHeight = (w - containerHeight) / 2;
 
-console.log("margin bottom is:" + marginBottomHeight);
+//console.log("margin bottom is:" + marginBottomHeight);
 
 var scaleLevels = containerHeight / 11;
 
@@ -89,12 +89,12 @@ var level11 = level10 + scaleLevels;
 function setTranslate(xPos, yPos, el) {
   // moving value of our rating rectangle
   var rect_rate_H = document.querySelector(".range__fill").offsetHeight;
-  console.log("height of rating rect is:" + rect_rate_H);
+  //console.log("height of rating rect is:" + rect_rate_H);
 
   if (yPos > 0) {
     // yPos is positive
     document.querySelectorAll(".rate__shape").forEach(rateShape => {
-      console.log("color path");
+      // console.log("color path");
       rateShape.style.fill = "#b24a42";
     });
     document.querySelector(".range__thumb").style.borderColor = "#ef8e86";
@@ -107,7 +107,7 @@ function setTranslate(xPos, yPos, el) {
   if (yPos <= 0) {
     // yPos is negative
     document.querySelectorAll(".rate__shape").forEach(rateShape => {
-      console.log("color path");
+      //console.log("color path");
       rateShape.style.fill = "#4F6D59";
     });
     document.querySelector(".range__thumb").style.borderColor = "#9aafa2";
@@ -123,52 +123,52 @@ function setTranslate(xPos, yPos, el) {
   document.querySelector(".range__fill").style.height =
     "calc(50vh - " + yPosPixel + ")";
 
-  console.log("yPos is:" + yPos);
+  //console.log("yPos is:" + yPos);
 
   // return the rate
   switch (true) {
     case rect_rate_H < level1:
-      console.log("RATE 0 !");
+      //console.log("RATE 0 !");
       rateFinal = 0;
       break;
     case level1 <= rect_rate_H && rect_rate_H < level2:
-      console.log("RATE 1 !");
+      //console.log("RATE 1 !");
       rateFinal = 1;
       break;
     case level2 <= rect_rate_H && rect_rate_H < level3:
-      console.log("RATE 2 !");
+      //console.log("RATE 2 !");
       rateFinal = 2;
       break;
     case level3 <= rect_rate_H && rect_rate_H < level4:
-      console.log("RATE 3 !");
+      //console.log("RATE 3 !");
       rateFinal = 3;
       break;
     case level4 <= rect_rate_H && rect_rate_H < level5:
-      console.log("RATE 4 !");
+      //console.log("RATE 4 !");
       rateFinal = 4;
       break;
     case level5 <= rect_rate_H && rect_rate_H < level6:
-      console.log("RATE 5 !");
+      //console.log("RATE 5 !");
       rateFinal = 5;
       break;
     case level6 <= rect_rate_H && rect_rate_H < level7:
-      console.log("RATE 6 !");
+      //console.log("RATE 6 !");
       rateFinal = 6;
       break;
     case level7 <= rect_rate_H && rect_rate_H < level8:
-      console.log("RATE 7 !");
+      //console.log("RATE 7 !");
       rateFinal = 7;
       break;
     case level8 <= rect_rate_H && rect_rate_H < level9:
-      console.log("RATE 8 !");
+      //console.log("RATE 8 !");
       rateFinal = 8;
       break;
     case level9 <= rect_rate_H && rect_rate_H < level10:
-      console.log("RATE 9 !");
+      //console.log("RATE 9 !");
       rateFinal = 9;
       break;
     case level10 <= rect_rate_H && rect_rate_H < level11:
-      console.log("RATE 10 !");
+      //console.log("RATE 10 !");
       rateFinal = 10;
       break;
     default:
