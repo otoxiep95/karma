@@ -11,6 +11,7 @@ let mainMap = document.querySelector(".map__container .map");
 //let menuMain = document.querySelector(".menu-main");
 
 let isopen = false;
+let burgerMenuOpen = false;
 
 // RATING VARIABKES
 let rateIntro = document.querySelector(".rate__intro");
@@ -33,6 +34,7 @@ function initInteraction() {
   let gallery = document.querySelector(".gallery");
   let businessPage = document.querySelector(".business");
   let rateLink = document.querySelectorAll(".rate-link");
+
   if (buttonFilter) {
     console.log("button filter clicked");
 
@@ -40,19 +42,18 @@ function initInteraction() {
       openCloseFilterModal(e);
     });
   }
-  if (burgerButton) {
-    document.querySelector(".burger-menu--link--who").href =
-      "index.html?interaction=about#about1";
-    document.querySelector(".burger-menu--link--why").href =
-      "index.html?interaction=about#about2";
-    document.querySelector(".burger-menu--link--how").href =
-      "index.html?interaction=about#about3";
-    document.querySelector(".burger-menu--link--contact").href =
-      "index.html?interaction=about#about4";
-  }
+
   if ((mapButton, burgerButton, crossBurger)) {
     mapButton.addEventListener("click", openCloseMapModal);
-    burgerButton.addEventListener("click", openBurgerMenu);
+
+    burgerButton.addEventListener("click", e => {
+      if (burgerMenuOpen) {
+        closeBurgerMenu();
+      } else {
+        openBurgerMenu();
+      }
+    });
+
     crossBurger.addEventListener("click", closeBurgerMenu);
   }
   if (returnLink && gallery) {
@@ -118,6 +119,7 @@ function openCloseMapModal() {
 function openBurgerMenu() {
   console.log("open burger");
   burgerModal.style.width = "83vw";
+  burgerMenuOpen = true;
   setTimeout(function() {
     linksBurger.forEach(function(link) {
       link.style.opacity = "1";
@@ -126,6 +128,7 @@ function openBurgerMenu() {
 }
 
 function closeBurgerMenu() {
+  burgerMenuOpen = false;
   linksBurger.forEach(function(link) {
     link.style.opacity = "0";
   });
