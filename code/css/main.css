@@ -1181,9 +1181,14 @@ a {
 /* ============================================ */
 /* =============== ABOUT ==================== */
 /* ============================================ */
-.about-main__container {
-  width: 100%;
-  height: auto; }
+.about-main {
+  display: none; }
+  @media (min-width: 600px) {
+    .about-main {
+      display: block; } }
+  .about-main__container {
+    width: 100%;
+    height: auto; }
 
 @media (min-width: 600px) {
   .about-sub__container {

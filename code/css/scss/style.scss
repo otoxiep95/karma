@@ -247,6 +247,10 @@ $color-link: (
 /* ============================================ */
 
 .about-main {
+  display: none;
+  @include for-tablet-portrait-up {
+    display: block;
+  }
   &__container {
     @include size(100%, auto);
   }
@@ -256,6 +260,7 @@ $color-link: (
   .about-sub {
     &__container {
       display: grid;
+      //display: none;
       grid-column-gap: 7%;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 0.5fr auto;

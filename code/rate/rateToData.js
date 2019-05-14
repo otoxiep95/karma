@@ -4,7 +4,8 @@ let catId = urlParams.get("category");
 let urlKey = urlParams.get("key");
 const database = firebase.database();
 const badgeButtons = document.querySelectorAll(".filter__link");
-console.log(badgeButtons);
+const backToBusinessLink = document.querySelector(".back-to-business__link");
+
 let selectedBadge = "";
 
 const badges = [];
@@ -64,6 +65,8 @@ rateLink.addEventListener("click", e => {
 
 function init() {
   console.log(rateFinal);
+  backToBusinessLink.href =
+    "../business.html?category=" + catId + "&key=" + urlKey;
   database
     .ref(catId + "/" + urlKey + "/badges/ratable")
     .on("child_added", snapshot => {

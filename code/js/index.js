@@ -23,7 +23,9 @@ function openMainMenu() {
 }
 
 function openAbout() {
-  launchingScreen.style.display = "none";
-  //aboutScreen.classList.remove("desk-only");
+  if (screen.width < 600) {
+    launchingScreen.style.display = "none";
+  }
+
   aboutScreen.style.display = "grid";
 }
