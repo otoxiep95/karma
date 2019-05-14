@@ -78,7 +78,16 @@ function init() {
       badges.push(data);
       // console.log(badges);
     });
+  database.ref(catId + "/" + urlKey).on("child_added", snapshot2 => {
+    if (snapshot2.key === "name") {
+      console.log(snapshot2.val());
+      nameOfBusiness.forEach(name => {
+        name.textContent = snapshot2.val();
+      });
+    }
+  });
 }
+
 init();
 
 document.querySelector(".rate-link--next").addEventListener("click", e => {

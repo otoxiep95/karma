@@ -24,6 +24,9 @@
 .none {
   display: none; }
 
+.underline {
+  border-bottom: 2px solid black; }
+
 /* ============================================ */
 /* =============== GALLERY ==================== */
 /* ============================================ */
@@ -406,6 +409,9 @@
 .none {
   display: none; }
 
+.underline {
+  border-bottom: 2px solid black; }
+
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
@@ -618,6 +624,9 @@
 
 .none {
   display: none; }
+
+.underline {
+  border-bottom: 2px solid black; }
 
 /* COLORS */
 /* STYLE ELEMENTS */

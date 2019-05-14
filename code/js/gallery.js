@@ -4,6 +4,8 @@ let catId = urlParams.get("category");
 const gallery = document.querySelector(".gallery__container");
 const filterList = document.querySelector(".filter__list");
 const filterListLinks = document.querySelectorAll(".filter__list img");
+const mainMenuLinks = document.querySelectorAll(".menu-main__link");
+const galleryCatTitle = document.querySelector(".category-display__text");
 
 let listOfBusinesses = [];
 let listOfFilters = [];
@@ -127,6 +129,19 @@ const Business = {
 
 function init() {
   createObject();
+  underlineCat();
+  galleryCatTitle.textContent = catId;
+}
+function underlineCat() {
+  console.log("hello");
+  console.log(mainMenuLinks);
+  mainMenuLinks.forEach(menuLink => {
+    catLink = menuLink.dataset.menu;
+    console.log(catLink);
+    if (catLink === catId) {
+      menuLink.firstElementChild.classList.add("underline");
+    }
+  });
 }
 
 function clickedFilter(event) {
