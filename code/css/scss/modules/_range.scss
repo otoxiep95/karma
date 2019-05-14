@@ -293,3 +293,15 @@
 .menu-bottom__link--rate {
   display: none;
 }
+
+.back-to-business__link {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+
+  top: 3vw;
+  left: 3vw;
+  h2 {
+    padding: 0;
+  }
+}
