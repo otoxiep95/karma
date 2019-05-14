@@ -8,7 +8,7 @@ const businessImage = document.querySelector("[data-image]");
 const businessLongDesc = document.querySelector("[data-long_desc]");
 const businessLocationMaps = document.querySelectorAll(".gmap_link");
 
-const rateButton = document.querySelector(".filter__button a");
+const rateButtons = document.querySelectorAll(".filter__button--rate a");
 
 const Business = {
   key: "",
@@ -114,7 +114,10 @@ const Business = {
 
 function init() {
   buildBusiness();
-  rateButton.href = "rate/index-rate.html?category=" + catId + "&key=" + urlKey;
+  rateButtons.forEach(rateButton => {
+    rateButton.href =
+      "rate/index-rate.html?category=" + catId + "&key=" + urlKey;
+  });
 }
 
 function buildBusiness() {
