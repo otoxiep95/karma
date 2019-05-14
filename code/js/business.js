@@ -9,6 +9,7 @@ const businessLongDesc = document.querySelector("[data-long_desc]");
 const businessLocationMaps = document.querySelectorAll(".gmap_link");
 
 const rateButtons = document.querySelectorAll(".filter__button--rate a");
+const mainMenuLinks = document.querySelectorAll(".menu-main__link");
 
 const Business = {
   key: "",
@@ -114,9 +115,21 @@ const Business = {
 
 function init() {
   buildBusiness();
+  underlineCat();
   rateButtons.forEach(rateButton => {
     rateButton.href =
       "rate/index-rate.html?category=" + catId + "&key=" + urlKey;
+  });
+}
+function underlineCat() {
+  console.log("hello");
+  console.log(mainMenuLinks);
+  mainMenuLinks.forEach(menuLink => {
+    catLink = menuLink.dataset.menu;
+    console.log(catLink);
+    if (catLink === catId) {
+      menuLink.firstElementChild.classList.add("underline");
+    }
   });
 }
 
