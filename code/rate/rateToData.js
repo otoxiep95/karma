@@ -5,6 +5,7 @@ let urlKey = urlParams.get("key");
 const database = firebase.database();
 const badgeButtons = document.querySelectorAll(".filter__link");
 const backToBusinessLink = document.querySelector(".back-to-business__link");
+const nameOfBusiness = document.querySelectorAll(".rate__business__name");
 
 let selectedBadge = "";
 
@@ -72,10 +73,10 @@ function init() {
     .on("child_added", snapshot => {
       const key = snapshot.key;
       const data = snapshot.val();
-      console.log(key);
-      console.log(data);
+      // console.log(key);
+      // console.log(data);
       badges.push(data);
-      console.log(badges);
+      // console.log(badges);
     });
 }
 init();
