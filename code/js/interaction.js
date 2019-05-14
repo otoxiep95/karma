@@ -154,6 +154,7 @@ function openRatePage(e) {
     rateIntro.style.display = "none";
     filterMenu.style.display = "none";
     rateNextButton.style.display = "block";
+    goBackRate.style.display = "block";
   }, 1000);
 }
 
@@ -180,6 +181,7 @@ function goBack() {
   filterMenu.style.opacity = "1";
   rateLink.style.display = "block";
   bottomModalRate.style.height = "35vh";
+  goBackRate.style.display = "none";
 }
 
 /* ---------------------- EFFECT FUNCTIONS ------------------- */

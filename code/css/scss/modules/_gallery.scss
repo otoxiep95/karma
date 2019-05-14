@@ -267,11 +267,9 @@ body {
     }
     &--rate {
       @include size(100vw, 30vh);
-      // top: inherit;
-      // bottom: 0vh;
       // desktop
       @include for-tablet-portrait-up {
-        @include size(100%, auto);
+        @include size(100%, 250px);
       }
       h2 {
         opacity: 1;

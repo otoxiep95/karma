@@ -1,29 +1,57 @@
 @import "variables";
 
+.logo-hor--rate {
+  @include size(175px, auto);
+  position: absolute;
+  top: 3vh;
+  left: calc(50vw - 75px);
+  @include for-tablet-portrait-up {
+    top: 5vh;
+    @include size(190px, auto);
+    left: calc(50vw - 100px);
+  }
+}
+
 //////////////////////////
 // RATE CONTENT - BODY  //
 
 .rate__content {
   position: fixed;
+  &__title {
+    max-width: 400px;
+    margin-top: 3.3rem;
+  }
+  &__illu {
+    @include size(100%, auto);
+    max-width: 600px;
+    justify-self: center;
+  }
 }
 
 // for desktop
 @include for-tablet-portrait-up {
   .rate__content {
-    @include size(100vw, 100vh);
+    @include size(100vw, 75vh);
     margin-top: 20vh;
+    margin-bottom: 5vh;
     padding: $padding-body-desk;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2.6rem;
+    grid-template-rows: 20vh auto;
+    grid-column-gap: 10%;
+    grid-row-gap: 2.6rem;
     &__title {
       grid-column: 1/2;
       padding: 0;
+      justify-self: center;
+      align-self: end;
     }
     // rate__container
     &__rate-window {
       grid-column: 2/3;
       grid-row: 1/-1;
+      justify-self: center;
+      align-self: center;
     }
   }
 }
@@ -37,8 +65,10 @@
 
   //desktop
   @include for-tablet-portrait-up {
-    @include size(450px, 570px);
+    @include size(100%, 570px);
+    max-width: 500px;
     position: relative;
+
     overflow: hidden;
     @include box-shadow($ourshadow, $brown, 0.4);
     border-radius: $round-corner;
@@ -147,11 +177,14 @@
   @include size(fit-content, fit-content);
   position: absolute;
   top: -2vh;
-  left: 17vw;
+  left: 35px;
   padding: 0px 1.6rem;
+  font-size: 1.8rem;
+  color: $green;
   background-color: $verylightbeige;
   @include for-tablet-portrait-up {
-    left: 3%;
+    left: 55px;
+    font-size: 2.1rem;
   }
 }
 
@@ -188,9 +221,9 @@
     }
   }
   li {
-    @include text(2.1rem, 2.6rem, $coral);
+    @include text(2.1rem, 2.1rem, $coral);
     list-style-type: none;
-    padding-bottom: 0;
+    // padding-bottom: 0;
   }
 }
 
@@ -219,19 +252,44 @@
   display: none;
 }
 
+.rate-link {
+  display: inline;
+  place-self: center;
+  @include vertical-align(h3);
+  width: fit-content;
+  h3 {
+    width: fit-content;
+    float: left;
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: $coral;
+  }
+  img {
+    float: right;
+  }
+}
+
 // BADGES
 
 .rate__badge--link {
   border-radius: 50%;
-  width: 30%;
-  height: auto;
+  width: 85px;
+  height: 85px;
   display: inline-block;
   img {
     @include size(100%, auto);
   }
+  @include for-tablet-portrait-up {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .badge--selected {
-  background-color: $orange;
-  border: solid 3px $orange;
+  background-color: $brown;
+  border: solid 3px $brown;
+}
+
+.menu-bottom__link--rate {
+  display: none;
 }

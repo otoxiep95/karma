@@ -27,20 +27,40 @@
       firebase.initializeApp(config);
     </script>
 
+    <img
+      class="desk-only logo-hor logo-hor--rate"
+      src="../assets/ui/logo/logo-horizontal-55.svg"
+      alt="logo"
+    />
+
+    <!--////////////////////////////////////////////-->
+    <!--=============== RATE CONTENT ===============-->
+    <!--////////////////////////////////////////////-->
     <div class="rate__content">
       <h1 class="rate__content__title desk-only">
         How was your experience with:
         <span class="rate__content__business">Name</span>
       </h1>
-      <!-- <h1 class="rate__content__business">Name</h1> -->
+
+      <img
+        src="../assets/ui/vector/illustrations/rating-process-54.svg"
+        alt=""
+        class="rate__content__illu desk-only"
+      />
+
+      <!--////////////////////////////////////////////-->
+      <!--=============== RATE WINDOW ================-->
+      <!--////////////////////////////////////////////-->
 
       <div class="rate__content__rate-window rate__container">
+        <!--////////////////////////////////////////////-->
+        <!--=============== RATE INTRO ==================-->
+        <!--////////////////////////////////////////////-->
         <div class="rate__intro">
           <h1 class="rate__intro--title">
             Rate your experience with:
             <span class="rate__intro--business">Name</span>
           </h1>
-          <!-- <h1 class="rate__intro--business">NAME</h1> -->
           <li class="rate__intro--explanation">Choose a category to rate</li>
           <li class="rate__intro--explanation desk-only">Drag the badge</li>
           <li class="rate__intro--explanation desk-only">Validate</li>
@@ -51,7 +71,11 @@
             Submit your rate(s) and send a message.
           </li>
         </div>
+        <!--============ END RATE INTRO ================-->
 
+        <!--////////////////////////////////////////////-->
+        <!--============= RATE CONCLUSION ==============-->
+        <!--////////////////////////////////////////////-->
         <div class="rate__conclusion">
           <h1 class="rate__conclusion--title">
             Thank you for sharing your experience with
@@ -61,8 +85,13 @@
             If you want to express your feelings send them a msg:
           </h2>
         </div>
+        <!--========== END RATE CONCLUSION =============-->
 
+        <!--////////////////////////////////////////////-->
+        <!--=============== RATE PAGE ==================-->
+        <!--////////////////////////////////////////////-->
         <div class="rate__page">
+          <!--============ RANGE THUMB ===============-->
           <div class="range__thumb__container">
             <div class="range__thumb"></div>
             <div class="range__scale">
@@ -78,9 +107,9 @@
               <div class="range__scale--level"></div>
               <div class="range__scale--level"></div>
             </div>
+            <!--============  RANGE FILL ===============-->
             <div class="range__fill">
               <h2 class="range__keyword">Could be better !</h2>
-              <!-- <img src="shape-green-animated.svg" alt="" /> -->
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,8 +208,11 @@
                 </g>
               </svg>
             </div>
+            <!--============ END RANGE FILL ===============-->
           </div>
+          <!--============ END RANGE THUMB ===============-->
         </div>
+        <!--============ END RATE PAGE ===============-->
 
         <!--////////////////////////////////////////////-->
         <!--=============== BOTTOM MENU ================-->
@@ -190,7 +222,7 @@
           <!--================= FILTERS ==================-->
           <!--////////////////////////////////////////////-->
           <div class="filter filter__modal filter__modal--rate">
-            <h2 class="opacity none">Select your filter:</h2>
+            <h2 class="opacity none">Categories:</h2>
             <div class="filter__list opacity none">
               <div
                 data-badge="vegetarian"
@@ -250,7 +282,14 @@
                 alt=""
               />
             </div>
-            <div class="button__submit rate-link"><h3>Rate</h3></div>
+            <div class="button__submit rate-link">
+              <h3>Rate</h3>
+              <img
+                class="menu-bottom__link__img menu-bottom__link__img--arrow"
+                src="../assets/ui/icons/nav/arrow-red.svg"
+                alt=""
+              />
+            </div>
             <div class="button__submit rate-link--next"><h3>Next</h3></div>
             <div class="button__submit--rating"><h3>Send</h3></div>
           </div>

@@ -101,6 +101,7 @@ function setTranslate(xPos, yPos, el) {
       rateShape.style.fill = "#b24a42";
     });
     document.querySelector(".range__thumb").style.borderColor = "#ef8e86";
+    rangeKeyWord.style.color = "#b24a42";
     // if you touch the bottom line
     if (yPos >= containerHeight / 2) {
       yPos = containerHeight / 2;
@@ -112,8 +113,10 @@ function setTranslate(xPos, yPos, el) {
     document.querySelectorAll(".rate__shape").forEach(rateShape => {
       //console.log("color path");
       rateShape.style.fill = "#4F6D59";
+      rangeKeyWord.style.color = "#4F6D59";
     });
     document.querySelector(".range__thumb").style.borderColor = "#9aafa2";
+    rangeKeyWord.style.color = "#4F6D59";
     // if you touch the top line
     if (yPos <= -(containerHeight / 2)) {
       yPos = (containerHeight / 2) * -1;
