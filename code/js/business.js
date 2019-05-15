@@ -7,6 +7,14 @@ const businessType = document.querySelector("[data-type]");
 const businessImage = document.querySelector("[data-image]");
 const businessLongDesc = document.querySelector("[data-long_desc]");
 const businessLocationMaps = document.querySelectorAll(".gmap_link");
+const priceSecIcon = document.querySelector(".price .secPrice");
+const priceThirdIcon = document.querySelector(".price .thirdPrice");
+const contactAdress = document.querySelector(".contact__adress");
+const phoneNumberText = document.querySelector(".contact__phone--text");
+const facebookLink = document.querySelector(".facebook--link");
+const facebookLinkText = document.querySelector(".contact__facebook--text");
+const websiteLink = document.querySelector(".website--link");
+const websiteLinkText = document.querySelector(".contact__website--text");
 
 const rateButtons = document.querySelectorAll(".filter__button--rate a");
 const mainMenuLinks = document.querySelectorAll(".menu-main__link");
@@ -23,10 +31,10 @@ const Business = {
   distance: "",
   contact: {
     fblink: "",
-    telephone: "",
+    telephoneNumber: "",
     weblink: "",
     instaLink: "",
-    businessAdress: ""
+    adress: ""
   },
   badges: {
     ratable: [
@@ -165,12 +173,16 @@ function showBusiness(business) {
   businessType.textContent = business.type;
   businessImage.style.backgroundImage = "url(" + business.image + ")";
   businessLongDesc.textContent = business.longDescription;
-
+  //console.log(business.contact.businessAdress);
+  contactAdress.textContent = business.contact.adress;
+  phoneNumberText.textContent = business.contact.telephoneNumber;
+  websiteLink.href = business.contact.weblink;
+  //websiteLinkText.textContent = business.contact.weblink;
+  facebookLink.href = business.contact.fblink;
+  //facebookLinkText.textContent = business.contact.fblink;
   document.querySelector("[data-distance]").textContent = business.distance;
 
   let priceTag = business.price;
-  const priceSecIcon = document.querySelector(".price .secPrice");
-  const priceThirdIcon = document.querySelector(".price .thirdPrice");
 
   switch (priceTag) {
     case "1":
