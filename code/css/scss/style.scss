@@ -4,6 +4,7 @@
 @import "modules/business";
 @import "modules/classes";
 @import "modules/range";
+@import "modules/contact";
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
@@ -104,7 +105,8 @@ a {
 // padding body general
 
 .launching__container,
-.about-main__container {
+.about-main__container,
+.contact-page__container {
   // mobile
   display: grid;
   grid-template-columns: 1fr;
@@ -114,7 +116,6 @@ a {
   @include for-tablet-portrait-up {
     padding: $padding-body-desk;
     @include size(100%, 90vh);
-
     grid-template-columns: 1fr 1fr;
   }
 }

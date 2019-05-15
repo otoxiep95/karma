@@ -11,8 +11,24 @@ body {
 /* =============== GALLERY ==================== */
 /* ============================================ */
 
+.category-display {
+  @include size(100vw, 5vh);
+  text-align: center;
+  background-color: $verylightbeige;
+  position: fixed;
+  @include box-shadow($ourshadow, $brown, 0.4);
+  top: 0;
+  h2 {
+    padding: 0;
+    color: $coral;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+}
+
 .gallery {
   @include size(100vw, 100vh);
+  margin-top: 5vh;
   @include for-tablet-portrait-up {
     @include size(80vw, 100vh);
     margin: 23vh 5vw;

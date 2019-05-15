@@ -38,7 +38,7 @@
       justify-self: end;
       grid-column: 1/2;
       grid-row-gap: 2.1rem;
-      position: relative;
+      //position: relative; // for shape
     }
     &__img {
       // mobile
@@ -67,12 +67,12 @@
       grid-column: 1/-1;
       grid-row: 2/3;
       display: grid;
-      grid-gap: 0.8rem;
+      //grid-gap: 0.8rem;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 1.5fr 1fr;
       // desktop
       @include for-tablet-portrait-up {
-        padding: 1.6rem;
+        padding: 0rem;
         grid-row: 1/2;
       }
     }
@@ -81,9 +81,88 @@
       position: absolute;
       width: auto;
       height: 350px;
-      bottom: -230px;
-      left: -5vw; // padding of desktop
+      top: 30vh;
+      left: 0vw; // padding of desktop
       z-index: -1;
+    }
+    &__contact {
+      display: none;
+      // contact desktop
+      @include for-tablet-portrait-up {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        // position: relative;
+        .see-map__link {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          display: inline;
+          width: fit-content;
+          align-self: end;
+          p {
+            width: fit-content;
+            float: left;
+          }
+          img {
+            float: right;
+            width: 25px;
+            margin-left: 1.6rem;
+          }
+        }
+        .business__contact {
+          // desktop
+          grid-column: 2/3;
+          grid-row: 1/3;
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-gap: 0.8rem;
+          justify-self: end;
+          height: 100%;
+          width: 100%;
+          align-self: center;
+          &--link {
+            @include size(100%, fit-content);
+            align-self: center;
+            position: relative;
+            img {
+              @include size(20px, 100%);
+              position: absolute;
+              margin: auto;
+              left: 0;
+            }
+            p {
+              margin-left: calc(20px + 1.6rem);
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__contact--mobile {
+    // mobile
+    grid-column: 1/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.8rem;
+    justify-self: end;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    a {
+      @include size(20px, 20px);
+      align-self: center;
+      position: relative;
+      img {
+        @include size(100%, 100%);
+        position: absolute;
+        margin: auto;
+        left: 0;
+      }
+    }
+    @include for-tablet-portrait-up {
+      display: none;
     }
   }
   &__title {
@@ -91,10 +170,11 @@
     grid-column: 1/2;
     font-size: 1.8rem;
     padding: 0;
-    align-self: end;
+    align-self: center;
     // desktop
     @include for-tablet-portrait-up {
       font-size: $font-large;
+      grid-column: 1/3;
     }
   }
   &__subtitle {
@@ -103,7 +183,7 @@
     font-size: 1.8rem;
     color: $brown;
     padding: 0;
-    align-self: end;
+    align-self: center;
     @include for-tablet-portrait-up {
       font-size: $font-normal;
     }
@@ -111,11 +191,11 @@
   &__infos {
     // mobile
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 1/3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-self: end;
-    height: fit-content;
+    height: 100%;
     align-self: end;
     p {
       padding-bottom: 0;
@@ -123,6 +203,8 @@
     //desktop
     @include for-tablet-portrait-up {
       width: 100%;
+      grid-row: 2/3;
+      height: fit-content;
       .price {
         justify-self: start;
       }
@@ -132,24 +214,7 @@
       }
     }
   }
-  &__contact {
-    // mobile
-    grid-column: 2/3;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 0.8rem;
-    justify-self: end;
-    height: fit-content;
-    width: 100%;
-    align-self: center;
-    &--link {
-      @include size(20px, 20px);
-      justify-self: center;
-      img {
-        @include size(100%, 100%);
-      }
-    }
-  }
+
   // END OF TEMPLATE HEADER
   // TEMPLATE CONTENT
   &__template--content {
@@ -168,6 +233,10 @@
   &__description {
     // mobile
     padding: 2.6rem 3vw 5.2rem 3vw;
+    // desktop
+    @include for-tablet-portrait-up {
+      padding: 0rem 3vw 5.2rem 3vw;
+    }
   }
   &__rate {
     // mobile
