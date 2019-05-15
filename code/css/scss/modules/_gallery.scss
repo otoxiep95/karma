@@ -29,28 +29,34 @@ body {
 .gallery {
   @include size(100vw, 100vh);
   margin-top: 5vh;
-  @include for-tablet-portrait-up {
-    @include size(80vw, 100vh);
-    margin: 23vh 5vw;
-  }
   background-color: none;
   display: grid;
   grid-template-rows: repeat(auto-fill, 170px);
   @include for-tablet-portrait-up {
-    grid-template-rows: repeat(auto-fill, 300px);
-    grid-row-gap: 6%;
+    @include size(100vw, 100vh);
+    margin: 20vh 0vw;
+    grid-template-rows: repeat(auto-fit, minmax(275px, 350px));
+    grid-template-columns: auto max-content auto max-content auto;
+    grid-row-gap: 5%;
   }
   a {
     @include size(100%, 100%);
     grid-column: 1/-1;
+    @include for-tablet-portrait-up {
+      grid-column: 2/3;
+    }
   }
   &__item {
-    @include size(100%, 170px);
+    // @include size(70vw, 170px);
+    // max-width: 1000px;
+    // min-width: 800px;
     display: grid;
     grid-template-columns: 50% 50%;
     @include for-tablet-portrait-up {
       grid-template-columns: 33% 66%;
-      @include size(100%, 300px);
+      @include size(70vw, 100%);
+      max-width: 1000px;
+      min-width: 800px;
       @include box-shadow($ourshadow, $brown, 0.4);
       border-radius: 25px;
     }
@@ -304,12 +310,11 @@ body {
   &__list {
     @include scroll-div(auto, hidden, auto, 60%);
     background-color: none;
-    @include for-tablet-portrait-up {
-      display: none;
-    }
+
     a {
       @include size(30%, auto);
       display: inline-block;
+      max-width: 100px;
       img {
         @include size(100%, 100%);
       }

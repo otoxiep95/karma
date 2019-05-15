@@ -79,6 +79,7 @@ function openCloseFilterModal(e) {
     }
     titleFilter.classList.remove("none");
     listFilter.classList.remove("none");
+
     setTimeout(opacity, 1000, titleFilter);
     setTimeout(opacity, 1000, listFilter);
     isopen = true;
@@ -97,6 +98,7 @@ function openCloseFilterModal(e) {
     opacityNo(listFilter);
     titleFilter.classList.add("none");
     listFilter.classList.add("none");
+
     //listFilter.style.display = "none";
     isopen = false;
   }
@@ -164,7 +166,9 @@ function openRatePage(e) {
 function openMsgModal() {
   document.querySelector(".rate__conclusion").style.display = "block";
   rateNextButton.style.display = "none";
-  document.querySelector(".button__submit--rating").style.display = "block";
+  document.querySelectorAll(".button__submit--rating").forEach(button => {
+    button.style.display = "block";
+  });
   ratePageOpen = false;
   msgModalOpen = true;
 }
@@ -177,7 +181,9 @@ if (goBackRate) {
 function goBack() {
   document.querySelector(".rate__conclusion").style.display = "none";
   rateNextButton.style.display = "none";
-  document.querySelector(".button__submit--rating").style.display = "none";
+  document.querySelectorAll(".button__submit--rating").forEach(button => {
+    button.style.display = "none";
+  });
   rateIntro.style.display = "block";
   rateIntro.style.opacity = "1";
   filterMenu.style.display = "block";
@@ -194,6 +200,7 @@ function none(element) {
 }
 function opacity(content) {
   console.log("opacity");
+  console.log(content);
   content.classList.remove("opacity");
 }
 

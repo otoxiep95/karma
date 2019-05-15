@@ -53,27 +53,29 @@
   grid-template-rows: repeat(auto-fill, 170px); }
   @media (min-width: 600px) {
     .gallery {
-      width: 80vw;
+      width: 100vw;
       height: 100vh;
-      margin: 23vh 5vw; } }
-  @media (min-width: 600px) {
-    .gallery {
-      grid-template-rows: repeat(auto-fill, 300px);
-      grid-row-gap: 6%; } }
+      margin: 20vh 0vw;
+      grid-template-rows: repeat(auto-fit, minmax(275px, 350px));
+      grid-template-columns: auto max-content auto max-content auto;
+      grid-row-gap: 5%; } }
   .gallery a {
     width: 100%;
     height: 100%;
     grid-column: 1/-1; }
+    @media (min-width: 600px) {
+      .gallery a {
+        grid-column: 2/3; } }
   .gallery__item {
-    width: 100%;
-    height: 170px;
     display: grid;
     grid-template-columns: 50% 50%; }
     @media (min-width: 600px) {
       .gallery__item {
         grid-template-columns: 33% 66%;
-        width: 100%;
-        height: 300px;
+        width: 70vw;
+        height: 100%;
+        max-width: 1000px;
+        min-width: 800px;
         box-shadow: 0px -2px 23px 1px rgba(208, 173, 142, 0.4);
         border-radius: 25px; } }
     .gallery__item__img {
@@ -299,13 +301,11 @@
   white-space: nowrap;
   scroll-behavior: smooth;
   background-color: none; }
-  @media (min-width: 600px) {
-    .filter__list {
-      display: none; } }
   .filter__list a {
     width: 30%;
     height: auto;
-    display: inline-block; }
+    display: inline-block;
+    max-width: 100px; }
     .filter__list a img {
       width: 100%;
       height: 100%; }
@@ -448,8 +448,8 @@
       padding: 0 5vw;
       position: fixed;
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      grid-gap: 3.3rem; } }
+      grid-template-columns: auto max-content max-content auto;
+      grid-gap: 5%; } }
 
 .business__template--header {
   width: 100%;
@@ -462,7 +462,7 @@
       height: fit-content;
       max-width: 450px;
       justify-self: end;
-      grid-column: 1/2;
+      grid-column: 2/3;
       grid-row-gap: 2.1rem; } }
   .business__template--header__img {
     width: 100%;
@@ -616,15 +616,17 @@
 
 @media (min-width: 600px) {
   .business__template--content {
-    width: 100%;
+    width: fit-content;
     height: auto;
     overflow-x: hidden;
     overflow-y: scroll;
     white-space: nowrap;
     scroll-behavior: smooth;
+    grid-columns: 3/4;
     max-width: 800px;
     margin-top: 100px;
-    white-space: inherit; } }
+    white-space: inherit;
+    justify-self: end; } }
 
 .business__template--content::-webkit-scrollbar {
   width: 0 !important; }
@@ -633,7 +635,8 @@
   padding: 2.6rem 3vw 5.2rem 3vw; }
   @media (min-width: 600px) {
     .business__description {
-      padding: 0rem 3vw 5.2rem 3vw; } }
+      padding: 0rem 0vw 0rem 4.2rem;
+      max-width: 550px; } }
 
 .business__rate {
   padding: 3vh 3vw;
@@ -649,8 +652,8 @@
       position: relative;
       height: 250px;
       padding: 3.3rem 2.6rem;
-      margin-bottom: 2.6rem;
-      margin: 10vh auto; } }
+      margin: 10vh auto 10vh 4.2rem;
+      min-width: 550px; } }
   .business__rate--title {
     padding: 0;
     padding-bottom: 1.6rem;
@@ -683,10 +686,10 @@
   .business__map {
     width: 80%;
     height: 450px;
-    margin: auto;
     background-color: #9aafa2;
-    margin-top: 10vh;
-    margin-bottom: 50vh; } }
+    margin: 13vh auto 50vh 4.2rem;
+    border-radius: 10px;
+    box-shadow: 0px -2px 23px 1px rgba(208, 173, 142, 0.4); } }
 
 /* ============================================ */
 /* =============== BUTTONS ==================== */
@@ -918,15 +921,23 @@
 
 .rate__intro {
   display: block; }
+  @media (min-width: 600px) {
+    .rate__intro--title {
+      display: none; } }
 
 .rate__conclusion {
   display: none; }
+  .rate__conclusion--explanation {
+    padding: 0; }
+  .rate__conclusion h2 {
+    color: #d0ad8e;
+    padding: 0 0 1.6rem 0; }
 
 .rate__intro,
 .rate__conclusion {
   width: 100%;
   height: 100%;
-  padding: 6.6rem 3.3rem 1.6rem 3.3rem;
+  padding: 6.6rem 1.6rem 1.6rem 1.6rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -934,11 +945,9 @@
   z-index: 10; }
   .rate__intro--title,
   .rate__conclusion--title {
-    padding: 2.6rem 0 1.3rem 0; }
-    @media (min-width: 600px) {
-      .rate__intro--title,
-      .rate__conclusion--title {
-        display: none; } }
+    font-size: 2.7rem;
+    line-height: 3.3rem;
+    padding: 0 0 1.6rem 0; }
   .rate__intro--business,
   .rate__conclusion--business {
     padding: 0; }
@@ -993,6 +1002,36 @@
   .rate-link img {
     float: right; }
 
+.rate-again--conclusion {
+  width: 120px;
+  height: 50px;
+  position: relative; }
+  .rate-again--conclusion p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  @media (min-width: 600px) {
+    .rate-again--conclusion {
+      width: 220px; } }
+  .rate-again--conclusion img {
+    transform: scale(-1);
+    width: 25px; }
+  .rate-again--conclusion p {
+    padding: 0;
+    margin-left: 35px; }
+
+.no-msg {
+  grid-column: 1/3;
+  grid-row: 1/2; }
+  .no-msg p {
+    padding: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #e2685b; }
+    @media (min-width: 600px) {
+      .no-msg p {
+        font-size: 1.6rem; } }
+
 .rate__badge--link {
   border-radius: 50%;
   width: 85px;
@@ -1018,9 +1057,18 @@
   height: fit-content;
   position: absolute;
   top: 3vw;
-  left: 3vw; }
+  left: 3vw;
+  z-index: 45; }
   .back-to-business__link h2 {
     padding: 0; }
+
+input {
+  width: 100%;
+  height: 159px;
+  background-color: #f7f2eb;
+  border-radius: 10px;
+  border: 2px solid #e2685b;
+  box-shadow: none; }
 
 /* COLORS */
 /* STYLE ELEMENTS */
@@ -1231,10 +1279,18 @@ a {
     .launching__title {
       width: 100%;
       max-width: 600px;
-      padding: 20% 5%;
+      max-height: 250px;
+      padding-top: 2.6rem;
       padding-right: 10%;
       grid-column: 2/3;
-      place-self: center; } }
+      place-self: center; }
+      .launching__title h1 {
+        padding: 0; }
+      .launching__title img {
+        width: 100%;
+        height: fit-content;
+        max-width: 400px;
+        max-height: 200px; } }
   .launching__button-container {
     width: 90%;
     height: 45px;

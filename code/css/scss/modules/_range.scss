@@ -193,26 +193,38 @@
 
 .rate__intro {
   display: block;
+  &--title {
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
 }
 
 .rate__conclusion {
   display: none;
+
+  &--explanation {
+    padding: 0;
+  }
+  h2 {
+    color: $brown;
+    padding: 0 0 1.6rem 0;
+  }
 }
 
 .rate__intro,
 .rate__conclusion {
   @include size(100%, 100%);
-  padding: 6.6rem 3.3rem 1.6rem 3.3rem;
+  padding: 6.6rem 1.6rem 1.6rem 1.6rem;
   position: absolute;
   top: 0;
   left: 0;
   background-color: $verylightbeige;
   z-index: 10;
   &--title {
-    padding: 2.6rem 0 1.3rem 0;
-    @include for-tablet-portrait-up {
-      display: none;
-    }
+    font-size: $font-large;
+    line-height: $line-large;
+    padding: 0 0 1.6rem 0;
   }
   &--business {
     padding: 0;
@@ -269,6 +281,39 @@
   }
 }
 
+.rate-again--conclusion {
+  width: 120px;
+  height: 50px;
+  @include vertical-align(p);
+  @include for-tablet-portrait-up {
+    width: 220px;
+  }
+  img {
+    transform: scale(-1);
+    // float: left;
+    width: 25px;
+  }
+  p {
+    // float: right;
+    padding: 0;
+    margin-left: 35px;
+  }
+}
+
+.no-msg {
+  // display: block;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  p {
+    padding: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid $coral;
+    @include for-tablet-portrait-up {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 // BADGES
 
 .rate__badge--link {
@@ -301,7 +346,16 @@
 
   top: 3vw;
   left: 3vw;
+  z-index: 45;
   h2 {
     padding: 0;
   }
+}
+
+input {
+  @include size(100%, 159px);
+  background-color: $verylightbeige;
+  border-radius: $round-corner;
+  border: 2px solid $coral;
+  box-shadow: none;
 }

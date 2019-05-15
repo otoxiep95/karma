@@ -146,10 +146,20 @@ a {
     @include for-tablet-portrait-up {
       width: 100%;
       max-width: 600px;
-      padding: 20% 5%;
+      max-height: 250px;
+      //padding: 20% 5%;
+      padding-top: 2.6rem;
       padding-right: 10%;
       grid-column: 2/3;
       place-self: center;
+      h1 {
+        padding: 0;
+      }
+      img {
+        @include size(100%, fit-content);
+        max-width: 400px;
+        max-height: 200px;
+      }
     }
   }
 
