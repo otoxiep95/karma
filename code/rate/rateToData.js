@@ -103,9 +103,11 @@ document.querySelector(".rate-link--next").addEventListener("click", e => {
   openMsgModal();
 });
 
-document
-  .querySelector(".button__submit--rating")
-  .addEventListener("click", updateBadges);
+const submitButtons = document.querySelectorAll(".button__submit--rating");
+
+submitButtons.forEach(submit => {
+  submit.addEventListener("click", updateBadges);
+});
 
 function updateBadges() {
   for (var i = 0; i < badges.length; i++) {
@@ -121,6 +123,8 @@ function updateBadges() {
     badges[i].votes = dataVotes;
   }
   console.log(badges);
+  //show Thank tou screen
+  document.querySelector(".thank--you--screen").classList.remove("none");
   //sendTodata();
 }
 

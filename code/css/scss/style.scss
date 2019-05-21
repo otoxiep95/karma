@@ -336,3 +336,35 @@ $color-link: (
     }
   }
 }
+
+///////////THANK YOU SCREEN //////////////////////////
+
+.thank--you--screen {
+  background-color: $lightbeige;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  h1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+//////// BURGUER ABOUT ////////////////
+
+.burguer__about--mobile {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: auto;
+  img {
+    width: 90%;
+    padding: 10%;
+  }
+}

@@ -5,6 +5,8 @@ const letsGo = document.querySelector(".launching__button-link");
 const menuMain = document.querySelector(".menu-main");
 const launchingScreen = document.querySelector(".launching");
 const aboutScreen = document.querySelector(".about-main");
+const burguerAbout = document.querySelector(".burguer__about--mobile");
+const contactScreen = document.querySelector(".contact-page");
 window.addEventListener("DOMContentLoaded", initIndex);
 
 function initIndex() {
@@ -14,6 +16,10 @@ function initIndex() {
   }
   if (screenFlag === "about") {
     openAbout();
+  } else {
+    if (screen.width < 600) {
+      contactScreen.style.display = "none";
+    }
   }
 }
 
@@ -25,7 +31,11 @@ function openMainMenu() {
 function openAbout() {
   if (screen.width < 600) {
     launchingScreen.style.display = "none";
+    burguerAbout.classList.remove("none");
+    burguerAbout.addEventListener("click", e => {
+      openMainMenu();
+    });
   }
-
+  contactScreen.style.display = "grid";
   aboutScreen.style.display = "grid";
 }
