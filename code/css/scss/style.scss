@@ -9,6 +9,7 @@
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -75,12 +76,10 @@ a {
 .button {
   @include centered(a);
   border-radius: $round-corner;
-  // box-shadow: $box-shadow;
 }
 
 .logos {
   @include size(auto, 60%);
-  //padding: 10%;
   place-self: center;
 }
 
@@ -92,10 +91,12 @@ a {
 }
 
 .desk-only {
-  display: none;
-  @include for-tablet-portrait-up {
-    display: block;
+  @include for-phone-only {
+    display: none;
   }
+  // @include for-tablet-portrait-up {
+  //   display: block;
+  // }
 }
 
 .none {
@@ -130,15 +131,15 @@ a {
 
   // desk
   @include for-tablet-portrait-up {
-    background-image: none;
     margin: 10vh 0vw;
     grid-gap: 2%;
+    background-image: none;
   }
-  // desk
+  // mobile & desk
   &__img {
     @include size(100%, auto);
-    grid-column: 1/2;
     max-width: 650px;
+    grid-column: 1/2;
     place-self: center;
   }
   // desk
@@ -147,7 +148,6 @@ a {
       width: 100%;
       max-width: 600px;
       max-height: 250px;
-      //padding: 20% 5%;
       padding-top: 2.6rem;
       padding-right: 10%;
       grid-column: 2/3;
@@ -164,6 +164,7 @@ a {
   }
 
   &__button-container {
+    //mobile
     @include size(90%, 45px);
     position: fixed;
     bottom: 3vh;
@@ -203,13 +204,12 @@ $color-link: (
 }
 
 .menu-main {
-  //display: none;
+  // mobile
   &__container {
+    @include size(100%, 100vh);
     position: fixed;
     top: 0vh;
     background-color: $orange;
-    width: 100%;
-    height: 100vh;
     z-index: z(modal);
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -218,26 +218,28 @@ $color-link: (
       "background-img/png-main-menu_shadows.png",
       white
     ); //doesnt work
-
+    // desktop
     @include for-tablet-portrait-up {
+      height: 10vh;
       background: none;
       background-color: $verylightbeige;
       @include box-shadow($ourshadow, $brown, 0.4);
-      height: 10vh;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto 1fr 1fr;
       grid-template-rows: 1fr;
     }
   }
   &__logo {
+    // mobile
     display: none;
+    // desktop
     @include for-tablet-portrait-up {
       display: block;
     }
   }
   &__link {
-    text-decoration: none;
     @include size(100%, 100%);
     @include centered(h1);
+    text-decoration: none;
     h1 {
       font-size: $font-normal;
       color: $lightbeige;
@@ -267,18 +269,15 @@ $color-link: (
   }
 }
 
+// desktop
 @include for-tablet-portrait-up {
   .about-sub {
     &__container {
       display: grid;
-      //display: none;
       grid-column-gap: 7%;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 0.5fr auto;
       grid-column: 1/-1;
-      // &--1 {
-      //   grid-column: 1/-1;
-      // }
       h2 {
         grid-column: 1/2;
         grid-row: 1/2;
@@ -290,49 +289,6 @@ $color-link: (
         grid-column: 2/3;
         grid-row: 2/3;
       }
-    }
-  }
-}
-
-/* ============================================ */
-/* =============== CONTACT ==================== */
-/* ============================================ */
-
-.contact__shape {
-  position: fixed;
-  width: 35%;
-  height: auto;
-  right: -5vh;
-  bottom: -15vh;
-  opacity: 1;
-  text-shadow: 0px -2px 23px $lightbrown;
-}
-
-.contact {
-  &__link--container {
-    @include for-tablet-portrait-up {
-      position: fixed;
-      width: 30%;
-      height: 50px;
-      right: -5vh;
-      bottom: 5vh;
-      display: grid;
-      grid-template-columns: 1.5fr 5fr 5fr;
-      a:nth-of-type(3) {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        grid-column-gap: 15px;
-        img {
-          align-self: center;
-        }
-      }
-    }
-  }
-  &__link {
-    color: $lightbrown;
-    align-self: center;
-    img {
-      @include size(20px, 20px);
     }
   }
 }

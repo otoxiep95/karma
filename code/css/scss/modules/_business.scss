@@ -67,13 +67,16 @@
       grid-column: 1/-1;
       grid-row: 2/3;
       display: grid;
-      //grid-gap: 0.8rem;
+      grid-gap: 0.8rem;
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1.5fr 1fr;
+      grid-template-rows: max-content max-content;
+
       // desktop
       @include for-tablet-portrait-up {
         padding: 0rem;
         grid-row: 1/2;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1.5fr 1fr;
       }
     }
     &__shape {

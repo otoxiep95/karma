@@ -62,8 +62,6 @@ function initInteraction() {
   if (returnLink && businessPage) {
     returnLink.href = "gallery.html?category=" + catId;
   }
-
-  //galleryItem.addEventListener("click", gotoSubpage);
 }
 
 function openCloseFilterModal(e) {
@@ -120,7 +118,7 @@ function openCloseMapModal() {
 
 function openBurgerMenu() {
   console.log("open burger");
-  burgerModal.style.width = "83vw";
+  burgerModal.style.width = "93vw";
   burgerMenuOpen = true;
   setTimeout(function() {
     linksBurger.forEach(function(link) {

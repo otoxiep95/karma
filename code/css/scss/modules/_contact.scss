@@ -1,5 +1,50 @@
 @import "variables";
 
+/* ============================================ */
+/* =============== CONTACT ==================== */
+/* ============================================ */
+
+// desktop
+.contact__shape {
+  @include size(35%, auto);
+  min-width: 500px;
+  position: fixed;
+  right: -5vh;
+  bottom: -15vh;
+  opacity: 1;
+  text-shadow: 0px -2px 23px $lightbrown;
+}
+
+.contact {
+  &__link {
+    color: $lightbrown;
+    align-self: center;
+    img {
+      @include size(20px, 20px);
+    }
+  }
+  &__link--container {
+    // desktop
+    @include for-tablet-portrait-up {
+      position: fixed;
+      @include size(30%, 50px);
+      min-width: 450px;
+      right: -5vh;
+      bottom: 5vh;
+      display: grid;
+      grid-template-columns: 1.5fr 5fr 5fr;
+      a:nth-of-type(3) {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-column-gap: 15px;
+        img {
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
 .contact-page {
   &__container {
     @include size(100%, 100%);
@@ -8,13 +53,15 @@
     }
   }
   &__form {
-    width: 100%;
-    height: 300px;
+    @include size(100%, 50%);
+    min-height: 300px;
     display: grid;
     grid-template-rows: 0.5fr 3fr;
-    grid-gap: 6.6rem;
+    grid-gap: 3.3rem;
     margin-bottom: 6.6rem;
-    padding-top: 6.6rem;
+    @include for-tablet-portrait-up {
+      padding-top: 9.9rem; // same as h2
+    }
     label {
       @include size(100%, 100%);
       color: $coral;

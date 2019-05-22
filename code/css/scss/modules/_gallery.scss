@@ -11,6 +11,7 @@ body {
 /* =============== GALLERY ==================== */
 /* ============================================ */
 
+// mobile
 .category-display {
   @include size(100vw, 5vh);
   text-align: center;
@@ -27,15 +28,17 @@ body {
 }
 
 .gallery {
-  @include size(100vw, 100vh);
-  margin-top: 5vh;
+  //mobile
+  @include size(100vw, auto);
   background-color: none;
   display: grid;
-  grid-template-rows: repeat(auto-fill, 170px);
+  padding: 5vh 0 7vh 0;
+  // desktop
   @include for-tablet-portrait-up {
-    @include size(100vw, 100vh);
-    margin: 20vh 0vw;
-    grid-template-rows: repeat(auto-fit, minmax(275px, 350px));
+    @include size(100vw, 100vh); // height auto ?
+    overflow-y: scroll; // pb de padding bottom
+    padding: 20vh 0vw;
+    grid-template-rows: repeat(auto-fit, minmax(max-content, 350px));
     grid-template-columns: auto max-content auto max-content auto;
     grid-row-gap: 5%;
   }
@@ -47,16 +50,16 @@ body {
     }
   }
   &__item {
-    // @include size(70vw, 170px);
-    // max-width: 1000px;
-    // min-width: 800px;
+    // mobile
+    min-height: 170px;
     display: grid;
     grid-template-columns: 50% 50%;
+    // desktop
     @include for-tablet-portrait-up {
-      grid-template-columns: 33% 66%;
       @include size(70vw, 100%);
       max-width: 1000px;
-      min-width: 800px;
+      min-width: 1000px;
+      grid-template-columns: 33% 66%;
       @include box-shadow($ourshadow, $brown, 0.4);
       border-radius: 25px;
     }
@@ -65,6 +68,7 @@ body {
       background-size: auto 300px;
       background-position: right;
       background-repeat: no-repeat;
+      // desktop
       @include for-tablet-portrait-up {
         border-radius: 25px;
       }
@@ -150,6 +154,8 @@ body {
   }
   p {
     max-width: 450px;
+    max-height: 100px;
+    overflow-y: scroll;
     @include text($font-small, $line-small, $green);
     padding-bottom: 0;
     color: $coral;
@@ -253,6 +259,10 @@ body {
       width: 36px;
       height: auto;
       margin-bottom: calc(35% - 18px);
+      // desktop
+      @include for-tablet-portrait-up {
+        margin-bottom: 0;
+      }
     }
     &--filter {
       // mobile
@@ -373,7 +383,7 @@ body {
   top: 0;
   bottom: 0;
   right: 0vw;
-  z-index: z(menu);
+  z-index: 50; // plus que bottom
 
   &--link {
     color: $lightbeige;
