@@ -91,8 +91,8 @@
     .gallery__item__infos {
       width: 100%;
       height: 100%;
-      background-color: none;
       padding: 1.2rem;
+      background-color: none;
       text-align: center;
       display: grid;
       grid-template-rows: 1fr 2fr 1.5fr;
@@ -501,16 +501,17 @@
     grid-template-rows: max-content max-content; }
     @media (min-width: 600px) {
       .business__template--header__text {
-        padding: 0rem;
+        padding: 1.6rem;
         grid-row: 1/2;
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1.5fr 1fr; } }
+        grid-template-rows: max-content max-content; } }
   .business__template--header__shape {
     transform: scale(-1);
     position: absolute;
     width: auto;
-    height: 350px;
-    top: 30vh;
+    height: 50%;
+    max-height: 550px;
+    bottom: 30vh;
     left: 0vw;
     z-index: -1; }
   .business__template--header__contact {
@@ -519,16 +520,22 @@
       .business__template--header__contact {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr; }
+        grid-template-rows: 2fr 1fr;
+        grid-gap: 0.8rem;
+        padding: 1.6rem; }
+        .business__template--header__contact p {
+          padding: 0;
+          color: #f7f2eb;
+          font-size: 1.6rem;
+          line-height: 2.6rem; }
         .business__template--header__contact .see-map__link {
           grid-column: 1/2;
           grid-row: 2/3;
           display: inline;
           width: fit-content;
-          align-self: end; }
-          .business__template--header__contact .see-map__link p {
-            width: fit-content;
-            float: left; }
+          align-self: end;
+          font-size: 1.6rem;
+          color: #f7f2eb; }
           .business__template--header__contact .see-map__link img {
             float: right;
             width: 25px;
@@ -556,7 +563,8 @@
               left: 0; }
             .business__template--header__contact .business__contact--link p {
               margin-left: calc(20px + 1.6rem);
-              padding: 0; } }
+              padding: 0;
+              color: #f7f2eb; } }
 
 .business__contact--mobile {
   grid-column: 1/3;
@@ -645,7 +653,9 @@
   @media (min-width: 600px) {
     .business__description {
       padding: 0rem 0vw 0rem 4.2rem;
-      max-width: 550px; } }
+      max-width: 550px;
+      font-size: 2.1rem;
+      line-height: 3.3rem; } }
 
 .business__rate {
   padding: 3vh 3vw;
@@ -661,8 +671,9 @@
       position: relative;
       height: 250px;
       padding: 3.3rem 2.6rem;
-      margin: 10vh auto 10vh 4.2rem;
-      min-width: 550px; } }
+      margin: 10vh auto 10vh 4.2rem; }
+      .business__rate h3 {
+        font-size: 2.1rem; } }
   .business__rate--title {
     padding: 0;
     padding-bottom: 1.6rem;
