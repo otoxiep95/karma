@@ -74,13 +74,15 @@ body {
       }
     }
     &__infos {
+      // mobile
       @include size(100%, 100%);
-      background-color: none;
       padding: 1.2rem;
+      background-color: none;
       text-align: center;
       display: grid;
       grid-template-rows: 1fr 2fr 1.5fr;
       border-radius: 0 50px 50px 0;
+      // desktop
       @include for-tablet-portrait-up {
         padding: 5.3rem 3.3rem 3.3rem;
         text-align: start;
@@ -90,6 +92,7 @@ body {
         grid-column-gap: 3.3rem;
       }
       &--up {
+        // mobile
         grid-row: 1/2;
         .price {
           float: left;
@@ -99,6 +102,7 @@ body {
           float: right;
           font-size: 1.2rem;
         }
+        // desktop
         @include for-tablet-portrait-up {
           grid-column: 2/-1;
           .price,
