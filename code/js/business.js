@@ -172,7 +172,8 @@ function showBusiness(business) {
   businessName.textContent = business.name;
   businessType.textContent = business.type;
   businessImage.style.backgroundImage = "url(" + business.image + ")";
-  businessLongDesc.textContent = business.longDescription;
+  console.log(business.longDescription);
+  businessLongDesc.innerText = business.longDescription;
   //console.log(business.contact.businessAdress);
   contactAdress.textContent = business.contact.adress;
   phoneNumberText.textContent = business.contact.telephoneNumber;
