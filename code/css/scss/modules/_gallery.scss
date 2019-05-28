@@ -33,11 +33,18 @@ body {
   background-color: none;
   display: grid;
   padding: 5vh 0 7vh 0;
+
+  &::after {
+    content: " ";
+    grid-column: 1/-1;
+    height: 300px;
+  }
   // desktop
   @include for-tablet-portrait-up {
-    @include size(100vw, 100vh); // height auto ?
-    overflow-y: scroll; // pb de padding bottom
-    padding: 20vh 0vw;
+    @include size(100vw, auto); // height auto ?
+    //overflow-y: scroll; // pb de padding bottom
+    //padding: 20vh 0vw;
+    margin: 20vh 0;
     grid-template-rows: repeat(auto-fit, minmax(max-content, 350px));
     grid-template-columns: auto max-content auto max-content auto;
     grid-row-gap: 5%;

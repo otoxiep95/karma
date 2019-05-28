@@ -99,6 +99,12 @@ a {
   // }
 }
 
+.phone-only {
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+}
+
 .none {
   display: none;
 }
