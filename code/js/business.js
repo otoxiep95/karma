@@ -11,9 +11,9 @@ const priceSecIcon = document.querySelector(".price .secPrice");
 const priceThirdIcon = document.querySelector(".price .thirdPrice");
 const contactAdress = document.querySelector(".contact__adress");
 const phoneNumberText = document.querySelector(".contact__phone--text");
-const facebookLink = document.querySelector(".facebook--link");
+const facebookLinks = document.querySelectorAll(".facebook--link");
 const facebookLinkText = document.querySelector(".contact__facebook--text");
-const websiteLink = document.querySelector(".website--link");
+const websiteLinks = document.querySelectorAll(".website--link");
 const websiteLinkText = document.querySelector(".contact__website--text");
 
 const rateButtons = document.querySelectorAll(".filter__button--rate a");
@@ -177,9 +177,13 @@ function showBusiness(business) {
   //console.log(business.contact.businessAdress);
   contactAdress.textContent = business.contact.adress;
   phoneNumberText.textContent = business.contact.telephoneNumber;
-  websiteLink.href = business.contact.weblink;
+  websiteLinks.forEach(elLink => {
+    elLink.href = business.contact.weblink;
+  });
   //websiteLinkText.textContent = business.contact.weblink;
-  facebookLink.href = business.contact.fblink;
+  facebookLinks.forEach(elLink => {
+    elLink.href = business.contact.fblink;
+  });
   //facebookLinkText.textContent = business.contact.fblink;
   document.querySelector("[data-distance]").textContent = business.distance;
 
