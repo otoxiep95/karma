@@ -112,8 +112,7 @@ a {
 // padding body general
 
 .launching__container,
-.about-main__container,
-.contact-page__container {
+.about-main__container {
   // mobile
   display: grid;
   grid-template-columns: 1fr;
@@ -272,6 +271,37 @@ $color-link: (
   }
   &__container {
     @include size(100%, auto);
+  }
+}
+
+.about-sub__container {
+  padding: 3vw 3vh;
+  @include for-tablet-portrait-up {
+    padding: 0 5vw;
+  }
+}
+
+.about-sub__business {
+  background-color: $coral;
+  p,
+  h1,
+  h2,
+  h3 {
+    color: $verylightbeige;
+  }
+  .about-sub__text {
+    padding-bottom: 10vh;
+  }
+}
+
+.about-sub__img {
+  @include size(100%, auto);
+  &--1 {
+    transform: translate(-5vw) scaleX(-1);
+    // transform: translate(-5vw);
+  }
+  &--2 {
+    padding: 5%;
   }
 }
 

@@ -211,6 +211,13 @@ $z-layers: (
     @content;
   }
 }
+
+@mixin for-tablet-HD-portrait-up {
+  @media (min-width: 1199px) and (orientation: portrait) {
+    @content;
+  }
+}
+
 @mixin for-tablet-portait-only {
   @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
     @content;

@@ -22,7 +22,7 @@
       padding: $padding-body-desk;
       position: fixed;
       display: grid;
-      grid-template-columns: auto 1fr 1fr auto;
+      grid-template-columns: 5vw 1fr 1fr 5vw;
       grid-gap: 5%;
     }
   }
@@ -31,6 +31,7 @@
     @include size(100%, 20%);
     display: grid;
     grid-template-rows: 1fr auto;
+    position: relative;
     // desktop
     @include for-tablet-portrait-up {
       @include size(100%, fit-content);
@@ -82,11 +83,11 @@
     &__shape {
       transform: scale(-1);
       position: absolute;
-      width: auto;
-      height: 50%;
-      max-height: 550px;
-      bottom: 30vh;
-      left: 0vw; // padding of desktop
+      width: calc(25vw + 120%);
+      height: auto;
+      min-height: 550px;
+      bottom: -25%;
+      left: -25vw;
       z-index: -1;
     }
     &__contact {
@@ -237,7 +238,7 @@
       max-width: 800px;
       margin-top: 100px;
       white-space: inherit;
-      justify-self: end;
+      justify-self: start;
     }
   }
   // hide the scrollbar
@@ -249,7 +250,7 @@
     padding: 2.6rem 3vw 5.2rem 3vw;
     // desktop
     @include for-tablet-portrait-up {
-      padding: 0rem 0vw 0rem 4.2rem;
+      padding: 0rem 0vw 0rem 1.2rem;
       max-width: 550px;
       font-size: $font-normal;
       line-height: $line-normal;
@@ -270,7 +271,7 @@
       position: relative;
       height: 250px;
       padding: 3.3rem 2.6rem;
-      margin: 10vh auto 10vh 4.2rem;
+      margin: 10vh auto 10vh 1.2rem;
       h3 {
         font-size: $font-normal;
       }
@@ -313,7 +314,7 @@
     @include for-tablet-portrait-up {
       @include size(80%, 450px);
       background-color: $lightgreen;
-      margin: 13vh auto 50vh 4.2rem;
+      margin: 13vh auto 50vh 1.2rem;
       border-radius: $round-corner; // doesnt work
 
       @include box-shadow($ourshadow, $brown, 0.4);

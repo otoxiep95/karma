@@ -31,10 +31,10 @@ function openMainMenu() {
 function openAbout() {
   if (screen.width < 600) {
     launchingScreen.style.display = "none";
-    burguerAbout.classList.remove("none");
-    burguerAbout.addEventListener("click", e => {
-      openMainMenu();
-    });
+    document.querySelector(".menu-bottom").classList.remove("none");
+    // burguerAbout.addEventListener("click", e => {
+    //   openMainMenu();
+    // });
   }
   contactScreen.style.display = "grid";
   aboutScreen.style.display = "grid";

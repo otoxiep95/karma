@@ -4,6 +4,20 @@
 /* =============== CONTACT ==================== */
 /* ============================================ */
 
+.contact-page {
+  @include size(100%, 100vh);
+  padding: 3vw 3vh;
+  height: auto;
+  display: grid;
+  // desk
+  @include for-tablet-portrait-up {
+    padding: $padding-body-desk;
+    padding-top: 10vh;
+    @include size(100%, 90vh);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 // desktop
 .contact__shape {
   @include size(35%, auto);
@@ -47,7 +61,7 @@
 
 .contact-page {
   &__container {
-    @include size(100%, 100%);
+    // @include size(100%, 100%);
     @include for-tablet-portrait-up {
       grid-column-gap: 7%;
     }

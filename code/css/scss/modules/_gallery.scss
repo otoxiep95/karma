@@ -7,10 +7,6 @@ body {
   }
 }
 
-/* ============================================ */
-/* =============== GALLERY ==================== */
-/* ============================================ */
-
 // mobile
 .category-display {
   @include size(100vw, 5vh);
@@ -27,33 +23,63 @@ body {
   }
 }
 
+/* ============================================ */
+/* =============== GALLERY ==================== */
+/* ============================================ */
+
 .gallery {
   //mobile
   @include size(100vw, auto);
   background-color: none;
   display: grid;
   padding: 5vh 0 7vh 0;
-
+  // little hack margin bottom gallery
   &::after {
     content: " ";
     grid-column: 1/-1;
-    height: 300px;
+    height: 10vh;
   }
   // desktop
   @include for-tablet-portrait-up {
-    @include size(100vw, auto); // height auto ?
-    //overflow-y: scroll; // pb de padding bottom
-    //padding: 20vh 0vw;
+    @include size(100vw, auto);
     margin: 20vh 0;
-    grid-template-rows: repeat(auto-fit, minmax(max-content, 350px));
-    grid-template-columns: auto max-content auto max-content auto;
+    // grid-template-rows: repeat(auto-fit, minmax(max-content, 350px));
+    //grid-template-rows: repeat(auto-fit, 1fr);
+    // grid-template-columns: auto max-content auto max-content auto;
+    grid-template-columns: 5% 1fr 5% 5%;
+    grid-auto-rows: minmax(35vh, 1fr);
     grid-row-gap: 5%;
+    grid-column-gap: 3%;
   }
   a {
     @include size(100%, 100%);
     grid-column: 1/-1;
+    // desktop
     @include for-tablet-portrait-up {
       grid-column: 2/3;
+    }
+  }
+  // SWITCHING IMG AND INFOS ON MOBILE
+  a:nth-child(odd) {
+    .gallery__item {
+      &__img {
+        grid-column: 2/3;
+        grid-row: 1/-1;
+      }
+      &__infos {
+        grid-column: 1/2;
+        grid-row: 1/-1;
+      }
+      @include for-tablet-portrait-up {
+        &__img {
+          grid-column: 1/2;
+          grid-row: 1/-1;
+        }
+        &__infos {
+          grid-column: 2/3;
+          grid-row: 1/-1;
+        }
+      }
     }
   }
   &__item {
@@ -63,18 +89,22 @@ body {
     grid-template-columns: 50% 50%;
     // desktop
     @include for-tablet-portrait-up {
-      @include size(70vw, 100%);
-      max-width: 1000px;
-      min-width: 1000px;
+      height: 100%;
+      //@include size(70vw, 100%);
+      //height: 35vh;
+      max-width: 1200px;
+      // max-height: 270px; // pb with img
+      // min-width: 1000px;
       grid-template-columns: 33% 66%;
       @include box-shadow($ourshadow, $brown, 0.4);
       border-radius: 25px;
     }
     &__img {
       @include size(auto, 100%);
-      background-size: auto 300px;
-      background-position: right;
+      background-size: cover;
+      background-position: 80% 0%;
       background-repeat: no-repeat;
+      // grid-column: 1/2;
       // desktop
       @include for-tablet-portrait-up {
         border-radius: 25px;
@@ -86,6 +116,7 @@ body {
       padding: 1.2rem;
       background-color: none;
       text-align: center;
+      // grid-column: 2/3;
       display: grid;
       grid-template-rows: 1fr 2fr 1.5fr;
       border-radius: 0 50px 50px 0;
@@ -371,6 +402,7 @@ body {
     }
     &--burger {
       text-align: right;
+      grid-column: 3/4;
     }
     &__img {
       @include size(25%, 100%);
