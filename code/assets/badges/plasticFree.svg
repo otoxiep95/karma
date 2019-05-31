@@ -11,14 +11,7 @@
 </g>
 <g id="svg">
 	<circle fill="#F7F2EB" cx="99.425" cy="99.101" r="94.654"/>
-	<g>
-		<g>
-			<g>
-				<circle fill="none" cx="102.287" cy="314.965" r="74.714"/>
-				<text transform="matrix(0.5731 -0.8195 0.8195 0.5731 36.6699 278.416)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462">E</tspan><tspan x="13.466" y="-0.149" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="10.031">T</tspan><tspan x="27.321" y="2.019" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="22.219">H</tspan><tspan x="43.623" y="9.124" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="31.393">I</tspan><tspan x="49.146" y="12.038" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="39.78">C</tspan><tspan x="61.196" y="21.842" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="52.152">A</tspan><tspan x="71.583" y="35.439" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="63.52">L</tspan></text>
-			</g>
-		</g>
-	</g>
+	
 	<g>
 		<g>
 			<path fill="#A88267" d="M26.193,115.327c-2.574-13.912-1.066-27.652,3.668-39.985c-0.9-0.329-1.686-0.825-2.486-1.295
@@ -110,8 +103,5 @@
 		</g>
 	</g>
 </g>
-<g id="bg">
-</g>
-<g id="ui">
-</g>
+
 </svg>

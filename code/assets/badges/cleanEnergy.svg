@@ -11,13 +11,7 @@
 </g>
 <g id="svg">
 	<circle fill="#F7F2EB" cx="99.425" cy="99.101" r="94.654"/>
-	<g>
-		<g>
-			<path fill="none" d="M188.514-95.988c9.955-49.197-21.855-97.146-71.049-107.1c-49.195-9.953-97.145,21.859-107.098,71.054
-				C0.416-82.84,32.227-34.893,81.42-24.938C130.617-14.984,178.564-46.796,188.514-95.988z"/>
-			<text transform="matrix(0.9905 0.1375 -0.1375 0.9905 80.457 -24.8936)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619">F</tspan><tspan x="15.192" y="-0.032" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-10.512">R</tspan><tspan x="32.561" y="-3.714" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-18.709">I</tspan><tspan x="40.108" y="-6.117" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-25.994">E</tspan><tspan x="54.364" y="-13.092" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-37.106">N</tspan><tspan x="69.99" y="-25.208" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-49.522">D</tspan><tspan x="82.436" y="-40.419" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-60.431">L</tspan><tspan x="89.657" y="-53.312" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.4619" rotate="-70.299">Y</tspan></text>
-		</g>
-	</g>
+	
 	<path fill="#F4AFAB" d="M90.825,99.603c-3.597,0-6.514-2.917-6.514-6.514c0-3.596,2.917-6.512,6.513-6.512
 		c3.597,0,6.514,2.916,6.514,6.512C97.334,96.684,94.42,99.596,90.825,99.603z"/>
 	<g>
@@ -106,12 +100,7 @@
 			c-0.02,1.139,0.134,2.27,0.148,3.355c37,9.986,63.934,44.236,63.059,84.229c-0.171,7.734-1.375,15.207-3.47,22.294
 			C180.9,125.684,182.014,125.675,183.099,125.748z"/>
 	</g>
-	<g>
-		<g>
-			<circle fill="none" cx="102.223" cy="316.362" r="73.283"/>
-			<text transform="matrix(0.357 -0.9341 0.9341 0.357 31.252 296.7441)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197">E</tspan><tspan x="13.085" y="-0.395" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="12.348">M</tspan><tspan x="31.643" y="4.179" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="22.139">I</tspan><tspan x="37.381" y="6.157" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="30.186">S</tspan><tspan x="49.758" y="13.274" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="41.357">S</tspan><tspan x="60.432" y="23.01" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="49.345">I</tspan><tspan x="64.751" y="27.245" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="58.53">O</tspan><tspan x="73.933" y="42.142" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="71.822">N</tspan><tspan x="79.116" y="58.081" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.5197" rotate="83.957">S</tspan></text>
-		</g>
-	</g>
+	
 </g>
 <g id="bg">
 </g>

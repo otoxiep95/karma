@@ -182,14 +182,7 @@
 			c0,7.646-1.027,15.053-2.943,22.1c1.112-0.036,2.211-0.071,3.283-0.021c1.842-7.056,2.826-14.454,2.826-22.078
 			C190.385,73.372,175.916,47.409,153.756,31.531z"/>
 	</g>
-	<g>
-		<path fill="none" d="M142.504,253.237c34.406,23.243,43.457,69.979,20.213,104.389c-23.246,34.408-69.982,43.455-104.389,20.211
-			c-34.412-23.244-43.459-69.979-20.213-104.388C61.359,239.04,108.096,229.991,142.504,253.237z"/>
-		<text transform="matrix(0.6866 -0.7271 0.7271 0.6866 40.1836 269.7939)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462">C</tspan><tspan x="15.646" y="0.073" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="10.838">L</tspan><tspan x="28.138" y="2.367" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="20.842">E</tspan><tspan x="40.788" y="6.902" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="32.395">A</tspan><tspan x="55.249" y="15.95" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1462" rotate="45.31">N</tspan></text>
-	</g>
+
 </g>
-<g id="bg">
-</g>
-<g id="ui">
-</g>
+
 </svg>

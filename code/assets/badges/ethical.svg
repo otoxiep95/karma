@@ -128,14 +128,7 @@
 				C113.001,82.289,102.489,88.472,99.166,90.183z"/>
 		</g>
 	</g>
-	<g>
-		<g>
-			<g>
-				<circle fill="none" cx="98.33" cy="317.532" r="73.47"/>
-				<text transform="matrix(0.4891 -0.8722 0.8722 0.4891 30.3906 288.4707)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487">R</tspan><tspan x="14.933" y="0.045" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="10.558">E</tspan><tspan x="27.328" y="2.197" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="21.148">C</tspan><tspan x="40.905" y="7.446" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="32.055">Y</tspan><tspan x="52.219" y="14.386" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="42.834">C</tspan><tspan x="62.866" y="24.347" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="53.047">L</tspan><tspan x="70.058" y="33.769" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="62.525">E</tspan><tspan x="76.082" y="44.818" fill="#A88267" font-family="'Nunito-Bold'" font-size="22.4487" rotate="73.767">D</tspan></text>
-			</g>
-		</g>
-	</g>
+	
 </g>
 <g id="bg">
 </g>

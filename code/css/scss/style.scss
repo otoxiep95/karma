@@ -69,6 +69,7 @@ p {
 }
 
 a {
+  cursor: pointer;
   @include links($font-normal, $coral);
   @include size(fit-content, fit-content);
 }
@@ -278,6 +279,17 @@ $color-link: (
   padding: 3vw 3vh;
   @include for-tablet-portrait-up {
     padding: 0 5vw;
+    &--4 {
+      padding: 0 10vw;
+    }
+  }
+  &--4 {
+    p {
+      a {
+        color: $verylightbeige;
+        border-bottom: solid 2px $verylightbeige;
+      }
+    }
   }
 }
 
@@ -298,7 +310,7 @@ $color-link: (
   @include size(100%, auto);
   &--1 {
     transform: translate(-5vw) scaleX(-1);
-    // transform: translate(-5vw);
+    max-width: 650px;
   }
   &--2 {
     padding: 5%;

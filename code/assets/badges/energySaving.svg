@@ -11,14 +11,7 @@
 </g>
 <g id="svg">
 	<circle fill="#F7F2EB" cx="99.425" cy="99.101" r="94.654"/>
-	<g>
-		<g>
-		</g>
-	</g>
-	<g>
-		<circle fill="none" cx="96.627" cy="-115.183" r="91.826"/>
-		<text transform="matrix(0.9886 0.1508 -0.1508 0.9886 76.1113 -25.4219)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072">F</tspan><tspan x="15.683" y="-0.04" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-10.725">R</tspan><tspan x="33.583" y="-3.919" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-19.106">I</tspan><tspan x="41.371" y="-6.459" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-26.548">E</tspan><tspan x="56.017" y="-13.81" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-37.898">N</tspan><tspan x="71.978" y="-26.564" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-50.593">D</tspan><tspan x="84.517" y="-42.514" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-61.747">L</tspan><tspan x="91.669" y="-56.026" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.1072" rotate="-71.847">Y</tspan></text>
-	</g>
+	
 	<g>
 		<g>
 			<path fill="#EFD4A8" d="M138.868,88.133c-0.009-16.192-11.641-30.041-27.588-32.846c-15.946-2.807-31.606,6.241-37.142,21.456
@@ -91,14 +84,7 @@
 				C181.093,126.842,182.213,126.834,183.304,126.907z"/>
 		</g>
 	</g>
-	<g>
-		<g>
-			<g>
-				<circle fill="none" cx="102.017" cy="316.424" r="73.802"/>
-				<text transform="matrix(0.5799 -0.8147 0.8147 0.5799 37.5342 279.75)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.686">S</tspan><tspan x="14.383" y="-0.021" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.686" rotate="10.653">E</tspan><tspan x="27.429" y="2.258" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.686" rotate="21.786">C</tspan><tspan x="41.655" y="7.705" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.686" rotate="34.484">O</tspan><tspan x="56.212" y="17.644" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.686" rotate="47.737">N</tspan><tspan x="67.646" y="30.071" fill="#A88267" font-family="'Nunito-Bold'" font-size="23.686" rotate="60.821">D</tspan></text>
-			</g>
-		</g>
-	</g>
+	
 </g>
 <g id="bg">
 </g>

@@ -119,6 +119,11 @@
             width: 25px;
             margin-left: 1.6rem;
           }
+          @include for-tablet-portrait-up {
+            img:nth-of-type(1) {
+              display: none;
+            }
+          }
         }
         .business__contact {
           // desktop

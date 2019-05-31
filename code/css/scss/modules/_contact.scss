@@ -9,6 +9,7 @@
   padding: 3vw 3vh;
   height: auto;
   display: grid;
+  grid-column: 1/-1;
   // desk
   @include for-tablet-portrait-up {
     padding: $padding-body-desk;
@@ -16,12 +17,52 @@
     @include size(100%, 90vh);
     grid-template-columns: 1fr 1fr;
   }
+  &__item {
+    @include for-tablet-portrait-up {
+      padding-top: 10vh;
+    }
+  }
+}
+
+.contact-page__item--2 {
+  @include size(fit-content, fit-content);
+  @include for-tablet-portrait-up {
+    padding-top: calc(6 * 3.3rem);
+    padding-bottom: calc(2 * 3.3rem);
+    justify-self: center;
+  }
+  div {
+    @include size(fit-content, fit-content);
+    display: grid;
+    grid-template-columns: max-content max-content;
+    a {
+      grid-column: 2/3;
+      place-self: center;
+      @include size(auto, 45px);
+
+      img {
+        @include size(auto, 100%);
+      }
+    }
+  }
+  p {
+    grid-column: 1/2;
+    padding-top: 3.3rem;
+    padding-bottom: 1.6rem;
+  }
+  a:nth-of-type(1) {
+    font-size: $font-xl;
+  }
+
+  a {
+    display: block;
+  }
 }
 
 // desktop
 .contact__shape {
   @include size(35%, auto);
-  min-width: 500px;
+  min-width: 650px;
   position: fixed;
   right: -5vh;
   bottom: -15vh;

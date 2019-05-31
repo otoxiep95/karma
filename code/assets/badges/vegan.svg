@@ -87,15 +87,7 @@
 			c0.003,1.14,0.181,2.264,0.221,3.347c37.147,9.161,64.78,42.757,64.78,82.694c0,7.725-1.039,15.207-2.976,22.329
 			C183.41,124.145,184.521,124.111,185.606,124.161z"/>
 	</g>
-	<g>
-		<g>
-			<circle fill="none" cx="100.108" cy="316.901" r="76.166"/>
-			<text transform="matrix(0.6704 -0.742 0.742 0.6704 38.46 271.5088)"><tspan x="0" y="0" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.2782">S</tspan><tspan x="14.685" y="-0.22" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.2782" rotate="12.012">A</tspan><tspan x="31.477" y="3.296" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.2782" rotate="24.653">V</tspan><tspan x="46.483" y="10.262" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.2782" rotate="35.879">E</tspan><tspan x="57.641" y="17.989" fill="#A88267" font-family="'Nunito-Bold'" font-size="24.2782" rotate="47.474">D</tspan></text>
-		</g>
-	</g>
+	
 </g>
-<g id="bg">
-</g>
-<g id="ui">
-</g>
+
 </svg>
