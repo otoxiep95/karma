@@ -138,6 +138,7 @@ function closeBurgerMenu() {
 }
 
 let ratePageOpen = false;
+let rateAgainOpen = false;
 let msgModalOpen = false;
 
 function openRatePage(e) {
@@ -148,6 +149,7 @@ function openRatePage(e) {
   opacityNo(filterMenu);
   rateLink.style.display = "none";
   msgModalOpen = false;
+  rateAgainOpen = false;
   ratePageOpen = true;
 
   rangeThumb.style.backgroundImage =
@@ -155,19 +157,33 @@ function openRatePage(e) {
 
   setTimeout(function() {
     rateIntro.style.display = "none";
+    document.querySelector(".rate__again").style.display = "none";
     filterMenu.style.display = "none";
     rateNextButton.style.display = "block";
     goBackRate.style.display = "block";
   }, 1000);
 }
+function openRateAgain() {
+  document.querySelector(".rate__again").style.display = "block";
+  document.querySelector(".rate-again-link--next").style.display = "block";
+  rateNextButton.style.display = "none";
+  document.querySelectorAll(".button__submit--rating").forEach(button => {
+    button.style.display = "none";
+  });
+  rateAgainOpen = true;
+  ratePageOpen = false;
+  msgModalOpen = false;
+}
 
 function openMsgModal() {
   document.querySelector(".rate__conclusion").style.display = "block";
   rateNextButton.style.display = "none";
+  document.querySelector(".rate-again-link--next").style.display = "none";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "block";
   });
   ratePageOpen = false;
+  rateAgainOpen = false;
   msgModalOpen = true;
 }
 
@@ -177,11 +193,14 @@ if (goBackRate) {
 }
 
 function goBack() {
-  document.querySelector(".rate__conclusion").style.display = "none";
-  rateNextButton.style.display = "none";
+  console.log("HELLLOOOOOOOOOOOO");
+  document.querySelector(".rate__again").style.display = "none";
+  document.querySelector(".rate-again-link--next").style.display = "none";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "none";
   });
+  document.querySelector(".badge--selected").classList.add("badge--voted");
+  document.querySelector(".badge--voted").classList.remove("badge--selected");
   rateIntro.style.display = "block";
   rateIntro.style.opacity = "1";
   filterMenu.style.display = "block";

@@ -96,12 +96,22 @@ document.querySelector(".rate-link--next").addEventListener("click", e => {
     if (element.name === selectedBadge) {
       element.rate = rateFinal;
       element.votes = 1;
+      document.querySelector(".current-badge__rate--img").src =
+        "../assets/badges/" + element.name + ".svg";
+      document.querySelector(".current-badge__rate--msg").textContent =
+        rangeKeyWord.textContent;
     }
   });
+
   console.log(badges);
   console.log(userRates);
-  openMsgModal();
+  openRateAgain();
+  //openMsgModal();
 });
+
+document
+  .querySelector(".rate-again-link--next")
+  .addEventListener("click", openMsgModal);
 
 const submitButtons = document.querySelectorAll(".button__submit--rating");
 
