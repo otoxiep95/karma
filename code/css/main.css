@@ -27,6 +27,18 @@
 .underline {
   border-bottom: 2px solid #e2685b; }
 
+.blink {
+  animation: blinkAnim 1s forwards; }
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 0.4; } }
+
 .category-display {
   width: 100vw;
   height: 5vh;
@@ -452,6 +464,18 @@
 .underline {
   border-bottom: 2px solid #e2685b; }
 
+.blink {
+  animation: blinkAnim 1s forwards; }
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 0.4; } }
+
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
@@ -790,6 +814,18 @@
 
 .underline {
   border-bottom: 2px solid #e2685b; }
+
+.blink {
+  animation: blinkAnim 1s forwards; }
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 0.4; } }
 
 /* COLORS */
 /* STYLE ELEMENTS */

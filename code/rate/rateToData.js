@@ -50,6 +50,11 @@ function clickedBadge(element) {
     badgeButton.classList.remove("badge--selected");
   });
   console.log(selectedBadge);
+
+  let rateLinkText = rateLink.firstChild;
+  console.log(rateLink);
+  rateLink.classList.remove("blink");
+  rateLink.classList.add("blink");
   element.classList.add("badge--selected");
 }
 
@@ -61,6 +66,7 @@ rateLink.addEventListener("click", e => {
   if (selectedBadge != "") {
     console.log("badge selected");
     openRatePage(e);
+  } else {
   }
 });
 
