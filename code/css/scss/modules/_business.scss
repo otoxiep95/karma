@@ -5,6 +5,14 @@
 /* =============== GENERAL ==================== */
 /* ============================================ */
 
+#myClip {
+  -webkit-transform: scale(0.004195862879, 0.005554321262);
+  transform: scale(0.004195862879, 0.005554321262);
+}
+// makes the clipMask shape units translated for responsiveness
+// for making it work on every browser, has to convert path points into decimals ( from 0 to 1 )
+// see => https://stackoverflow.com/questions/44090167/how-to-use-svg-clippathunits-objectboundingbox
+
 /* ============================================ */
 /* =============== BUSINESS =================== */
 /* ============================================ */
@@ -50,6 +58,7 @@
       grid-column: 1/-1;
       grid-row: 1/2;
       clip-path: url(#myClip);
+      -webkit-clip-path: url(#myClip);
       // desktop
       @include for-tablet-portrait-up {
         @include size(100%, auto);

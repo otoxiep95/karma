@@ -43,20 +43,19 @@ h2 {
 }
 
 h3 {
-  @include title($font-normal, $line-small, $lightbeige);
-  @include for-tablet-portrait-up {
-    @include title($font-large, $line-Xsmall, $green);
+  @include text($font-normal, $line-small, $coral);
+
+  @include for-tablet-landscape-up {
+    @include text($font-large, $line-large, $coral);
   }
 }
 
 h4 {
-  font-size: $font-small;
-  line-height: $line-small;
-  color: $lightbeige;
-  font-weight: 600;
+  @include text($font-small, $line-small, $coral);
+
   font-style: italic;
-  @include for-tablet-portrait-up {
-    @include title($font-normal, $line-Xsmall, $green);
+  @include for-tablet-landscape-up {
+    @include text($font-normal, $line-normal, $coral);
   }
 }
 
@@ -252,6 +251,9 @@ $color-link: (
       font-weight: 400;
       padding: 0;
       @include for-tablet-portrait-up {
+        @include links($font-xs-small, $coral);
+      }
+      @include for-tablet-landscape-up {
         @include links($font-small, $coral);
       }
     }

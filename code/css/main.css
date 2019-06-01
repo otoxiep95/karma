@@ -56,6 +56,12 @@
     height: 10vh; }
   @media (min-width: 600px) {
     .gallery {
+      grid-template-columns: 2% 1fr 2% 2%;
+      grid-row-gap: 3%;
+      grid-column-gap: 3%;
+      margin: 10vh 0; } }
+  @media (min-width: 900px) and (orientation: landscape) {
+    .gallery {
       width: 100vw;
       height: auto;
       margin: 20vh 0;
@@ -114,6 +120,14 @@
       border-radius: 0 50px 50px 0; }
       @media (min-width: 600px) {
         .gallery__item__infos {
+          padding: 3.3rem 2.6rem 2.6rem;
+          text-align: start;
+          grid-template-rows: 1fr 1fr 2fr;
+          grid-template-columns: 2fr 1fr;
+          grid-gap: 2.1rem;
+          grid-column-gap: 3.3rem; } }
+      @media (min-width: 900px) and (orientation: landscape) {
+        .gallery__item__infos {
           padding: 5.3rem 3.3rem 3.3rem;
           text-align: start;
           grid-template-rows: 1fr 1fr 2fr;
@@ -154,23 +168,17 @@
 /* ============================================ */
 /* =============== STYLE TEXT ================= */
 /* ============================================ */
-.gallery__item__infos--text h3 {
-  color: #e2685b;
-  padding-top: 0; }
-  @media (max-width: 599px) {
-    .gallery__item__infos--text h3 {
-      padding: 0;
-      font-size: 1.6rem;
-      line-height: inherit; } }
+@media (max-width: 599px) {
+  .gallery__item__infos--text h3 {
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: inherit; } }
 
-.gallery__item__infos--text h4 {
-  color: #e2685b;
-  padding-top: 0; }
-  @media (max-width: 599px) {
-    .gallery__item__infos--text h4 {
-      padding: 0;
-      font-size: 1.4rem;
-      line-height: inherit; } }
+@media (max-width: 599px) {
+  .gallery__item__infos--text h4 {
+    padding: 0;
+    font-size: 1.4rem;
+    line-height: inherit; } }
 
 .gallery__item__infos--text p {
   max-width: 450px;
@@ -180,7 +188,7 @@
   font-size: 1.6rem;
   line-height: 2.6rem;
   font-weight: 600;
-  padding-bottom: 2.6rem;
+  padding-bottom: calc(2.6rem / 2);
   padding-bottom: 0;
   color: #e2685b; }
 
@@ -455,6 +463,10 @@
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
+#myClip {
+  -webkit-transform: scale(0.0042, 0.00555);
+  transform: scale(0.0042, 0.00555); }
+
 /* ============================================ */
 /* =============== BUSINESS =================== */
 /* ============================================ */
@@ -495,7 +507,8 @@
     background-position: no-repeat;
     grid-column: 1/-1;
     grid-row: 1/2;
-    clip-path: url(#myClip); }
+    clip-path: url(#myClip);
+    -webkit-clip-path: url(#myClip); }
     @media (min-width: 600px) {
       .business__template--header__img {
         width: 100%;
@@ -1002,7 +1015,7 @@
     font-size: 2.1rem;
     line-height: 2.1rem;
     font-weight: 600;
-    padding-bottom: 2.1rem;
+    padding-bottom: calc(2.1rem / 2);
     list-style-type: none; }
 
 .button__submit,
@@ -1282,42 +1295,40 @@ h2 {
       padding-bottom: calc(2 * 3.3rem); } }
 
 h3 {
-  color: #f9ecd7;
+  color: #e2685b;
   font-size: 2.1rem;
-  font-weight: 700;
   line-height: 2.6rem;
-  padding-top: calc(3 * 2.6rem);
-  padding-bottom: calc(2 * 2.6rem); }
-  @media (min-width: 600px) {
+  font-weight: 600;
+  padding-bottom: calc(2.6rem / 2); }
+  @media (min-width: 900px) and (orientation: landscape) {
     h3 {
-      color: #6b927a;
+      color: #e2685b;
       font-size: 2.7rem;
-      font-weight: 700;
-      line-height: 1.6rem;
-      padding-top: calc(3 * 1.6rem);
-      padding-bottom: calc(2 * 1.6rem); } }
+      line-height: 3.3rem;
+      font-weight: 600;
+      padding-bottom: calc(3.3rem / 2); } }
 
 h4 {
+  color: #e2685b;
   font-size: 1.6rem;
   line-height: 2.6rem;
-  color: #f9ecd7;
   font-weight: 600;
+  padding-bottom: calc(2.6rem / 2);
   font-style: italic; }
-  @media (min-width: 600px) {
+  @media (min-width: 900px) and (orientation: landscape) {
     h4 {
-      color: #6b927a;
+      color: #e2685b;
       font-size: 2.1rem;
-      font-weight: 700;
-      line-height: 1.6rem;
-      padding-top: calc(3 * 1.6rem);
-      padding-bottom: calc(2 * 1.6rem); } }
+      line-height: 3.3rem;
+      font-weight: 600;
+      padding-bottom: calc(3.3rem / 2); } }
 
 p {
   color: #e2685b;
   font-size: 1.6rem;
   line-height: 2.6rem;
   font-weight: 600;
-  padding-bottom: 2.6rem;
+  padding-bottom: calc(2.6rem / 2);
   width: fit-content;
   height: fit-content; }
   @media (min-width: 600px) {
@@ -1326,7 +1337,7 @@ p {
       font-size: 2.1rem;
       line-height: 3.3rem;
       font-weight: 600;
-      padding-bottom: 3.3rem; } }
+      padding-bottom: calc(3.3rem / 2); } }
 
 a {
   cursor: pointer;
@@ -1535,6 +1546,11 @@ a {
     font-weight: 400;
     padding: 0; }
     @media (min-width: 600px) {
+      .menu-main__link h1 {
+        text-decoration: none;
+        color: #e2685b;
+        font-size: 1.2rem; } }
+    @media (min-width: 900px) and (orientation: landscape) {
       .menu-main__link h1 {
         text-decoration: none;
         color: #e2685b;

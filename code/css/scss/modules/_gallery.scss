@@ -39,13 +39,18 @@ body {
     grid-column: 1/-1;
     height: 10vh;
   }
-  // desktop
+  // tablet
   @include for-tablet-portrait-up {
+    grid-template-columns: 2% 1fr 2% 2%;
+    grid-row-gap: 3%;
+    grid-column-gap: 3%;
+    margin: 10vh 0;
+    // grid-auto-rows: minmax(25vh, 1fr);
+  }
+  // desktop
+  @include for-tablet-landscape-up {
     @include size(100vw, auto);
     margin: 20vh 0;
-    // grid-template-rows: repeat(auto-fit, minmax(max-content, 350px));
-    //grid-template-rows: repeat(auto-fit, 1fr);
-    // grid-template-columns: auto max-content auto max-content auto;
     grid-template-columns: 5% 1fr 5% 5%;
     grid-auto-rows: minmax(35vh, 1fr);
     grid-row-gap: 5%;
@@ -116,12 +121,20 @@ body {
       padding: 1.2rem;
       background-color: none;
       text-align: center;
-      // grid-column: 2/3;
       display: grid;
       grid-template-rows: 1fr 2fr 1.5fr;
       border-radius: 0 50px 50px 0;
-      // desktop
+      //tablet
       @include for-tablet-portrait-up {
+        padding: 3.3rem 2.6rem 2.6rem;
+        text-align: start;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 2.1rem;
+        grid-column-gap: 3.3rem;
+      }
+      // desktop
+      @include for-tablet-landscape-up {
         padding: 5.3rem 3.3rem 3.3rem;
         text-align: start;
         grid-template-rows: 1fr 1fr 2fr;
@@ -182,8 +195,8 @@ body {
       font-size: 1.6rem;
       line-height: inherit;
     }
-    color: $coral;
-    padding-top: 0;
+    // color: $coral;
+    // padding-top: 0;
   }
   h4 {
     @include for-phone-only {
@@ -191,8 +204,8 @@ body {
       font-size: 1.4rem;
       line-height: inherit;
     }
-    color: $coral;
-    padding-top: 0;
+    // color: $coral;
+    // padding-top: 0;
   }
   p {
     max-width: 450px;

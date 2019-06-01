@@ -59,6 +59,8 @@ $font-large: 2.7rem;
 $font-normal: 2.1rem;
 // body mobile
 $font-small: 1.6rem;
+// link tablet
+$font-xs-small: 1.2rem;
 
 /* FONT WEIGHT */
 
@@ -118,7 +120,7 @@ $transition-super-slow: all ease 3s;
   font-size: $size;
   line-height: $line-height;
   font-weight: $semibold;
-  padding-bottom: $line-height;
+  padding-bottom: calc(#{$line-height} / 2);
 }
 
 @mixin liste($size, $color) {
@@ -224,7 +226,7 @@ $z-layers: (
   }
 }
 @mixin for-tablet-landscape-up {
-  @media (min-width: 900px) {
+  @media (min-width: 900px) and (orientation: landscape) {
     @content;
   }
 }
