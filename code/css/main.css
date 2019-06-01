@@ -27,6 +27,18 @@
 .underline {
   border-bottom: 2px solid #e2685b; }
 
+.blink {
+  animation: blinkAnim 1s forwards; }
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 0.4; } }
+
 .category-display {
   width: 100vw;
   height: 5vh;
@@ -460,6 +472,18 @@
 .underline {
   border-bottom: 2px solid #e2685b; }
 
+.blink {
+  animation: blinkAnim 1s forwards; }
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 0.4; } }
+
 /* ============================================ */
 /* =============== GENERAL ==================== */
 /* ============================================ */
@@ -808,6 +832,18 @@
 .underline {
   border-bottom: 2px solid #e2685b; }
 
+.blink {
+  animation: blinkAnim 1s forwards; }
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 0.4; } }
+
 /* COLORS */
 /* STYLE ELEMENTS */
 /* -------------GENERAL STYLE SHEET----------------- */
@@ -979,15 +1015,19 @@
     .rate__intro--title {
       display: none; } }
 
+.rate__again,
 .rate__conclusion {
   display: none; }
+  .rate__again--explanation,
   .rate__conclusion--explanation {
     padding: 0; }
+  .rate__again h2,
   .rate__conclusion h2 {
     color: #d0ad8e;
     padding: 0 0 1.6rem 0; }
 
 .rate__intro,
+.rate__again,
 .rate__conclusion {
   width: 100%;
   height: 100%;
@@ -998,18 +1038,22 @@
   background-color: #f7f2eb;
   z-index: 10; }
   .rate__intro--title,
+  .rate__again--title,
   .rate__conclusion--title {
     font-size: 2.7rem;
     line-height: 3.3rem;
     padding: 0 0 1.6rem 0; }
   .rate__intro--business,
+  .rate__again--business,
   .rate__conclusion--business {
     padding: 0; }
     @media (min-width: 600px) {
       .rate__intro--business,
+      .rate__again--business,
       .rate__conclusion--business {
         display: none; } }
   .rate__intro li,
+  .rate__again li,
   .rate__conclusion li {
     color: #e2685b;
     font-size: 2.1rem;
@@ -1035,6 +1079,9 @@
   display: none; }
 
 .rate-link--next {
+  display: none; }
+
+.rate-again-link--next {
   display: none; }
 
 .rate-link {
@@ -1102,6 +1149,9 @@
 .badge--selected {
   background-color: #d0ad8e;
   border: solid 3px #d0ad8e; }
+
+.badge--voted {
+  opacity: 0.4; }
 
 .menu-bottom__link--rate {
   display: none; }

@@ -199,7 +199,7 @@
     }
   }
 }
-
+.rate__again,
 .rate__conclusion {
   display: none;
 
@@ -213,6 +213,7 @@
 }
 
 .rate__intro,
+.rate__again,
 .rate__conclusion {
   @include size(100%, 100%);
   padding: 6.6rem 1.6rem 1.6rem 1.6rem;
@@ -261,6 +262,9 @@
 }
 
 .rate-link--next {
+  display: none;
+}
+.rate-again-link--next {
   display: none;
 }
 
@@ -333,6 +337,9 @@
 .badge--selected {
   background-color: $brown;
   border: solid 3px $brown;
+}
+.badge--voted {
+  opacity: 0.4;
 }
 
 .menu-bottom__link--rate {

@@ -9,3 +9,20 @@
 .underline {
   border-bottom: 2px solid $coral;
 }
+
+.blink {
+  animation: blinkAnim 1s forwards;
+}
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.4;
+  }
+}

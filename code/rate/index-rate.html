@@ -80,18 +80,17 @@
         <!--============ END RATE INTRO ================-->
 
         <!--////////////////////////////////////////////-->
-        <!--============= RATE CONCLUSION ==============-->
+        <!--============= RATE AGAIN ==============-->
         <!--////////////////////////////////////////////-->
-        <div class="rate__conclusion">
-          <h1 class="rate__conclusion--title">
-            Thank you for sharing your experience with
-            <span class="rate__content__business rate__business__name"
-              >Name</span
-            >
-          </h1>
+        <div class="rate__again">
+          <h2>Your rate for the category <span></span> has been saved</h2>
 
-          <!-- <h1 class="rate__conclusion--business rate__business__name">NAME</h1> -->
-          <h2 class="rate__conclusion--explanation">
+          <div class="current-badge__rate">
+            <img class="current-badge__rate--img" src="" alt="" />
+            <div><h2 class="current-badge__rate--msg"></h2></div>
+          </div>
+
+          <h2 class="rate__again--explanation">
             Do you want to rate for another category ?
           </h2>
 
@@ -103,6 +102,19 @@
             />
             <p>Rate Again</p>
           </div>
+        </div>
+        <!--////////////////////////////////////////////-->
+        <!--============= RATE CONCLUSION ==============-->
+        <!--////////////////////////////////////////////-->
+        <div class="rate__conclusion">
+          <h1 class="rate__conclusion--title">
+            Thank you for sharing your experience with
+            <span class="rate__content__business rate__business__name"
+              >Name</span
+            >
+          </h1>
+
+          <!-- <h1 class="rate__conclusion--business rate__business__name">NAME</h1> -->
 
           <h2 class="rate__conclusion--explanation">
             Explain your opinion to
@@ -112,6 +124,7 @@
           </h2>
           <input type="textarea" />
         </div>
+
         <!--========== END RATE CONCLUSION =============-->
 
         <!--////////////////////////////////////////////-->
@@ -318,6 +331,9 @@
               />
             </div>
             <div class="button__submit rate-link--next"><h3>Next</h3></div>
+            <div class="button__submit rate-again-link--next">
+              <h3>Next</h3>
+            </div>
             <div class="button__submit--rating"><h3>Send</h3></div>
             <div class="button__submit--rating no-msg">
               <p>I don't need to send a message</p>
