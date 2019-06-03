@@ -39,6 +39,10 @@ function dragEnd(e) {
   initialY = currentY;
 
   active = false;
+
+  document.querySelector(".rate-link--next").classList.remove("blink");
+  void document.querySelector(".rate-link--next").offsetWidth;
+  document.querySelector(".rate-link--next").classList.add("blink");
 }
 
 function drag(e) {

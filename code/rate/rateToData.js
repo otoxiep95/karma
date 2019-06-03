@@ -39,9 +39,17 @@ const userRates = [
 ];
 
 badgeButtons.forEach(element => {
-  element.addEventListener("click", e => {
-    clickedBadge(element);
-  });
+  element.addEventListener(
+    "click",
+    e => {
+      clickedBadge(element);
+
+      rateLink.classList.remove("blink");
+      void rateLink.offsetWidth;
+      rateLink.classList.add("blink");
+    },
+    false
+  );
 });
 
 function clickedBadge(element) {
@@ -51,10 +59,6 @@ function clickedBadge(element) {
   });
   console.log(selectedBadge);
 
-  let rateLinkText = rateLink.firstChild;
-  console.log(rateLink);
-  rateLink.classList.remove("blink");
-  rateLink.classList.add("blink");
   element.classList.add("badge--selected");
 }
 
@@ -62,13 +66,23 @@ function clickedBadge(element) {
 // after having a category go to rating
 let rateLink = document.querySelector(".rate-link");
 
-rateLink.addEventListener("click", e => {
-  if (selectedBadge != "") {
-    console.log("badge selected");
-    openRatePage(e);
-  } else {
-  }
-});
+rateLink.addEventListener(
+  "click",
+  e => {
+    e.preventDefault();
+    if (selectedBadge != "") {
+      console.log("badge selected");
+      openRatePage(e);
+    } else {
+      badgeButtons.forEach(badge => {
+        badge.classList.remove("blink");
+        void badge.offsetWidth;
+        badge.classList.add("blink");
+      });
+    }
+  },
+  false
+);
 
 function init() {
   console.log(rateFinal);

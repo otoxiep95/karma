@@ -286,6 +286,12 @@
     font-weight: 400;
     color: $coral;
   }
+  p {
+    width: fit-content;
+    color: $coral;
+    padding: 1px;
+    border-bottom: 2px solid $coral;
+  }
   img {
     float: right;
   }
