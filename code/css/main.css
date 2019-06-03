@@ -30,6 +30,9 @@
 .blink {
   animation: blinkAnim 1s forwards; }
 
+.showUpGallery {
+  animation: fadeUp 0.6s forwards; }
+
 @keyframes blinkAnim {
   0% {
     opacity: 0.3; }
@@ -38,6 +41,13 @@
     transform: scale(1.2); }
   100% {
     opacity: 0.4; } }
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .category-display {
   width: 100vw;
@@ -475,6 +485,9 @@
 .blink {
   animation: blinkAnim 1s forwards; }
 
+.showUpGallery {
+  animation: fadeUp 0.6s forwards; }
+
 @keyframes blinkAnim {
   0% {
     opacity: 0.3; }
@@ -483,6 +496,13 @@
     transform: scale(1.2); }
   100% {
     opacity: 0.4; } }
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /* ============================================ */
 /* =============== GENERAL ==================== */
@@ -835,6 +855,9 @@
 .blink {
   animation: blinkAnim 1s forwards; }
 
+.showUpGallery {
+  animation: fadeUp 0.6s forwards; }
+
 @keyframes blinkAnim {
   0% {
     opacity: 0.3; }
@@ -843,6 +866,13 @@
     transform: scale(1.2); }
   100% {
     opacity: 0.4; } }
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /* COLORS */
 /* STYLE ELEMENTS */

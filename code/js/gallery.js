@@ -240,6 +240,8 @@ function displayListBusiness(business) {
     badgeImg.src = "assets/badges/" + filter + ".svg";
     badgesList.appendChild(badgeImg);
   });
+  console.log(clone.firstElementChild);
+  clone.firstElementChild.classList.add("showUpGallery");
   gallery.appendChild(clone);
 }
 
