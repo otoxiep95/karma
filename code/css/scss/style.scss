@@ -79,8 +79,13 @@ a {
 }
 
 .logos {
-  @include size(auto, 60%);
+  // tablet
+  @include size(auto, 35%);
   place-self: center;
+  // desktop
+  @include for-tablet-landscape-up {
+    @include size(auto, 60%);
+  }
 }
 
 .menu-main--desk {
