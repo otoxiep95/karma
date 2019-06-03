@@ -238,6 +238,13 @@ $color-link: (
       grid-template-rows: 1fr;
     }
   }
+  &__logoLink {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    @include vertical-align(img);
+    left: 25%;
+  }
   &__logo {
     // mobile
     display: none;
@@ -246,9 +253,11 @@ $color-link: (
       display: block;
     }
   }
+
   &__link {
     @include size(100%, 100%);
     @include centered(h1);
+
     text-decoration: none;
     h1 {
       font-size: $font-normal;

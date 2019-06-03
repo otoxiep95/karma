@@ -1691,6 +1691,18 @@ a {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto 1fr 1fr;
       grid-template-rows: 1fr; } }
 
+.menu-main__logoLink {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  left: 25%; }
+  .menu-main__logoLink img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+
 .menu-main__logo {
   display: none; }
   @media (min-width: 600px) {
