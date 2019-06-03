@@ -62,12 +62,17 @@
 // desktop
 .contact__shape {
   @include size(35%, auto);
-  min-width: 650px;
+  min-width: 550px;
   position: fixed;
   right: -5vh;
-  bottom: -15vh;
+  bottom: -10vh;
   opacity: 1;
   text-shadow: 0px -2px 23px $lightbrown;
+  @include for-tablet-landscape-up {
+    min-width: 650px;
+    right: -5vh;
+    bottom: -12vh;
+  }
 }
 
 .contact {
@@ -79,23 +84,29 @@
     }
   }
   &__link--container {
-    // desktop
-    @include for-tablet-portrait-up {
-      position: fixed;
-      @include size(30%, 50px);
-      min-width: 450px;
-      right: -5vh;
-      bottom: 5vh;
+    position: fixed;
+    @include size(30%, 50px);
+    min-width: fit-content;
+    right: 1vh;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: max-content max-content max-content;
+    a:nth-of-type(3) {
       display: grid;
-      grid-template-columns: 1.5fr 5fr 5fr;
-      a:nth-of-type(3) {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        grid-column-gap: 15px;
-        img {
-          align-self: center;
-        }
+      grid-template-columns: 3fr 1fr;
+      grid-column-gap: 15px;
+      img {
+        align-self: center;
       }
+    }
+    //tablet
+    @include for-tablet-portrait-up {
+      bottom: 2vh;
+    }
+    // desktop
+    @include for-tablet-landscape-up {
+      bottom: 5vh;
+      right: -5vw;
     }
   }
 }

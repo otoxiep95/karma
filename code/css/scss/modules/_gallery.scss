@@ -259,7 +259,7 @@ body {
   // rate
   &--rate {
     // mobile
-    @include size(100vw, 35vh);
+    @include size(100vw, 65vh);
     // desktop
     @include for-tablet-portrait-up {
       @include size(100%, 250px);
@@ -357,7 +357,8 @@ body {
       }
     }
     &--rate {
-      @include size(100vw, 30vh);
+      @include size(100vw, 65vh);
+      box-shadow: none;
       // desktop
       @include for-tablet-portrait-up {
         @include size(100%, 250px);
@@ -369,6 +370,9 @@ body {
       .filter__list {
         opacity: 1;
         display: block;
+        // @include scroll-div(inherit, inherit, 100%, 100%);
+
+        white-space: initial;
       }
     }
   }

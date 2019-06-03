@@ -23,8 +23,18 @@
     @include size(100vw, auto);
     min-height: 100vh;
 
-    // desktop
+    //tablet
     @include for-tablet-portrait-up {
+      @include size(100%, 100vh);
+      margin-top: 20vh;
+      position: fixed;
+      display: grid;
+      grid-template-columns: 4vw 1fr 1fr 4vw;
+      grid-gap: 3%;
+    }
+
+    // desktop
+    @include for-tablet-landscape-up {
       @include size(100%, 100vh);
       margin-top: 20vh;
       padding: $padding-body-desk;
@@ -90,21 +100,26 @@
       }
     }
     &__shape {
-      transform: scale(-1);
-      position: absolute;
       width: calc(25vw + 120%);
+      min-width: 600px;
       height: auto;
-      min-height: 550px;
-      bottom: -25%;
-      left: -25vw;
+      position: absolute;
+      transform: scale(-1);
       z-index: -1;
+      bottom: -7vh;
+      left: -16vw;
+      // desktop
+      @include for-tablet-landscape-up {
+        bottom: -25%;
+        left: -25vw;
+      }
     }
     &__contact {
       display: none;
       // contact desktop
       @include for-tablet-portrait-up {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 135px;
         grid-template-rows: 2fr 1fr;
         grid-gap: 0.8rem;
         padding: 1.6rem;
@@ -241,8 +256,8 @@
       }
     }
   }
-
   // END OF TEMPLATE HEADER
+  /////////////////////
   // TEMPLATE CONTENT
   &__template--content {
     // desktop
@@ -305,6 +320,10 @@
       @include size(100%, 12vh);
       @include for-tablet-portrait-up {
         max-width: 300px;
+        img {
+          height: auto;
+          align-self: start;
+        }
       }
     }
     .rate-link {
@@ -324,13 +343,19 @@
     }
   }
   &__map {
-    // desktop
+    //tablet
     @include for-tablet-portrait-up {
+      @include size(80%, 250px);
+      background-color: $lightgreen;
+      margin: 10vh auto 70vh 1.2rem;
+      @include box-shadow($ourshadow, $brown, 0.4);
+    }
+    // desktop
+    @include for-tablet-landscape-up {
       @include size(80%, 450px);
       background-color: $lightgreen;
       margin: 13vh auto 50vh 1.2rem;
       border-radius: $round-corner; // doesnt work
-
       @include box-shadow($ourshadow, $brown, 0.4);
     }
   }
