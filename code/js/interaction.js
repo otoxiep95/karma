@@ -19,7 +19,7 @@ let ratePage = document.querySelector(".rate__page");
 let filterMenu = document.querySelector(".filter__modal");
 let bottomModalRate = document.querySelector(".menu-bottom__modal--rate");
 let rateNextButton = document.querySelector(".rate-link--next");
-let goBackRate = document.querySelector(".menu-bottom__link--rate");
+let rateAgainButton = document.querySelector(".menu-bottom__link--rate");
 let rangeThumb = document.querySelector(".range__thumb");
 
 window.onload = initInteraction();
@@ -155,18 +155,19 @@ function openRatePage(e) {
   rangeThumb.style.backgroundImage =
     "url('../css/background-img/" + selectedBadge + ".svg')";
 
-  setTimeout(function() {
-    rateIntro.style.display = "none";
-    document.querySelector(".rate__again").style.display = "none";
-    filterMenu.style.display = "none";
-    rateNextButton.style.display = "block";
-    goBackRate.style.display = "block";
-  }, 1000);
+  // setTimeout(function() {
+  rateIntro.style.display = "none";
+  document.querySelector(".rate__again").style.display = "none";
+  filterMenu.style.display = "none";
+  rateNextButton.style.display = "block";
+  rateAgainButton.style.display = "none";
+  // }, 1000);
 }
 function openRateAgain() {
-  document.querySelector(".rate__again").style.display = "block";
+  document.querySelector(".rate__again").style.display = "grid";
   document.querySelector(".rate-again-link--next").style.display = "block";
   rateNextButton.style.display = "none";
+  rateAgainButton.style.display = "block";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "none";
   });
@@ -178,6 +179,7 @@ function openRateAgain() {
 function openMsgModal() {
   document.querySelector(".rate__conclusion").style.display = "block";
   rateNextButton.style.display = "none";
+  rateAgainButton.style.display = "none";
   document.querySelector(".rate-again-link--next").style.display = "none";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "block";
@@ -188,8 +190,8 @@ function openMsgModal() {
 }
 
 /* GO BACKSSSS */
-if (goBackRate) {
-  goBackRate.addEventListener("click", goBack);
+if (rateAgainButton) {
+  rateAgainButton.addEventListener("click", goBack);
 }
 
 function goBack() {
@@ -206,8 +208,8 @@ function goBack() {
   filterMenu.style.display = "block";
   filterMenu.style.opacity = "1";
   rateLink.style.display = "block";
-  bottomModalRate.style.height = "35vh";
-  goBackRate.style.display = "none";
+  bottomModalRate.style.height = "65vh";
+  rateAgainButton.style.display = "none";
 }
 
 /* ---------------------- EFFECT FUNCTIONS ------------------- */

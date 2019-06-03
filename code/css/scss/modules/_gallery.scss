@@ -359,6 +359,8 @@ body {
     &--rate {
       @include size(100vw, 65vh);
       box-shadow: none;
+      padding: 0;
+
       // desktop
       @include for-tablet-portrait-up {
         @include size(100%, 250px);
@@ -369,9 +371,9 @@ body {
       }
       .filter__list {
         opacity: 1;
-        display: block;
-        // @include scroll-div(inherit, inherit, 100%, 100%);
-
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 20px;
         white-space: initial;
       }
     }

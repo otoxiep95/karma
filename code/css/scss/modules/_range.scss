@@ -111,7 +111,7 @@
     width: 100%;
     height: 1px;
     right: 0;
-    border-top: dashed 5px white;
+    border-top: dashed 5px $darkbrown;
   }
   svg {
     width: 200%;
@@ -131,20 +131,17 @@
   right: 3vw;
   top: calc(50% - 50px);
   background-image: url("background-img/vegan.svg");
+  background-color: $verylightbeige;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 50%;
-  border: 10px solid rgba($lightgreen, 0.7);
+  border: 10px solid rgba($lightgreen, 0.9);
   transition: none;
   touch-action: none;
   user-select: none;
   z-index: 5;
 }
-
-// .range__thumb:active {
-//   background-color: rgba(168, 218, 220, 1);
-// }
 
 .range__thumb:hover {
   cursor: pointer;
@@ -155,16 +152,14 @@
   @include size(30px, 100%);
   width: 30px;
   height: 70vh;
-  //position: fixed;
-  // top: 0;
-  // left: 3vw;
-  margin: 15vh 0 15vh 3vw;
-  border-left: 5px solid white;
+  margin: 15vh 0 15vh 80vw;
+  border-left: 5px solid $darkbrown;
   display: grid;
   grid-template-rows: repeat(10, 1fr);
+  transform: scale(-1);
   &--level {
     @include size(25px, 5px);
-    background-color: white;
+    background-color: $darkbrown;
   }
   @include for-tablet-portrait-up {
     left: 3%;
@@ -177,7 +172,7 @@
   @include size(fit-content, fit-content);
   position: absolute;
   top: -2vh;
-  left: 35px;
+  left: 3vw;
   padding: 0px 1.6rem;
   font-size: 1.8rem;
   color: $green;
@@ -237,6 +232,17 @@
     @include text(2.1rem, 2.1rem, $coral);
     list-style-type: none;
     // padding-bottom: 0;
+  }
+}
+
+.rate__again {
+  display: grid;
+  display: grid;
+  grid-template-rows: 0.5fr max-content 0.5fr 0.5fr;
+  padding-bottom: 6.6rem;
+  h2:nth-of-type(2) {
+    grid-row: 4/5;
+    align-self: end;
   }
 }
 
@@ -325,6 +331,8 @@
   width: 85px;
   height: 85px;
   display: inline-block;
+  background-color: $verylightbeige;
+  box-shadow: 0 0 20px 1px rgba($brown, 0.4);
   img {
     @include size(100%, auto);
   }
@@ -366,4 +374,45 @@ input {
   border-radius: $round-corner;
   border: 2px solid $coral;
   box-shadow: none;
+}
+
+.current-badge__rate {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+  img {
+    max-width: 100px;
+    background-color: $verylightbeige;
+  }
+  div {
+    align-self: center;
+    h2 {
+      padding: 0;
+    }
+  }
+}
+
+.menu-bottom__link--rate {
+  align-self: center;
+  height: fit-content;
+  p {
+    padding: 1px;
+    border-bottom: 2px solid $coral;
+  }
+}
+
+.menu-bottom__link--rate,
+.rate-again-link--next {
+  p {
+    width: fit-content;
+    color: $coral;
+    padding: 1px;
+    border-bottom: 2px solid $coral;
+  }
+}
+
+.rate-again-link--next {
+  padding-right: 3vw;
+  width: fit-content;
+  justify-self: end;
 }
