@@ -8,6 +8,7 @@ const aboutScreen = document.querySelector(".about-main");
 const burguerAbout = document.querySelector(".burguer__about--mobile");
 const contactScreen = document.querySelector(".contact-page");
 const contactBusinessScreen = document.querySelector("#contact2");
+const warningScreen = document.querySelector(".project-warning");
 window.addEventListener("DOMContentLoaded", initIndex);
 
 function initIndex() {
@@ -23,6 +24,10 @@ function initIndex() {
       contactBusinessScreen.style.display = "none";
     }
   }
+  setTimeout(clearWarning, 3500);
+}
+function clearWarning() {
+  warningScreen.classList.add("none");
 }
 
 function openMainMenu() {
