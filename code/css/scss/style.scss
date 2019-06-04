@@ -270,6 +270,10 @@ $color-link: (
       @include for-tablet-landscape-up {
         @include links($font-small, $coral);
       }
+      &:hover {
+        transform: scale(1.2);
+      }
+      transition: transform 0.3s;
     }
     &--about {
       grid-column: 11/-1;
