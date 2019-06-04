@@ -437,6 +437,17 @@ body {
 /* ============== BURGER MENU ================= */
 /* ============================================ */
 
+.burger-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
 .burger-menu {
   //display: none;
   @include size(0vw, 100vh);

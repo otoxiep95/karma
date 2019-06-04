@@ -196,6 +196,7 @@
     </div>
 
     <div
+      id="contact2"
       class="about-sub__container about-sub__container--4 about-sub__business"
     >
       <h2 class="about-sub__title">You have a sustainable business ?</h2>
@@ -241,7 +242,10 @@
     <!--////////////////////////////////////////////-->
 
     <div class="menu-bottom menu-bottom--index menu-bottom__container none">
-      <a class="menu-bottom__link menu-bottom__link--return" href="index.html">
+      <a
+        class="menu-bottom__link menu-bottom__link--return"
+        href="index.html?interaction=menu"
+      >
         <img
           class="menu-bottom__link__img menu-bottom__link__img--return"
           src="assets/ui/icons/nav/arrow-bottom-41.svg"
@@ -272,9 +276,9 @@
     <!--////////////////////////////////////////////-->
     <!--=============== BURGER MENU ================-->
     <!--////////////////////////////////////////////-->
-
+    <div class="burger-shadow none"></div>
     <div class="burger-menu">
-      <a href="#" class="burger-menu--link burger-menu--link__close">CLOSE</a>
+      <a href="#" class="burger-menu--link burger-menu--link__close">x</a>
       <img src="" alt="" class="burger-menu--logo" />
       <div class="burger-menu--link__container">
         <a class="burger-menu--link">ABOUT</a>
@@ -298,7 +302,15 @@
           class="burger-menu--link burger-menu--link--contact"
           >CONTACT US</a
         >
+        <a
+          href="index.html?interaction=about#contact2"
+          class="burger-menu--link burger-menu--link--contact"
+          ><pre> Register your business </pre></a
+        >
       </div>
+    </div>
+    <div class="thank--you--screen">
+      <h2></h2>
     </div>
     <!--============ END BURGER MENU ===============-->
     <script src="js/index.js "></script>

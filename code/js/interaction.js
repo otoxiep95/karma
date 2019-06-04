@@ -9,6 +9,8 @@ let linksBurger = document.querySelectorAll(".burger-menu--link");
 let mainMap = document.querySelector(".map__container .map");
 //let letsGo = document.querySelector(".launching__button-link");
 //let menuMain = document.querySelector(".menu-main");
+const burgerShadow = document.querySelector(".burger-shadow");
+let mapButton = document.querySelector(".menu-bottom__link--map");
 
 let isopen = false;
 let burgerMenuOpen = false;
@@ -26,7 +28,7 @@ window.onload = initInteraction();
 
 function initInteraction() {
   let buttonFilter = document.querySelector(".filter__button--filter");
-  let mapButton = document.querySelector(".menu-bottom__link--map");
+
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
   // let rateBadgeLink = document.querySelectorAll(".rate__badge--link");
@@ -34,6 +36,12 @@ function initInteraction() {
   let gallery = document.querySelector(".gallery");
   let businessPage = document.querySelector(".business");
   // let rateLink = document.querySelectorAll(".button-rate--rate");
+
+  if (linksBurger) {
+    linksBurger.forEach(linkEl => {
+      linkEl.addEventListener("click", closeBurgerMenu);
+    });
+  }
 
   if (buttonFilter) {
     console.log("button filter clicked");
@@ -106,6 +114,8 @@ function openCloseMapModal() {
   if (isopen == false) {
     bottomModal.style.height = "60vh";
     isopen = true;
+    console.log(mapButton.firstElementChild);
+    //mapButton.firstElementChild.style.stroke = "red";
     opacity(mainMap);
   } else {
     opacityNo(mainMap);
@@ -120,6 +130,7 @@ function openBurgerMenu() {
   console.log("open burger");
   burgerModal.style.width = "93vw";
   burgerMenuOpen = true;
+  burgerShadow.classList.remove("none");
   setTimeout(function() {
     linksBurger.forEach(function(link) {
       link.style.opacity = "1";
@@ -129,6 +140,7 @@ function openBurgerMenu() {
 
 function closeBurgerMenu() {
   burgerMenuOpen = false;
+  burgerShadow.classList.add("none");
   linksBurger.forEach(function(link) {
     link.style.opacity = "0";
   });

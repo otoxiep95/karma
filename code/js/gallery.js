@@ -132,6 +132,7 @@ function init() {
   underlineCat();
   galleryCatTitle.textContent = catId;
 }
+
 function underlineCat() {
   console.log("hello");
   console.log(mainMenuLinks);
@@ -146,8 +147,14 @@ function underlineCat() {
 
 function clickedFilter(event) {
   console.log("clickedFilter");
+  console.log(event.target);
   const filter = this.dataset.filter; // references data-filter="____"
   event.preventDefault();
+  console.log(filterList.querySelectorAll("img"));
+  filterList.querySelectorAll("img").forEach(element => {
+    element.classList.remove("selected");
+  });
+  event.target.classList.add("selected");
   if (filter == "all") {
     displayFilteredList(listOfBusinesses);
   } else {
@@ -155,6 +162,7 @@ function clickedFilter(event) {
     console.log(filteredBusinessList);
     displayFilteredList(filteredBusinessList);
   }
+  setTimeout(openCloseFilterModal, 1000, event);
 }
 
 function filterBusinessList(filter) {

@@ -21,6 +21,10 @@
 .opacity {
   opacity: 0; }
 
+.selected {
+  border-radius: 50%;
+  border: solid 3px #d0ad8e; }
+
 .none {
   display: none; }
 
@@ -407,6 +411,16 @@
 /* ============================================ */
 /* ============== BURGER MENU ================= */
 /* ============================================ */
+.burger-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5; }
+
 .burger-menu {
   width: 0vw;
   height: 100vh;
@@ -480,6 +494,10 @@
 /* -------------- MIXINS RESPONSIVENESS ------------------- */
 .opacity {
   opacity: 0; }
+
+.selected {
+  border-radius: 50%;
+  border: solid 3px #d0ad8e; }
 
 .none {
   display: none; }
@@ -874,6 +892,10 @@
 
 .opacity {
   opacity: 0; }
+
+.selected {
+  border-radius: 50%;
+  border: solid 3px #d0ad8e; }
 
 .none {
   display: none; }
@@ -1695,7 +1717,8 @@ a {
     font-size: 2.1rem;
     color: #f9ecd7;
     font-weight: 400;
-    padding: 0; }
+    padding: 0;
+    transition: transform 0.3s; }
     @media (min-width: 600px) {
       .menu-main__link h1 {
         text-decoration: none;
@@ -1706,6 +1729,8 @@ a {
         text-decoration: none;
         color: #e2685b;
         font-size: 1.6rem; } }
+    .menu-main__link h1:hover {
+      transform: scale(1.2); }
   .menu-main__link--about {
     grid-column: 11/-1; }
 
@@ -1769,7 +1794,7 @@ a {
 
 .thank--you--screen {
   background-color: #f9ecd7;
-  position: relative;
+  position: fixed;
   width: 100vw;
   height: 100vh; }
   .thank--you--screen h1 {

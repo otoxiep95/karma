@@ -7,6 +7,7 @@ const launchingScreen = document.querySelector(".launching");
 const aboutScreen = document.querySelector(".about-main");
 const burguerAbout = document.querySelector(".burguer__about--mobile");
 const contactScreen = document.querySelector(".contact-page");
+const contactBusinessScreen = document.querySelector("#contact2");
 window.addEventListener("DOMContentLoaded", initIndex);
 
 function initIndex() {
@@ -19,6 +20,7 @@ function initIndex() {
   } else {
     if (screen.width < 600) {
       contactScreen.style.display = "none";
+      contactBusinessScreen.style.display = "none";
     }
   }
 }
