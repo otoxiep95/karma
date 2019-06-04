@@ -122,9 +122,14 @@ document.querySelector(".button-rate--next").addEventListener("click", e => {
         rangeKeyWord.textContent;
     }
   });
+  let ratedBadge = selectedBadge
+    .replace(/([A-Z])/g, " $1")
+    .trim()
+    .toLowerCase();
 
   console.log(badges);
   console.log(userRates);
+  document.querySelector(".selectedRate").textContent = ratedBadge;
   openRateAgain();
   //openMsgModal();
 });
@@ -156,8 +161,13 @@ function updateBadges() {
   //show Thank tou screen
   document.querySelector(".thank--you--screen").classList.remove("none");
   //sendTodata();
+  setTimeout(goBackToBusiness, 2000);
 }
 
 function sendTodata() {
   database.ref("EAT/-Le8Q2uYZ8-stN4uXwRT/badges/ratable").set(badges);
+}
+
+function goBackToBusiness() {
+  window.location = "../business.html?category=" + catId + "&key=" + urlKey;
 }
