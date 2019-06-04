@@ -1222,6 +1222,8 @@
   .rate__again h2:nth-of-type(2) {
     grid-row: 4/5;
     align-self: end; }
+  .rate__again .selectedRate {
+    color: #e2685b; }
 
 .rate__conclusion h2 {
   align-self: end;
@@ -1345,13 +1347,17 @@
     padding: 0;
     color: #d0ad8e; }
 
-input {
+textarea {
   width: 100%;
   height: 159px;
+  padding: 1.6rem;
+  color: #e2685b;
   background-color: #f7f2eb;
   border-radius: 10px;
   border: 2px solid #e2685b;
   box-shadow: none; }
+  textarea::placeholder {
+    color: #e2685b; }
 
 .thank--you--screen {
   background-color: #f7f2eb;

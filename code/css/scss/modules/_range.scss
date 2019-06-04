@@ -286,6 +286,9 @@
     grid-row: 4/5;
     align-self: end;
   }
+  .selectedRate {
+    color: $coral;
+  }
 }
 
 .rate__conclusion {
@@ -456,12 +459,17 @@
 }
 
 // MSG //
-input {
+textarea {
   @include size(100%, 159px);
+  padding: 1.6rem;
+  color: $coral;
   background-color: $verylightbeige;
   border-radius: $round-corner;
   border: 2px solid $coral;
   box-shadow: none;
+  &::placeholder {
+    color: $coral;
+  }
 }
 
 ///////////THANK YOU SCREEN //////////////////////////

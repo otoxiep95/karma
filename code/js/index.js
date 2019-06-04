@@ -1,6 +1,7 @@
 "use strict";
 let urlParams = new URLSearchParams(window.location.search);
 let screenFlag = urlParams.get("interaction");
+let messageFlag = urlParams.get("message");
 const letsGo = document.querySelector(".launching__button-link");
 const menuMain = document.querySelector(".menu-main");
 const launchingScreen = document.querySelector(".launching");
@@ -13,10 +14,15 @@ window.addEventListener("DOMContentLoaded", initIndex);
 
 function initIndex() {
   letsGo.addEventListener("click", openMainMenu);
+  if (messageFlag === "no") {
+    clearWarning();
+  }
   if (screenFlag === "menu") {
     openMainMenu();
+    clearWarning();
   }
   if (screenFlag === "about") {
+    clearWarning();
     openAbout();
   } else {
     if (screen.width < 600) {
