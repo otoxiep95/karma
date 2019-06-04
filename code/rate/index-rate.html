@@ -28,13 +28,14 @@
       firebase.initializeApp(config);
     </script>
 
+    <!--==  LOGO HEADER RATE  ===-->
     <img
       class="desk-only logo-hor logo-hor--rate"
       src="../assets/ui/logo/logo-horizontal-55.svg"
       alt="logo"
     />
 
-    <!--== THERE IS THIS WEIRD A HERE TO STYLE WHICH IS THE CROSS TO GO BACK -->
+    <!--==  CROSS TO GO BACK  ===-->
     <a class="back-to-business__link"><h2>X</h2></a>
 
     <!--////////////////////////////////////////////-->
@@ -58,59 +59,37 @@
         class="rate__content__illu desk-only"
       />
 
-      <!--////////////////////////////////////////////-->
       <!--=============== RATE WINDOW ================-->
-      <!--////////////////////////////////////////////-->
 
       <div class="rate__content__rate-window rate__container">
-        <!--////////////////////////////////////////////-->
         <!--=============== RATE INTRO ==================-->
-        <!--////////////////////////////////////////////-->
         <div class="rate__intro">
-          <!-- /////////////////////////////////////////////////////// -->
-
-          <!-- /////////////////////////////////////////////////////// -->
           <h1 class="rate__intro--title">
             Rate your experience with:
             <span class="rate__intro--business rate__business__name">Name</span>
           </h1>
           <li class="rate__intro--explanation">Choose a category to rate:</li>
-          <!-- <li class="rate__intro--explanation desk-only">Drag the badge</li>
-          <li class="rate__intro--explanation desk-only">Validate</li>
-          <li class="rate__intro--explanation desk-only">
-            Rate another category
-          </li>
-          <li class="rate__intro--explanation desk-only">
-            Submit your rate(s) and send a message.
-          </li> -->
         </div>
         <!--============ END RATE INTRO ================-->
 
-        <!--////////////////////////////////////////////-->
-        <!--============= RATE AGAIN ==============-->
-        <!--////////////////////////////////////////////-->
+        <!--=============== RATE AGAIN =================-->
         <div class="rate__again">
           <h2>Your rate for the category <span></span> has been saved</h2>
-
           <div class="current-badge__rate">
             <img class="current-badge__rate--img" src="" alt="" />
             <div><h2 class="current-badge__rate--msg"></h2></div>
           </div>
-
           <h2 class="rate__again--explanation">
             Do you want to rate for another category ?
           </h2>
         </div>
-        <!--////////////////////////////////////////////-->
+        <!--============ END RATE INTRO ================-->
+
         <!--============= RATE CONCLUSION ==============-->
-        <!--////////////////////////////////////////////-->
         <div class="rate__conclusion">
           <h1 class="rate__conclusion--title">
             Would you like to add a comment ?
           </h1>
-
-          <!-- <h1 class="rate__conclusion--business rate__business__name">NAME</h1> -->
-
           <h2 class="rate__conclusion--explanation">
             Explain your opinion to
             <span class="rate__content__business rate__business__name"
@@ -119,12 +98,9 @@
           </h2>
           <input type="textarea" />
         </div>
-
         <!--========== END RATE CONCLUSION =============-->
 
-        <!--////////////////////////////////////////////-->
         <!--=============== RATE PAGE ==================-->
-        <!--////////////////////////////////////////////-->
         <div class="rate__page">
           <h3 class="rate--title">Drag the badge.</h3>
           <!--============ RANGE THUMB ===============-->
@@ -250,15 +226,10 @@
         </div>
         <!--============ END RATE PAGE ===============-->
 
-        <!--////////////////////////////////////////////-->
         <!--=============== BOTTOM MENU ================-->
-        <!--////////////////////////////////////////////-->
         <div class="menu-bottom__modal menu-bottom__modal--rate">
-          <!--////////////////////////////////////////////-->
           <!--================= FILTERS ==================-->
-          <!--////////////////////////////////////////////-->
           <div class="filter filter__modal filter__modal--rate">
-            <!-- <h2 class="opacity none">Categories:</h2> -->
             <div class="filter__list opacity none">
               <div
                 data-badge="vegetarian"
@@ -270,6 +241,7 @@
                   alt=""
                 />
               </div>
+
               <div data-badge="vegan" class="filter__link rate__badge--link">
                 <img
                   class="filter__link__img"
@@ -277,6 +249,7 @@
                   alt=""
                 />
               </div>
+
               <div
                 data-badge="localProducts"
                 class="filter__link rate__badge--link"
@@ -287,6 +260,7 @@
                   alt=""
                 />
               </div>
+
               <div
                 data-badge="plasticFree"
                 class="filter__link rate__badge--link"
@@ -297,6 +271,7 @@
                   alt=""
                 />
               </div>
+
               <div data-badge="organic" class="filter__link rate__badge--link">
                 <img
                   class="filter__link__img"
@@ -306,10 +281,9 @@
               </div>
             </div>
           </div>
+          <!--=============== END FILTERS ================-->
 
-          <!--////////////////////////////////////////////-->
           <!--=================== MENU ===================-->
-          <!--////////////////////////////////////////////-->
           <div class="menu-bottom menu-bottom__container">
             <div
               class="button-rate button-rate--again button-rate--left button-rate__container"
@@ -365,10 +339,17 @@
               <p>I don't need to send a message</p>
             </div>
           </div>
+          <!--=============== END MENU =================-->
         </div>
         <!--============ END BOTTOM MENU ===============-->
       </div>
+      <!--============ END RATE WINDOW =================-->
     </div>
+    <!--============= END RATE CONTENT =================-->
+
+    <!--=============================================-->
+    <!--============ THANK YOU SCREEN ===============-->
+    <!--=============================================-->
     <div class="thank--you--screen none">
       <h3>
         Thank you !
@@ -376,10 +357,10 @@
       <h3>Your vote has been sent.</h3>
       <img src="../assets/ui/logo/logo-horizontal-55.svg" alt="" />
     </div>
+    <!--============= END THANK YOU =================-->
 
     <script src="../js/interaction.js"></script>
     <script src="rate.js"></script>
     <script src="rateToData.js"></script>
-    <!-- <script src="random.js"></script> -->
   </body>
 </html>

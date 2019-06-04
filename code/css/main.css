@@ -429,13 +429,16 @@
   z-index: 50;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #682c29;
   opacity: 0.5; }
 
 .burger-menu {
   width: 0vw;
   height: 100vh;
-  background-color: #e2685b;
+  background: url("background-img/png-main-menu_shadows.png"), #e2685b;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -455,7 +458,18 @@
     .burger-menu--link__container {
       width: 100%;
       padding: 3.3rem;
-      height: fit-content; }
+      height: 60vh;
+      margin-top: 25vh; }
+  .burger-menu .burger-menu--logo {
+    position: absolute;
+    margin: auto;
+    opacity: 0;
+    top: 10vh;
+    bottom: 80vh;
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: auto; }
 
 .morphing {
   animation: morphing 1s 0s ease-in-out forwards;
@@ -868,7 +882,8 @@
 @media (min-width: 900px) and (orientation: landscape) {
   .business__map {
     width: 80%;
-    height: 450px;
+    height: 40%;
+    max-height: 450px;
     background-color: #9aafa2;
     margin: 13vh auto 50vh 1.2rem;
     border-radius: 10px;
@@ -914,6 +929,9 @@
     width: 90%;
     height: 100%; }
 
+/* ============================================ */
+/* ================= MAP ====================== */
+/* ============================================ */
 .mapouter {
   width: 100%;
   height: 100%; }
@@ -973,6 +991,9 @@
 /* ------------- MIXINS STYLE----------------- */
 /* -------------- MIXINS FUNCTIONS ------------------- */
 /* -------------- MIXINS RESPONSIVENESS ------------------- */
+/* ============================================ */
+/* =============== ELEMENTS =================== */
+/* ============================================ */
 .logo-hor--rate {
   width: 175px;
   height: auto;
@@ -998,6 +1019,9 @@
     position: fixed;
     bottom: 10vh; }
 
+/* ============================================ */
+/* =============== CONTENT ==================== */
+/* ============================================ */
 .rate__content {
   position: fixed; }
   .rate__content__title {
@@ -1047,6 +1071,9 @@
     .rate__content__illu {
       display: block; } }
 
+/* ============================================ */
+/* =============== WINDOW ===================== */
+/* ============================================ */
 .rate__container {
   width: 100vw;
   height: 100vh; }
@@ -1060,6 +1087,9 @@
       box-shadow: 0px -2px 23px 1px rgba(208, 173, 142, 0.4);
       border-radius: 10px; } }
 
+/* ============================================ */
+/* ================ RATING ==================== */
+/* ============================================ */
 .rate__page {
   display: block;
   width: 100%;
@@ -1166,6 +1196,9 @@
       left: 55px;
       font-size: 2.1rem; } }
 
+/* ============================================ */
+/* ================= STEPS ==================== */
+/* ============================================ */
 .rate__intro {
   display: block; }
   @media (min-width: 600px) {
@@ -1228,6 +1261,9 @@
   color: #e2685b;
   font-size: 1.6rem; }
 
+/* ============================================ */
+/* ================ BADGES ==================== */
+/* ============================================ */
 .current-badge__rate {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -1262,6 +1298,9 @@
 .badge--voted {
   opacity: 0.4; }
 
+/* ============================================ */
+/* =============== BUTTONS ==================== */
+/* ============================================ */
 .button__submit--rating {
   display: none; }
 
@@ -1353,6 +1392,9 @@ input {
   border: 2px solid #e2685b;
   box-shadow: none; }
 
+/* ============================================ */
+/* =============== THANK YOU ================== */
+/* ============================================ */
 .thank--you--screen {
   background-color: #f7f2eb;
   position: relative;
@@ -1452,11 +1494,14 @@ input {
   height: auto;
   min-width: 550px;
   position: fixed;
-  right: -5vh;
-  bottom: -10vh;
+  right: 0vh;
+  bottom: -15vh;
   opacity: 1;
   text-shadow: 0px -2px 23px #ccb7a8; }
-  @media (min-width: 900px) and (orientation: landscape) {
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .contact__shape {
+      bottom: -10vh; } }
+  @media (min-width: 1200px) {
     .contact__shape {
       min-width: 650px;
       right: -5vh;
@@ -1487,7 +1532,7 @@ input {
   @media (min-width: 600px) {
     .contact__link--container {
       bottom: 2vh; } }
-  @media (min-width: 900px) and (orientation: landscape) {
+  @media (min-width: 1200px) {
     .contact__link--container {
       bottom: 5vh;
       right: -5vw; } }
@@ -1654,9 +1699,6 @@ a {
   .phone-only {
     display: none; } }
 
-.none {
-  display: none; }
-
 .launching__container,
 .about-main__container {
   display: grid;
@@ -1673,7 +1715,7 @@ a {
       grid-template-columns: 1fr 1fr; } }
 
 /* ============================================ */
-/* =============== LAUNCHING ==================== */
+/* =============== LAUNCHING ================== */
 /* ============================================ */
 .launching {
   background: url("background-img/png-launch-illu.png"), none;
@@ -1720,7 +1762,7 @@ a {
         display: none; } }
 
 /* ============================================ */
-/* =============== MENU ==================== */
+/* ================== MENU ==================== */
 /* ============================================ */
 .menu-main__link--eat {
   background-blend-mode: multiply;
@@ -1851,7 +1893,7 @@ a {
     grid-column: 11/-1; }
 
 /* ============================================ */
-/* =============== ABOUT ==================== */
+/* ================= ABOUT ==================== */
 /* ============================================ */
 .about-main {
   display: none; }
@@ -1874,7 +1916,8 @@ a {
     border-bottom: solid 2px #f7f2eb; }
 
 .about-sub__business {
-  background-color: #e2685b; }
+  background-color: #e2685b;
+  min-height: 65vh; }
   .about-sub__business p,
   .about-sub__business h1,
   .about-sub__business h2,
@@ -1908,16 +1951,9 @@ a {
       grid-column: 2/3;
       grid-row: 2/3; } }
 
-.burguer__about--mobile {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 20%;
-  height: auto; }
-  .burguer__about--mobile img {
-    width: 90%;
-    padding: 10%; }
-
+/* ============================================ */
+/* =============== WARNING ==================== */
+/* ============================================ */
 .project-warning {
   position: fixed;
   width: 100vw;

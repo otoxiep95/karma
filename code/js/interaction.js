@@ -132,8 +132,9 @@ function openBurgerMenu() {
   burgerMenuOpen = true;
   burgerShadow.classList.remove("none");
   setTimeout(function() {
-    linksBurger.forEach(function(link) {
-      link.style.opacity = "1";
+    document.querySelector(".burger-menu--logo").style.opacity = "1";
+    linksBurger.forEach(function(linkL) {
+      linkL.style.opacity = "1";
     });
   }, 1000);
 }
@@ -141,9 +142,11 @@ function openBurgerMenu() {
 function closeBurgerMenu() {
   burgerMenuOpen = false;
   burgerShadow.classList.add("none");
-  linksBurger.forEach(function(link) {
-    link.style.opacity = "0";
+  document.querySelector(".burger-menu--logo").style.opacity = "0";
+  linksBurger.forEach(function(linkL) {
+    linkL.style.opacity = "0";
   });
+
   setTimeout(function() {
     burgerModal.style.width = "0vw";
   }, 1000);

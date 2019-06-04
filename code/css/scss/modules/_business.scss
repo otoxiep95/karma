@@ -57,7 +57,6 @@
       justify-self: end;
       grid-column: 2/3;
       grid-row-gap: 2.1rem;
-      //position: relative; // for shape
     }
     &__img {
       // mobile
@@ -90,7 +89,6 @@
       grid-gap: 0.8rem;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: max-content max-content;
-
       // desktop
       @include for-tablet-portrait-up {
         padding: 1.6rem;
@@ -136,7 +134,7 @@
     }
     &__contact {
       display: none;
-      // contact desktop
+      // desktop
       @include for-tablet-portrait-up {
         display: grid;
         grid-template-columns: 1fr 135px;
@@ -157,12 +155,12 @@
           align-self: end;
           font-size: $font-small;
           color: $verylightbeige;
-
           img {
             float: right;
             width: 25px;
             margin-left: 1.6rem;
           }
+          // tablet
           @include for-tablet-portrait-up {
             img:nth-of-type(1) {
               display: none;
@@ -270,15 +268,14 @@
       .price {
         justify-self: start;
       }
-
       .distance {
         justify-self: end;
       }
     }
   }
-  // END OF TEMPLATE HEADER
-  /////////////////////
-  // TEMPLATE CONTENT
+  // END OF TEMPLATE HEADER //
+  ////////////////////////////
+  ///// TEMPLATE CONTENT /////
   &__template--content {
     // desktop
     @include for-tablet-portrait-up {
@@ -314,7 +311,6 @@
     border-radius: 10px;
     margin: 0vh auto 20vh auto;
     @include box-shadow($ourshadow-mobile, $brown, 0.3);
-
     // desktop
     @include for-tablet-portrait-up {
       position: relative;
@@ -366,7 +362,6 @@
             border-bottom: 2px solid $coral;
           }
         }
-        // display: inline;
         position: absolute;
         width: 90px;
         bottom: 1.6rem;
@@ -384,7 +379,8 @@
     }
     // desktop
     @include for-tablet-landscape-up {
-      @include size(80%, 450px);
+      @include size(80%, 40%);
+      max-height: 450px;
       background-color: $lightgreen;
       margin: 13vh auto 50vh 1.2rem;
       border-radius: $round-corner; // doesnt work
@@ -429,7 +425,9 @@
   }
 }
 
-// GOOGLE MAP STYLING //
+/* ============================================ */
+/* ================= MAP ====================== */
+/* ============================================ */
 
 .mapouter {
   width: 100%;

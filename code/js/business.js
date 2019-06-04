@@ -2,6 +2,8 @@ let urlParams = new URLSearchParams(window.location.search);
 const database = firebase.database();
 let catId = urlParams.get("category");
 let urlKey = urlParams.get("key");
+
+// VARIABLES BUSINESS INFOS
 const businessName = document.querySelector("[data-name]");
 const businessType = document.querySelector("[data-type]");
 const businessImage = document.querySelector("[data-image]");
@@ -16,9 +18,11 @@ const facebookLinkText = document.querySelector(".contact__facebook--text");
 const websiteLinks = document.querySelectorAll(".website--link");
 const websiteLinkText = document.querySelector(".contact__website--text");
 
+// VARIABLES LINKS
 const rateButtons = document.querySelectorAll(".filter__button--rate a");
 const mainMenuLinks = document.querySelectorAll(".menu-main__link");
 
+// BUSINESS OBJECT
 const Business = {
   key: "",
   name: "",
@@ -129,24 +133,24 @@ function init() {
       "rate/index-rate.html?category=" + catId + "&key=" + urlKey;
   });
 }
+
+// SHOW THE ACTIVE CATEGORY IN MENU
 function underlineCat() {
-  console.log("hello");
   console.log(mainMenuLinks);
   mainMenuLinks.forEach(menuLink => {
     catLink = menuLink.dataset.menu;
-    console.log(catLink);
     if (catLink === catId) {
       menuLink.firstElementChild.classList.add("underline");
     }
   });
 }
 
+// BUILD THE BUSINESS OBJECT
 function buildBusiness() {
   database.ref(catId + "/").on("child_added", snapshot => {
     const key = snapshot.key;
     const data = snapshot.val();
-    console.log(key);
-    console.log(data);
+
     if (urlKey == key) {
       const business = Object.create(Business);
       business.key = key;
@@ -168,27 +172,26 @@ function buildBusiness() {
   });
 }
 
+// DISPLAY THE BUSINESS
 function showBusiness(business) {
   businessName.textContent = business.name;
   businessType.textContent = business.type;
   businessImage.style.backgroundImage = "url(" + business.image + ")";
-  console.log(business.longDescription);
   businessLongDesc.innerText = business.longDescription;
-  //console.log(business.contact.businessAdress);
   contactAdress.textContent = business.contact.adress;
   phoneNumberText.textContent = business.contact.telephoneNumber;
   websiteLinks.forEach(elLink => {
     elLink.href = business.contact.weblink;
   });
-  //websiteLinkText.textContent = business.contact.weblink;
+
   facebookLinks.forEach(elLink => {
     elLink.href = business.contact.fblink;
   });
-  //facebookLinkText.textContent = business.contact.fblink;
+
   document.querySelector("[data-distance]").textContent = business.distance;
 
+  // DISPLAY THE PRICE
   let priceTag = business.price;
-
   switch (priceTag) {
     case "1":
       priceSecIcon.style.opacity = "0.4";
@@ -204,6 +207,7 @@ function showBusiness(business) {
       break;
   }
 
+  // DISPLAY THE BADGES
   let badgesList = document.querySelector("[data-badges_container]");
   business.filtersArray.forEach(filter => {
     console.log(filter);
@@ -213,6 +217,7 @@ function showBusiness(business) {
     badgesList.appendChild(badgeImg);
   });
 
+  // DISPLAY THE MAP
   businessLocationMaps.forEach(gmap => {
     gmap.src = business.location;
   });

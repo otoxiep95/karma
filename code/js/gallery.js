@@ -1,15 +1,21 @@
 let urlParams = new URLSearchParams(window.location.search);
 const database = firebase.database();
 let catId = urlParams.get("category");
+
+// VARIABLES GALLERY
 const gallery = document.querySelector(".gallery__container");
 const filterList = document.querySelector(".filter__list");
-const filterListLinks = document.querySelectorAll(".filter__list img");
-const mainMenuLinks = document.querySelectorAll(".menu-main__link");
 const galleryCatTitle = document.querySelector(".category-display__text");
 
+//VARIABLES LINKS
+const filterListLinks = document.querySelectorAll(".filter__list img");
+const mainMenuLinks = document.querySelectorAll(".menu-main__link");
+
+// ARRAYS
 let listOfBusinesses = [];
 let listOfFilters = [];
 
+// BUSINESS OBJECT
 const Business = {
   key: "",
   name: "",
@@ -123,62 +129,13 @@ const Business = {
   }
 };
 
-// filterListLinks.forEach(element =>
-//   element.addEventListener("click", clickedFilter)
-// );
-
 function init() {
   createObject();
   underlineCat();
   galleryCatTitle.textContent = catId;
 }
 
-function underlineCat() {
-  console.log("hello");
-  console.log(mainMenuLinks);
-  mainMenuLinks.forEach(menuLink => {
-    catLink = menuLink.dataset.menu;
-    console.log(catLink);
-    if (catLink === catId) {
-      menuLink.firstElementChild.classList.add("underline");
-    }
-  });
-}
-
-function clickedFilter(event) {
-  console.log("clickedFilter");
-  console.log(event.target);
-  const filter = this.dataset.filter; // references data-filter="____"
-  event.preventDefault();
-  console.log(filterList.querySelectorAll("img"));
-  filterList.querySelectorAll("img").forEach(element => {
-    element.classList.remove("selected");
-  });
-  event.target.classList.add("selected");
-  if (filter == "all") {
-    displayFilteredList(listOfBusinesses);
-  } else {
-    const filteredBusinessList = filterBusinessList(filter);
-    console.log(filteredBusinessList);
-    displayFilteredList(filteredBusinessList);
-  }
-  setTimeout(openCloseFilterModal, 1000, event);
-}
-
-function filterBusinessList(filter) {
-  const filteredBusinessList = listOfBusinesses.filter(byFilter);
-
-  function byFilter(business) {
-    if (business.filtersArray.indexOf(filter) >= 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  return filteredBusinessList;
-}
-
+// BUILD THE BUSINESS OBJECT
 function createObject() {
   database.ref(catId + "/").on("child_added", snapshot => {
     const key = snapshot.key;
@@ -201,11 +158,13 @@ function createObject() {
   });
 }
 
+// & PUSH IT TO THE ARRAY
 function pushBusinessToList(business) {
   listOfBusinesses.push(business);
   displayListBusiness(business);
 }
 
+// DISPLAY IT TO THE GALLERY
 function displayListBusiness(business) {
   let clone = document
     .querySelector(".gallery__item__template")
@@ -219,9 +178,9 @@ function displayListBusiness(business) {
   clone.querySelector("[data-type]").textContent = business.type;
   clone.querySelector("[data-short_desc]").textContent =
     business.shortDescription;
-  //clone.querySelector("[data-price]")
   clone.querySelector("[data-distance]").textContent = business.distance;
-  // MAKE OPACITIES IN PRICE ICONS
+
+  // Make opacity of price icon
   let priceTag = business.price;
   const priceSecIcon = clone.querySelector(".price .secPrice");
   const priceThirdIcon = clone.querySelector(".price .thirdPrice");
@@ -240,6 +199,8 @@ function displayListBusiness(business) {
     default:
       break;
   }
+
+  // Make the badges
   let badgesList = clone.querySelector("[data-badges_container]");
   business.filtersArray.forEach(filter => {
     console.log(filter);
@@ -248,54 +209,71 @@ function displayListBusiness(business) {
     badgeImg.src = "assets/badges/" + filter + ".svg";
     badgesList.appendChild(badgeImg);
   });
-  console.log(clone.firstElementChild);
+
   clone.firstElementChild.classList.add("showUpGallery");
   gallery.appendChild(clone);
 }
 
-function displayFilteredList(filteredList) {
-  gallery.innerHTML = "";
-  filteredList.forEach(business => {
-    let clone = document.querySelector("template").content.cloneNode(true);
-    clone.querySelector("[data-link_to_subpage]").href =
-      "business.html?category=" + catId + "&key=" + business.key;
-    clone.querySelector("[data-image]").style.backgroundImage =
-      "url(" + business.image + ")";
-    clone.querySelector("[data-name]").textContent = business.name;
-    clone.querySelector("[data-type]").textContent = business.type;
-    clone.querySelector("[data-short_desc]").textContent =
-      business.shortDescription;
-    //clone.querySelector("[data-price]")
-    clone.querySelector("[data-distance]").textContent = business.distance;
-    // MAKE OPACITIES IN PRICE ICONS
-    let priceTag = business.price;
-    const priceSecIcon = clone.querySelector(".price .secPrice");
-    const priceThirdIcon = clone.querySelector(".price .thirdPrice");
+// FILTERED LIST
+function clickedFilter(event) {
+  const filter = this.dataset.filter; // references data-filter="____"
+  event.preventDefault();
 
-    switch (priceTag) {
-      case "1":
-        priceSecIcon.style.opacity = "0.4";
-        priceThirdIcon.style.opacity = "0.4";
-        break;
-      case "2":
-        priceThirdIcon.style.opacity = "0.4";
-        break;
-      case "3":
-        break;
-
-      default:
-        break;
-    }
-    let badgesList = clone.querySelector("[data-badges_container]");
-    business.filtersArray.forEach(filter => {
-      console.log(filter);
-      let badgeImg = document.createElement("img");
-      badgeImg.classList.add("badge__img");
-      badgeImg.src = "assets/badges/" + filter + ".svg";
-      badgesList.appendChild(badgeImg);
-    });
-    gallery.appendChild(clone);
+  // remove selection to all filters
+  filterList.querySelectorAll("img").forEach(element => {
+    element.classList.remove("selected");
   });
+  // show filter selected
+  event.target.classList.add("selected");
+
+  // display the filtered array or all
+  if (filter == "all") {
+    displayFilteredList(listOfBusinesses);
+  } else {
+    const filteredBusinessList = filterBusinessList(filter);
+    console.log(filteredBusinessList);
+    displayFilteredList(filteredBusinessList);
+  }
+
+  // close the filter modal
+  setTimeout(openCloseFilterModal, 1000, event);
+}
+
+// DISPLAY IT TO THE GALLERY
+function displayFilteredList(filteredList) {
+  // clear the gallery
+  gallery.innerHTML = "";
+
+  // display the filtered list
+  filteredList.forEach(business => {
+    displayListBusiness(business);
+  });
+}
+
+// SHOW THE ACTIVE CATEGORY IN MENU
+function underlineCat() {
+  mainMenuLinks.forEach(menuLink => {
+    catLink = menuLink.dataset.menu;
+    console.log(catLink);
+    if (catLink === catId) {
+      menuLink.firstElementChild.classList.add("underline");
+    }
+  });
+}
+
+// SORT THE BUSINESS ARRAY
+function filterBusinessList(filter) {
+  const filteredBusinessList = listOfBusinesses.filter(byFilter);
+
+  function byFilter(business) {
+    if (business.filtersArray.indexOf(filter) >= 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  return filteredBusinessList;
 }
 
 init();
