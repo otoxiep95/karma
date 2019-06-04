@@ -13,13 +13,13 @@ let mainMap = document.querySelector(".map__container .map");
 let isopen = false;
 let burgerMenuOpen = false;
 
-// RATING VARIABKES
+// RATING VARIABLES
 let rateIntro = document.querySelector(".rate__intro");
 let ratePage = document.querySelector(".rate__page");
 let filterMenu = document.querySelector(".filter__modal");
 let bottomModalRate = document.querySelector(".menu-bottom__modal--rate");
-let rateNextButton = document.querySelector(".rate-link--next");
-let rateAgainButton = document.querySelector(".menu-bottom__link--rate");
+let rateNextButton = document.querySelector(".button-rate--next");
+let rateAgainButton = document.querySelector(".button-rate--again");
 let rangeThumb = document.querySelector(".range__thumb");
 
 window.onload = initInteraction();
@@ -29,11 +29,11 @@ function initInteraction() {
   let mapButton = document.querySelector(".menu-bottom__link--map");
   let burgerButton = document.querySelector(".menu-bottom__link--burger");
   let crossBurger = document.querySelector(".burger-menu--link__close");
-  let rateBadgeLink = document.querySelectorAll(".rate__badge--link");
+  // let rateBadgeLink = document.querySelectorAll(".rate__badge--link");
   let returnLink = document.querySelector(".menu-bottom__link--return");
   let gallery = document.querySelector(".gallery");
   let businessPage = document.querySelector(".business");
-  let rateLink = document.querySelectorAll(".rate-link");
+  // let rateLink = document.querySelectorAll(".button-rate--rate");
 
   if (buttonFilter) {
     console.log("button filter clicked");
@@ -159,15 +159,15 @@ function openRatePage(e) {
   rateIntro.style.display = "none";
   document.querySelector(".rate__again").style.display = "none";
   filterMenu.style.display = "none";
-  rateNextButton.style.display = "block";
+  rateNextButton.style.display = "grid";
   rateAgainButton.style.display = "none";
   // }, 1000);
 }
 function openRateAgain() {
   document.querySelector(".rate__again").style.display = "grid";
-  document.querySelector(".rate-again-link--next").style.display = "block";
+  document.querySelector(".button-rate--next__2").style.display = "grid";
   rateNextButton.style.display = "none";
-  rateAgainButton.style.display = "block";
+  rateAgainButton.style.display = "grid";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "none";
   });
@@ -177,10 +177,10 @@ function openRateAgain() {
 }
 
 function openMsgModal() {
-  document.querySelector(".rate__conclusion").style.display = "block";
+  document.querySelector(".rate__conclusion").style.display = "grid";
   rateNextButton.style.display = "none";
   rateAgainButton.style.display = "none";
-  document.querySelector(".rate-again-link--next").style.display = "none";
+  document.querySelector(".button-rate--next__2").style.display = "none";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "block";
   });
@@ -197,7 +197,7 @@ if (rateAgainButton) {
 function goBack() {
   console.log("HELLLOOOOOOOOOOOO");
   document.querySelector(".rate__again").style.display = "none";
-  document.querySelector(".rate-again-link--next").style.display = "none";
+  document.querySelector(".button-rate--next__2").style.display = "none";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "none";
   });
@@ -207,7 +207,7 @@ function goBack() {
   rateIntro.style.opacity = "1";
   filterMenu.style.display = "block";
   filterMenu.style.opacity = "1";
-  rateLink.style.display = "block";
+  rateLink.style.display = "grid";
   bottomModalRate.style.height = "65vh";
   rateAgainButton.style.display = "none";
 }

@@ -40,9 +40,9 @@ function dragEnd(e) {
 
   active = false;
 
-  document.querySelector(".rate-link--next").classList.remove("blink");
-  void document.querySelector(".rate-link--next").offsetWidth;
-  document.querySelector(".rate-link--next").classList.add("blink");
+  document.querySelector(".button-rate--next").classList.remove("blink");
+  void document.querySelector(".button-rate--next").offsetWidth;
+  document.querySelector(".button-rate--next").classList.add("blink");
 }
 
 function drag(e) {

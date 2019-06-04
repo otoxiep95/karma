@@ -64,7 +64,7 @@ function clickedBadge(element) {
 
 // click on rate
 // after having a category go to rating
-let rateLink = document.querySelector(".rate-link");
+let rateLink = document.querySelector(".button-rate--rate");
 
 rateLink.addEventListener(
   "click",
@@ -110,7 +110,7 @@ function init() {
 
 init();
 
-document.querySelector(".rate-link--next").addEventListener("click", e => {
+document.querySelector(".button-rate--next").addEventListener("click", e => {
   console.log(rateFinal);
   userRates.forEach(element => {
     if (element.name === selectedBadge) {
@@ -130,7 +130,7 @@ document.querySelector(".rate-link--next").addEventListener("click", e => {
 });
 
 document
-  .querySelector(".rate-again-link--next")
+  .querySelector(".button-rate--next__2")
   .addEventListener("click", openMsgModal);
 
 const submitButtons = document.querySelectorAll(".button__submit--rating");

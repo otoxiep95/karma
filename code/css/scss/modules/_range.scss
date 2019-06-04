@@ -14,6 +14,7 @@
 
 //////////////////////////
 // RATE CONTENT - BODY  //
+//////////////////////////
 
 .rate__content {
   position: fixed;
@@ -183,8 +184,10 @@
   }
 }
 
+/////////////////////////////////////
 ///////// RATE STEPS STYLE //////////
 //////// INTRO AND CONCLUSION ///////
+/////////////////////////////////////
 
 .rate__intro {
   display: block;
@@ -198,9 +201,6 @@
 .rate__conclusion {
   display: none;
 
-  &--explanation {
-    padding: 0;
-  }
   h2 {
     color: $brown;
     padding: 0 0 1.6rem 0;
@@ -231,13 +231,11 @@
   li {
     @include text(2.1rem, 2.1rem, $coral);
     list-style-type: none;
-    // padding-bottom: 0;
   }
 }
 
 .rate__again {
-  display: grid;
-  display: grid;
+  // display: grid;
   grid-template-rows: 0.5fr max-content 0.5fr 0.5fr;
   padding-bottom: 6.6rem;
   h2:nth-of-type(2) {
@@ -246,91 +244,35 @@
   }
 }
 
-//////// BUTTONS ///////////
-
-.button__submit,
-.button__submit--rating {
-  // display: none;
-  grid-column: 3/4;
-  width: 100%;
-  height: fit-content;
-  align-self: center;
-  h3 {
-    text-align: center;
-    color: $lightbrown;
-    padding: 0;
-    margin: auto;
-  }
-}
-
-.button__submit--rating {
-  display: none;
-}
-
-.rate-link--next {
-  display: none;
-}
-.rate-again-link--next {
-  display: none;
-}
-
-.rate-link {
-  display: inline;
-  place-self: center;
-  @include vertical-align(h3);
-  width: fit-content;
-  h3 {
-    width: fit-content;
-    float: left;
-    font-size: 2.1rem;
-    font-weight: 400;
+.rate__conclusion {
+  // display: grid;
+  h2 {
+    align-self: end;
     color: $coral;
-  }
-  p {
-    width: fit-content;
-    color: $coral;
-    padding: 1px;
-    border-bottom: 2px solid $coral;
-  }
-  img {
-    float: right;
+    font-size: 1.6rem;
   }
 }
 
-.rate-again--conclusion {
-  width: 120px;
-  height: 50px;
-  @include vertical-align(p);
-  @include for-tablet-portrait-up {
-    width: 220px;
-  }
-  img {
-    transform: scale(-1);
-    // float: left;
-    width: 25px;
-  }
-  p {
-    // float: right;
-    padding: 0;
-    margin-left: 35px;
-  }
-}
+/////////////////////////////////////
+/////////////// BADGES //////////////
+/////////////////////////////////////
+/////////////////////////////////////
 
-.no-msg {
-  // display: block;
-  grid-column: 1/3;
-  grid-row: 1/2;
-  p {
-    padding: 0;
-    font-size: 1.2rem;
-    border-bottom: 1px solid $coral;
-    @include for-tablet-portrait-up {
-      font-size: 1.6rem;
+.current-badge__rate {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+  img {
+    max-width: 100px;
+    background-color: $verylightbeige;
+  }
+  div {
+    align-self: center;
+    h2 {
+      padding: 0;
     }
   }
 }
-
-// BADGES
 
 .rate__badge--link {
   border-radius: 50%;
@@ -356,15 +298,101 @@
   opacity: 0.4;
 }
 
-.menu-bottom__link--rate {
+/////////////////////////////////////
+/////////////// BUTTONS //////////////
+/////////////////////////////////////
+/////////////////////////////////////
+
+.button__submit--rating {
   display: none;
 }
 
+.button-rate {
+  &--again,
+  &--next,
+  &--next__2 {
+    display: none;
+  }
+
+  &--rate {
+    display: grid;
+  }
+
+  &__container {
+    width: fit-content;
+    height: fit-content;
+    grid-template-columns: max-content max-content;
+    grid-gap: 15px;
+    align-self: center;
+
+    img {
+      width: 20px;
+    }
+    p {
+      padding: 0;
+      padding: 1px;
+      border-bottom: 2px solid $coral;
+    }
+  }
+  &--right {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: end;
+    padding-right: 3vw;
+    p {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    img {
+      grid-column: 2/3;
+    }
+  }
+  &--left {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: start;
+    padding-left: 3vw;
+    p {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+    img {
+      grid-column: 1/2;
+      transform: scale(-1);
+    }
+  }
+}
+
+// SUBMIT RATING
+
+.no-msg {
+  grid-column: 1/3;
+  grid-row: 1/2;
+
+  p {
+    padding: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid $coral;
+    @include for-tablet-portrait-up {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.button__submit--rating {
+  height: fit-content;
+  align-self: center;
+  h3 {
+    padding: 0 3vw 0 0;
+    float: right;
+  }
+}
+
+// CROSS //
 .back-to-business__link {
   width: fit-content;
   height: fit-content;
   position: absolute;
-
   top: 3vw;
   left: 3vw;
   z-index: 45;
@@ -374,51 +402,11 @@
   }
 }
 
+// MSG //
 input {
   @include size(100%, 159px);
   background-color: $verylightbeige;
   border-radius: $round-corner;
   border: 2px solid $coral;
   box-shadow: none;
-}
-
-.current-badge__rate {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  grid-gap: 10px;
-  img {
-    max-width: 100px;
-    background-color: $verylightbeige;
-  }
-  div {
-    align-self: center;
-    h2 {
-      padding: 0;
-    }
-  }
-}
-
-.menu-bottom__link--rate {
-  align-self: center;
-  height: fit-content;
-  p {
-    padding: 1px;
-    border-bottom: 2px solid $coral;
-  }
-}
-
-.menu-bottom__link--rate,
-.rate-again-link--next {
-  p {
-    width: fit-content;
-    color: $coral;
-    padding: 1px;
-    border-bottom: 2px solid $coral;
-  }
-}
-
-.rate-again-link--next {
-  padding-right: 3vw;
-  width: fit-content;
-  justify-self: end;
 }
