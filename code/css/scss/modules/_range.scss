@@ -12,6 +12,20 @@
   }
 }
 
+.shape {
+  position: absolute;
+  right: 0;
+  bottom: 0vh;
+  width: 100%;
+  @include for-tablet-landscape-up {
+    width: 55%;
+  }
+  &__gallery {
+    position: fixed;
+    bottom: 10vh;
+  }
+}
+
 //////////////////////////
 // RATE CONTENT - BODY  //
 //////////////////////////
@@ -32,27 +46,47 @@
 // for desktop
 @include for-tablet-portrait-up {
   .rate__content {
-    @include size(100vw, 75vh);
-    margin-top: 20vh;
+    @include size(100vw, 85vh);
+    margin-top: 10vh;
     margin-bottom: 5vh;
     padding: $padding-body-desk;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 20vh auto;
-    grid-column-gap: 10%;
-    grid-row-gap: 2.6rem;
+    grid-row-gap: 3.3rem;
     &__title {
-      grid-column: 1/2;
       padding: 0;
       justify-self: center;
       align-self: end;
+      text-align: center;
+    }
+    &__rate-window {
+      grid-row: 2/3;
+      justify-self: center;
+      align-self: center;
+    }
+    &__illu {
+      display: none;
+    }
+  }
+}
+@include for-tablet-landscape-up {
+  .rate__content {
+    @include size(100vw, 75vh);
+    margin-top: 20vh;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10%;
+
+    &__title {
+      grid-column: 1/2;
+      text-align: start;
     }
     // rate__container
     &__rate-window {
       grid-column: 2/3;
       grid-row: 1/-1;
-      justify-self: center;
-      align-self: center;
+    }
+    &__illu {
+      display: block;
     }
   }
 }
@@ -84,6 +118,15 @@
   display: block;
   @include size(100%, 100%);
   position: absolute;
+  h3 {
+    display: none;
+    color: $brown;
+    position: absolute;
+    z-index: 25;
+    font-size: 2.1rem;
+    left: 1.6rem;
+    top: 6.6rem;
+  }
 }
 
 .range__thumb__container {
@@ -165,7 +208,7 @@
   @include for-tablet-portrait-up {
     left: 3%;
     height: calc(570px - (85.5px * 2));
-    margin: 85.5px 0 85.5px 3%;
+    margin: 85.5px 0 85.5px 80%;
   }
 }
 
@@ -339,6 +382,9 @@
     grid-row: 1/2;
     justify-self: end;
     padding-right: 3vw;
+    @include for-tablet-portrait-up {
+      padding-right: 0;
+    }
     p {
       grid-column: 1/2;
       grid-row: 1/2;
@@ -352,6 +398,9 @@
     grid-row: 1/2;
     justify-self: start;
     padding-left: 3vw;
+    @include for-tablet-portrait-up {
+      padding-left: 0;
+    }
     p {
       grid-column: 2/3;
       grid-row: 1/2;
@@ -385,6 +434,9 @@
   h3 {
     padding: 0 3vw 0 0;
     float: right;
+    @include for-tablet-portrait-up {
+      padding-right: 0;
+    }
   }
 }
 
@@ -409,4 +461,45 @@ input {
   border-radius: $round-corner;
   border: 2px solid $coral;
   box-shadow: none;
+}
+
+///////////THANK YOU SCREEN //////////////////////////
+
+.thank--you--screen {
+  background-color: $verylightbeige;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 2.6rem;
+  @include for-tablet-portrait-up {
+    grid-gap: 1.6rem;
+  }
+
+  h3 {
+    justify-self: center;
+    text-align: center;
+    width: 80%;
+    padding: 0;
+    @include for-tablet-portrait-up {
+      font-size: 3.3rem;
+    }
+  }
+
+  h3:nth-of-type(1) {
+    grid-row: 3/4;
+    align-self: end;
+  }
+  h3:nth-of-type(2) {
+    grid-row: 4/5;
+    align-self: start;
+  }
+  img {
+    width: 60%;
+    max-width: 200px;
+    grid-row: 7/8;
+    place-self: center;
+  }
 }

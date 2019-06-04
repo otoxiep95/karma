@@ -145,6 +145,7 @@ function openRatePage(e) {
   e.preventDefault();
 
   bottomModalRate.style.height = "7vh";
+  document.querySelector(".rate--title").style.display = "block";
   opacityNo(rateIntro);
   opacityNo(filterMenu);
   rateLink.style.display = "none";
@@ -167,6 +168,7 @@ function openRateAgain() {
   document.querySelector(".rate__again").style.display = "grid";
   document.querySelector(".button-rate--next__2").style.display = "grid";
   rateNextButton.style.display = "none";
+  document.querySelector(".rate--title").style.display = "none";
   rateAgainButton.style.display = "grid";
   document.querySelectorAll(".button__submit--rating").forEach(button => {
     button.style.display = "none";

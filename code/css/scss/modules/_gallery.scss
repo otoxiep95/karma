@@ -94,12 +94,9 @@ body {
     grid-template-columns: 50% 50%;
     // desktop
     @include for-tablet-portrait-up {
+      background-color: $verylightbeige;
       height: 100%;
-      //@include size(70vw, 100%);
-      //height: 35vh;
       max-width: 1200px;
-      // max-height: 270px; // pb with img
-      // min-width: 1000px;
       grid-template-columns: 33% 66%;
       @include box-shadow($ourshadow, $brown, 0.4);
       border-radius: 25px;
@@ -262,7 +259,7 @@ body {
     @include size(100vw, 65vh);
     // desktop
     @include for-tablet-portrait-up {
-      @include size(100%, 250px);
+      @include size(100%, 65%);
       position: absolute;
     }
   }
@@ -363,7 +360,7 @@ body {
 
       // desktop
       @include for-tablet-portrait-up {
-        @include size(100%, 250px);
+        @include size(100%, 75%);
       }
       h2 {
         opacity: 1;
@@ -373,19 +370,30 @@ body {
         opacity: 1;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
         padding: 20px;
         white-space: initial;
+        @include for-tablet-landscape-up {
+          grid-gap: 20px;
+        }
       }
     }
   }
   &__list {
     @include scroll-div(auto, hidden, auto, 60%);
+    @include for-tablet-portrait-up {
+      height: 100%;
+    }
     background-color: none;
+    div {
+      place-self: center;
+    }
 
     a {
       @include size(30%, auto);
       display: inline-block;
       max-width: 100px;
+
       img {
         @include size(100%, 100%);
       }
@@ -409,7 +417,7 @@ body {
   @include for-tablet-portrait-up {
     position: absolute; // for rating
     height: 7vh;
-    //display: block; // to change
+    padding: 0 3%;
   }
   &__link {
     @include size(100%, 100%);

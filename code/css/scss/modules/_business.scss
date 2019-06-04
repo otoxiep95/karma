@@ -310,6 +310,9 @@
       padding-bottom: 1.6rem;
       color: $brown;
       @include for-tablet-portrait-up {
+        padding-bottom: 0rem;
+      }
+      @include for-tablet-landscape-up {
         padding-bottom: 2.6rem;
         color: $coral;
         font-size: $font-large;
@@ -328,17 +331,26 @@
     }
     .rate-link {
       @include for-tablet-portrait-up {
-        display: inline;
+        a {
+          @include size(100%, fit-content);
+          display: grid;
+          grid-template-columns: max-content max-content;
+          grid-gap: 15px;
+          img {
+            place-self: center;
+            width: 25px;
+          }
+          h3 {
+            padding: 0;
+            padding: 1px;
+            border-bottom: 2px solid $coral;
+          }
+        }
+        // display: inline;
         position: absolute;
-        width: 80px;
-        bottom: 2.6rem;
+        width: 90px;
+        bottom: 1.6rem;
         right: 2.6rem;
-        img {
-          width: 25px;
-        }
-        h3 {
-          padding: 0;
-        }
       }
     }
   }
