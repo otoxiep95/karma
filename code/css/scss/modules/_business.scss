@@ -108,10 +108,30 @@
       z-index: -1;
       bottom: -7vh;
       left: -16vw;
-      // desktop
+      //tablet
+      @include for-tablet-portrait-up {
+        width: calc(25vw + 160%);
+        bottom: -5vh;
+        left: -35vw;
+      }
       @include for-tablet-landscape-up {
-        bottom: -25%;
+        bottom: -10vh;
+      }
+      //tablet HD
+      @include for-tablet-HD-portrait-up {
+        bottom: -10vh;
+      }
+      // desktop
+      @include for-desktop-up {
+        width: calc(25vw + 120%);
+        bottom: -15vh;
         left: -25vw;
+      }
+      // big desktop
+      @include for-big-desktop-up {
+        // bottom: -35vh;
+        left: -33vw;
+        width: calc(33vw + 120%);
       }
     }
     &__contact {
