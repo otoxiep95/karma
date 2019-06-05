@@ -166,7 +166,7 @@ function updateBadges() {
 }
 
 function sendTodata() {
-  database.ref("EAT/-Le8Q2uYZ8-stN4uXwRT/badges/ratable").set(badges);
+  database.ref(catId + "/" + urlKey + "/badges/ratable").set(badges);
 }
 
 function goBackToBusiness() {
