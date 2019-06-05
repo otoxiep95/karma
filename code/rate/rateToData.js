@@ -1,4 +1,3 @@
-//console.log(rateFinal);
 let urlParams = new URLSearchParams(window.location.search);
 let catId = urlParams.get("category");
 let urlKey = urlParams.get("key");
@@ -38,6 +37,7 @@ const userRates = [
   }
 ];
 
+//RUN ANIMATION FOR RATE BUTTON WHEN CLICK ON BADGES
 badgeButtons.forEach(element => {
   element.addEventListener(
     "click",
@@ -52,32 +52,35 @@ badgeButtons.forEach(element => {
   );
 });
 
+//SELECT BADGE
 function clickedBadge(element) {
   selectedBadge = element.dataset.badge;
   badgeButtons.forEach(badgeButton => {
     badgeButton.classList.remove("badge--selected");
   });
-  console.log(selectedBadge);
 
   element.classList.add("badge--selected");
 }
 
-// click on rate
-// after having a category go to rating
 let rateLink = document.querySelector(".button-rate--rate");
-
+// CLICK RATE BUTTON TO GO TO DRAG/RATE SCREEN
 rateLink.addEventListener(
   "click",
   e => {
     e.preventDefault();
     if (selectedBadge != "") {
-      console.log("badge selected");
       openRatePage(e);
     } else {
+      //If there is no badge selected dont go
       badgeButtons.forEach(badge => {
-        badge.classList.remove("blink");
-        void badge.offsetWidth;
-        badge.classList.add("blink");
+        if (badge.classList.contains("badge--voted")) {
+          //dont blink
+        } else {
+          //warning blink
+          badge.classList.remove("blink");
+          void badge.offsetWidth;
+          badge.classList.add("blink");
+        }
       });
     }
   },
@@ -85,22 +88,20 @@ rateLink.addEventListener(
 );
 
 function init() {
-  console.log(rateFinal);
   backToBusinessLink.href =
     "../business.html?category=" + catId + "&key=" + urlKey;
+  //Fetch badges from database
   database
     .ref(catId + "/" + urlKey + "/badges/ratable")
     .on("child_added", snapshot => {
       const key = snapshot.key;
       const data = snapshot.val();
-      // console.log(key);
-      // console.log(data);
+
       badges.push(data);
-      // console.log(badges);
     });
+  //fetch name of business
   database.ref(catId + "/" + urlKey).on("child_added", snapshot2 => {
     if (snapshot2.key === "name") {
-      console.log(snapshot2.val());
       nameOfBusiness.forEach(name => {
         name.textContent = snapshot2.val();
       });
@@ -110,10 +111,11 @@ function init() {
 
 init();
 
+//CLICK ON NEXT FROM DRAG/RATE SCREEN
 document.querySelector(".button-rate--next").addEventListener("click", e => {
-  console.log(rateFinal);
   userRates.forEach(element => {
     if (element.name === selectedBadge) {
+      //Replace values on current user rate array
       element.rate = rateFinal;
       element.votes = 1;
       document.querySelector(".current-badge__rate--img").src =
@@ -127,40 +129,39 @@ document.querySelector(".button-rate--next").addEventListener("click", e => {
     .trim()
     .toLowerCase();
 
-  console.log(badges);
-  console.log(userRates);
   document.querySelector(".selectedRate").textContent = ratedBadge;
   openRateAgain();
-  //openMsgModal();
 });
 
+//CLICK ON NEXT FROM RATE AGAIN SCREEN
 document
   .querySelector(".button-rate--next__2")
   .addEventListener("click", openMsgModal);
 
 const submitButtons = document.querySelectorAll(".button__submit--rating");
 
+//CLICK SUBMIT
 submitButtons.forEach(submit => {
   submit.addEventListener("click", updateBadges);
 });
 
+//UPDATE THE BADGES ARRAY WITH THE USER RATE ARRAY
 function updateBadges() {
   for (var i = 0; i < badges.length; i++) {
     let dataRate = badges[i].rate;
     let dataVotes = badges[i].votes;
     let userRate = userRates[i].rate;
-    console.log(dataRate);
-    console.log(userRate);
+
     dataRate += userRate;
     dataVotes++;
 
     badges[i].rate = dataRate;
     badges[i].votes = dataVotes;
   }
-  console.log(badges);
+
   //show Thank tou screen
   document.querySelector(".thank--you--screen").classList.remove("none");
-  //sendTodata();
+  sendTodata();
   setTimeout(goBackToBusiness, 2000);
 }
 

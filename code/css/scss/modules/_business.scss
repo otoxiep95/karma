@@ -241,7 +241,7 @@
     // mobile
     grid-column: 1/2;
     font-size: 1.8rem;
-    color: $brown;
+    color: $coral;
     padding: 0;
     align-self: center;
     @include for-tablet-portrait-up {
@@ -447,3 +447,23 @@
     font-size: 0.9rem;
   }
 }
+
+.business__rate--container {
+  @include for-phone-only {
+    height: 55vh;
+    @include background-image("background-img/shape--orange-37.svg", none);
+    background-size: 200%;
+    background-position: center;
+  }
+}
+
+// .shape__business {
+//   display: none;
+//   @include for-phone-only {
+//     display: block;
+//     position: absolute;
+//     bottom: -50vh;
+//     width: 100%;
+//     z-index: -1;
+//   }
+// }

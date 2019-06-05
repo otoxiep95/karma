@@ -123,7 +123,6 @@
       .gallery__item {
         background-color: #f7f2eb;
         height: 100%;
-        max-width: 1200px;
         grid-template-columns: 33% 66%;
         box-shadow: 0px -2px 23px 1px rgba(208, 173, 142, 0.4);
         border-radius: 25px; } }
@@ -199,13 +198,15 @@
   .gallery__item__infos--text h3 {
     padding: 0;
     font-size: 1.6rem;
-    line-height: inherit; } }
+    line-height: inherit;
+    color: #f7f2eb; } }
 
 @media (max-width: 599px) {
   .gallery__item__infos--text h4 {
     padding: 0;
     font-size: 1.4rem;
-    line-height: inherit; } }
+    line-height: inherit;
+    color: #f7f2eb; } }
 
 .gallery__item__infos--text p {
   max-width: 450px;
@@ -221,6 +222,9 @@
 
 .gallery__item__infos--up p {
   padding-bottom: 0; }
+  @media (max-width: 599px) {
+    .gallery__item__infos--up p {
+      color: #f7f2eb; } }
 
 /* ============================================ */
 /* ================ BADGES ==================== */
@@ -759,7 +763,7 @@
 .business__subtitle {
   grid-column: 1/2;
   font-size: 1.8rem;
-  color: #d0ad8e;
+  color: #e2685b;
   padding: 0;
   align-self: center; }
   @media (min-width: 600px) {
@@ -946,6 +950,15 @@
   .mapouter a {
     font-size: 0.9rem; }
 
+@media (max-width: 599px) {
+  .business__rate--container {
+    height: 55vh;
+    background: url("background-img/shape--orange-37.svg"), none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: center; } }
+
 .opacity {
   opacity: 0; }
 
@@ -1102,8 +1115,8 @@
     position: absolute;
     z-index: 25;
     font-size: 2.1rem;
-    left: 1.6rem;
-    top: 6.6rem; }
+    left: 4.6rem;
+    top: 1rem; }
 
 .range__thumb__container {
   width: 100vw;
@@ -1433,6 +1446,9 @@ textarea {
     max-width: 200px;
     grid-row: 7/8;
     place-self: center; }
+
+.none {
+  display: none; }
 
 /* COLORS */
 /* STYLE ELEMENTS */
@@ -1969,7 +1985,7 @@ a {
   z-index: 100;
   background-color: #f9ecd7; }
   .project-warning h1 {
-    margin-top: 20%;
+    margin-top: 10%;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;

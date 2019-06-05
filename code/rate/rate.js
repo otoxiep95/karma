@@ -30,7 +30,6 @@ function dragStart(e) {
 
   if (e.target === dragItem) {
     active = true;
-    console.log("im draggin element");
   }
 }
 
@@ -75,9 +74,6 @@ var containerHeight = document.querySelector(".range__thumb__container")
   .offsetHeight;
 var marginBottomHeight = (pageHeight - containerHeight) / 2;
 
-console.log(pageHeight);
-console.log("margin bottom is:" + marginBottomHeight);
-
 var scaleLevels = containerHeight / 11;
 
 var level0 = marginBottomHeight;
@@ -96,12 +92,10 @@ var level11 = level10 + scaleLevels;
 function setTranslate(xPos, yPos, el) {
   // moving value of our rating rectangle
   var rect_rate_H = document.querySelector(".range__fill").offsetHeight;
-  //console.log("height of rating rect is:" + rect_rate_H);
 
   if (yPos > 0) {
     // yPos is positive
     document.querySelectorAll(".rate__shape").forEach(rateShape => {
-      // console.log("color path");
       rateShape.style.fill = "#b24a42";
     });
     document.querySelector(".range__thumb").style.borderColor = "#ef8e86";
@@ -115,7 +109,6 @@ function setTranslate(xPos, yPos, el) {
   if (yPos <= 0) {
     // yPos is negative
     document.querySelectorAll(".rate__shape").forEach(rateShape => {
-      //console.log("color path");
       rateShape.style.fill = "#4F6D59";
       rangeKeyWord.style.color = "#4F6D59";
     });
@@ -133,61 +126,48 @@ function setTranslate(xPos, yPos, el) {
   document.querySelector(".range__fill").style.height =
     pageHeight / 2 - yPos + "px";
 
-  // console.log("page height is :" + pageHeight);
-
   // return the rate
   switch (true) {
     case rect_rate_H < level1:
-      console.log("RATE 0 !");
       rangeKeyWord.textContent = "Very disapointing !";
       rateFinal = 0;
       break;
     case level1 <= rect_rate_H && rect_rate_H < level2:
-      console.log("RATE 1 !");
       rangeKeyWord.textContent = "Not as expected !";
       rateFinal = 1;
       break;
     case level2 <= rect_rate_H && rect_rate_H < level3:
-      console.log("RATE 2 !");
       rateFinal = 2;
       break;
     case level3 <= rect_rate_H && rect_rate_H < level4:
-      console.log("RATE 3 !");
       rateFinal = 3;
       rangeKeyWord.textContent = "Not as expected !";
       break;
     case level4 <= rect_rate_H && rect_rate_H < level5:
-      console.log("RATE 4 !");
       rateFinal = 4;
       rangeKeyWord.textContent = "Could be better !";
       break;
     case level5 <= rect_rate_H && rect_rate_H < level6:
-      console.log("RATE 5 !");
       rangeKeyWord.textContent = "Could be better !";
       rateFinal = 5;
       break;
     case level6 <= rect_rate_H && rect_rate_H < level7:
-      console.log("RATE 6 !");
       rateFinal = 6;
       rangeKeyWord.textContent = "Nice experience !";
       break;
     case level7 <= rect_rate_H && rect_rate_H < level8:
-      console.log("RATE 7 !");
       rateFinal = 7;
       rangeKeyWord.textContent = "Nice experience !";
       break;
     case level8 <= rect_rate_H && rect_rate_H < level9:
-      console.log("RATE 8 !");
       rateFinal = 8;
       rangeKeyWord.textContent = "Very Satisfied !";
       break;
     case level9 <= rect_rate_H && rect_rate_H < level10:
-      console.log("RATE 9 !");
       rateFinal = 9;
       rangeKeyWord.textContent = "Very Satisfied !";
       break;
     case level10 <= rect_rate_H && rect_rate_H < level11:
-      console.log("RATE 10 !");
       rateFinal = 10;
       rangeKeyWord.textContent = "Perfect !";
       break;

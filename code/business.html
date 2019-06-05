@@ -210,24 +210,27 @@
       <!--============== BUS CONTENT ===============-->
       <div class="business__template--content business__desktop">
         <p data-long_desc class="business__description"></p>
-        <div class="business__rate">
-          <h3 class="business__rate--title">
-            According to your votes this place is:
-          </h3>
+        <div class="business__rate--container">
+          <div class="business__rate">
+            <h3 class="business__rate--title">
+              According to your votes this place is:
+            </h3>
 
-          <div class="desk-only rate-link filter__button--rate">
-            <a href="rate/index-rate.html">
-              <h3>Rate</h3>
+            <div class="desk-only rate-link filter__button--rate">
+              <a href="rate/index-rate.html">
+                <h3>Rate</h3>
 
-              <img class="" src="assets/ui/icons/nav/arrow-red.svg" alt="" />
-            </a>
+                <img class="" src="assets/ui/icons/nav/arrow-red.svg" alt="" />
+              </a>
+            </div>
+
+            <div
+              data-badges_container
+              class="badge__container business__rate--badges"
+            ></div>
           </div>
-
-          <div
-            data-badges_container
-            class="badge__container business__rate--badges"
-          ></div>
         </div>
+
         <div id="map" class="business__map desk-only">
           <div class="mapouter">
             <div class="gmap_canvas">

@@ -14,6 +14,9 @@ const mainMenuLinks = document.querySelectorAll(".menu-main__link");
 // ARRAYS
 let listOfBusinesses = [];
 let listOfFilters = [];
+let listOfColors = ["#b24a42", "#6b927a", "#e38655", "#e2685b", "#d0ad8e"];
+//COLOR COUNTER
+let i = 0;
 
 // BUSINESS OBJECT
 const Business = {
@@ -179,7 +182,16 @@ function displayListBusiness(business) {
   clone.querySelector("[data-short_desc]").textContent =
     business.shortDescription;
   clone.querySelector("[data-distance]").textContent = business.distance;
-
+  if (screen.width < 600) {
+    clone.querySelector(".gallery__item").style.backgroundColor = selectColor();
+  } else {
+    let textColor = selectColor();
+    clone.querySelector("[data-name]").style.color = textColor;
+    clone.querySelector("[data-type]").style.color = textColor;
+    clone.querySelector("[data-short_desc]").style.color = textColor;
+    clone.querySelector("[data-distance]").style.color = textColor;
+    clone.querySelector(".price").style.color = textColor;
+  }
   // Make opacity of price icon
   let priceTag = business.price;
   const priceSecIcon = clone.querySelector(".price .secPrice");
@@ -212,6 +224,15 @@ function displayListBusiness(business) {
 
   clone.firstElementChild.classList.add("showUpGallery");
   gallery.appendChild(clone);
+}
+//Color selection for background and font
+function selectColor() {
+  if (i > 4) {
+    i = 0;
+  }
+  let color = listOfColors[i];
+  i++;
+  return color;
 }
 
 // FILTERED LIST

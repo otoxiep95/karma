@@ -90,7 +90,6 @@
     @include for-tablet-portrait-up {
       background-color: $verylightbeige;
       height: 100%;
-      max-width: 1200px;
       grid-template-columns: 33% 66%;
       @include box-shadow($ourshadow, $brown, 0.4);
       border-radius: 25px;
@@ -184,6 +183,7 @@
       padding: 0;
       font-size: 1.6rem;
       line-height: inherit;
+      color: $verylightbeige;
     }
   }
   h4 {
@@ -192,6 +192,7 @@
       padding: 0;
       font-size: 1.4rem;
       line-height: inherit;
+      color: $verylightbeige;
     }
   }
   p {
@@ -207,6 +208,9 @@
 .gallery__item__infos--up {
   p {
     padding-bottom: 0;
+    @include for-phone-only {
+      color: $verylightbeige;
+    }
   }
 }
 

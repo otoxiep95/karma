@@ -218,9 +218,15 @@ function showBusiness(business) {
   });
 
   // DISPLAY THE MAP
-  businessLocationMaps.forEach(gmap => {
-    gmap.src = business.location;
-  });
+  if (business.location) {
+    businessLocationMaps.forEach(gmap => {
+      gmap.src = business.location;
+    });
+  } else {
+    businessLocationMaps.forEach(gmap => {
+      gmap.style.display = "none";
+    });
+  }
 }
 
 init();
