@@ -192,6 +192,41 @@
             grid-row: 3/4; } }
 
 /* ============================================ */
+/* =============== HOVER EFFECT================ */
+/* ============================================ */
+.gallery__item {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+  filter: grayscale(30%); }
+
+.gallery__item:hover {
+  transform: scale(1.01);
+  opacity: 1;
+  filter: grayscale(0%); }
+
+.filter__modal--gallery {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+  filter: grayscale(30%); }
+  .filter__modal--gallery .filter__list img {
+    transition: all ease 0.6s;
+    transform: scale(0.9);
+    opacity: 1;
+    filter: grayscale(30%); }
+  .filter__modal--gallery .filter__list img:hover {
+    transform: scale(1);
+    opacity: 1;
+    filter: grayscale(0%); }
+
+.filter__modal--gallery:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  filter: grayscale(0%);
+  cursor: pointer; }
+
+/* ============================================ */
 /* =============== STYLE TEXT ================= */
 /* ============================================ */
 @media (max-width: 599px) {
@@ -477,11 +512,11 @@
 
 .morphing {
   animation: morphing 1s 0s ease-in-out forwards;
-  transition: all ease; }
+  transition: 0.6s all ease; }
 
 .morphingClose {
   animation: morphingClose 1s 0s ease-in-out forwards;
-  transition: all ease; }
+  transition: 0.6s all ease; }
 
 @keyframes morphing {
   0% {
@@ -959,6 +994,17 @@
     background-size: 200%;
     background-position: center; } }
 
+.gallery__item {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+  filter: grayscale(30%); }
+
+.gallery__item:hover {
+  transform: scale(1.01);
+  opacity: 1;
+  filter: grayscale(0%); }
+
 .opacity {
   opacity: 0; }
 
@@ -1383,7 +1429,8 @@
   align-self: center; }
   .button__submit--rating h3 {
     padding: 0 3vw 0 0;
-    float: right; }
+    float: right;
+    font-size: 2.1rem; }
     @media (min-width: 600px) {
       .button__submit--rating h3 {
         padding-right: 0; } }
@@ -1449,6 +1496,32 @@ textarea {
 
 .none {
   display: none; }
+
+/* ============================================ */
+/* ================= HOVER ==================== */
+/* ============================================ */
+.button-rate,
+.button__submit--rating {
+  transform: scale(0.95);
+  transition: all ease 0.3s;
+  cursor: pointer;
+  opacity: 0.8; }
+
+.button-rate:hover,
+.button__submit--rating:hover {
+  transform: scale(1);
+  opacity: 1; }
+
+.rate__badge--link {
+  transition: all ease 0.6s;
+  transform: scale(0.9);
+  opacity: 1;
+  filter: grayscale(30%); }
+
+.rate__badge--link:hover {
+  transform: scale(1);
+  opacity: 1;
+  filter: grayscale(0%); }
 
 /* COLORS */
 /* STYLE ELEMENTS */
@@ -1594,9 +1667,6 @@ textarea {
   box-sizing: border-box;
   margin: 0;
   font-family: Nunito, sans-serif; }
-
-* {
-  transition: 1s all ease; }
 
 :root {
   font-size: 62.5%; }

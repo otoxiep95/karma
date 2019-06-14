@@ -173,6 +173,51 @@
 }
 
 /* ============================================ */
+/* =============== HOVER EFFECT================ */
+/* ============================================ */
+
+.gallery {
+  &__item {
+    transition: all 0.3s ease;
+    transform: scale(1);
+    opacity: 1;
+    filter: grayscale(30%);
+  }
+  &__item:hover {
+    transform: scale(1.01);
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+
+.filter__modal--gallery {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+  filter: grayscale(30%);
+  .filter__list {
+    img {
+      transition: all ease 0.6s;
+      transform: scale(0.9);
+      opacity: 1;
+      filter: grayscale(30%);
+    }
+    img:hover {
+      transform: scale(1);
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+  }
+}
+
+.filter__modal--gallery:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+/* ============================================ */
 /* =============== STYLE TEXT ================= */
 /* ============================================ */
 
@@ -491,12 +536,12 @@
 
 .morphing {
   animation: morphing 1s 0s ease-in-out forwards;
-  transition: all ease;
+  transition: 0.6s all ease;
 }
 
 .morphingClose {
   animation: morphingClose 1s 0s ease-in-out forwards;
-  transition: all ease;
+  transition: 0.6s all ease;
 }
 
 @keyframes morphing {
