@@ -105,16 +105,13 @@ const Business = {
   filtersArray: [],
 
   createBadges(filters) {
-    console.log(filters.ratable, filters.notRatable);
     let full_badges = filters.ratable.concat(filters.notRatable);
-    console.log(full_badges);
 
     full_badges.forEach(filter => {
       averageRate = filter.rate / filter.votes;
       badge = filter.name;
-      console.log(averageRate, filter.name);
+
       if (averageRate > 5) {
-        console.log(averageRate, filter.name);
         this.filtersArray.push(badge);
         if (!listOfFilters.includes(badge)) {
           listOfFilters.push(badge);
@@ -128,7 +125,6 @@ const Business = {
         }
       }
     });
-    console.log(listOfFilters);
   }
 };
 
@@ -143,7 +139,8 @@ function createObject() {
   database.ref(catId + "/").on("child_added", snapshot => {
     const key = snapshot.key;
     const data = snapshot.val();
-
+    console.log(key);
+    console.log(data);
     const business = Object.create(Business);
     business.key = key;
     business.name = data.name;
@@ -163,12 +160,15 @@ function createObject() {
 
 // & PUSH IT TO THE ARRAY
 function pushBusinessToList(business) {
+  console.log("push");
   listOfBusinesses.push(business);
   displayListBusiness(business);
 }
 
 // DISPLAY IT TO THE GALLERY
 function displayListBusiness(business) {
+  document.querySelector(".logo-loader").style.display = "none";
+  console.log("display");
   let clone = document
     .querySelector(".gallery__item__template")
     .content.cloneNode(true);
@@ -215,7 +215,6 @@ function displayListBusiness(business) {
   // Make the badges
   let badgesList = clone.querySelector("[data-badges_container]");
   business.filtersArray.forEach(filter => {
-    console.log(filter);
     let badgeImg = document.createElement("img");
     badgeImg.classList.add("badge__img");
     badgeImg.src = "assets/badges/" + filter + ".svg";
@@ -252,7 +251,7 @@ function clickedFilter(event) {
     displayFilteredList(listOfBusinesses);
   } else {
     const filteredBusinessList = filterBusinessList(filter);
-    console.log(filteredBusinessList);
+
     displayFilteredList(filteredBusinessList);
   }
 
@@ -275,7 +274,7 @@ function displayFilteredList(filteredList) {
 function underlineCat() {
   mainMenuLinks.forEach(menuLink => {
     catLink = menuLink.dataset.menu;
-    console.log(catLink);
+
     if (catLink === catId) {
       menuLink.firstElementChild.classList.add("underline");
     }
