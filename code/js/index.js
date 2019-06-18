@@ -3,7 +3,9 @@ let urlParams = new URLSearchParams(window.location.search);
 let screenFlag = urlParams.get("interaction");
 let messageFlag = urlParams.get("message");
 const letsGo = document.querySelector(".launching__button-link");
+const closeMenuModalButton = document.querySelector(".menu-modal__close");
 const menuMain = document.querySelector(".menu-main");
+const menuModal = document.querySelector(".menu-modal");
 const launchingScreen = document.querySelector(".launching");
 const aboutScreen = document.querySelector(".about-main");
 const burguerAbout = document.querySelector(".burguer__about--mobile");
@@ -14,6 +16,7 @@ window.addEventListener("DOMContentLoaded", initIndex);
 
 function initIndex() {
   letsGo.addEventListener("click", openMainMenu);
+  closeMenuModalButton.addEventListener("click", closeMenuModal);
   if (messageFlag === "no") {
     clearWarning();
   }
@@ -37,8 +40,15 @@ function clearWarning() {
 }
 
 function openMainMenu() {
-  console.log("open menuMain");
-  menuMain.style.display = "grid";
+  if (screen.width < 600) {
+    console.log("open menuMain");
+    menuMain.style.display = "grid";
+  } else {
+    menuModal.classList.remove("none");
+  }
+}
+function closeMenuModal() {
+  menuModal.classList.add("none");
 }
 
 function openAbout() {
