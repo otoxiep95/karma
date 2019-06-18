@@ -32,17 +32,18 @@
   border-bottom: 2px solid #e2685b; }
 
 .blink {
-  animation: blinkAnim 0.3s 0.3s forwards ease; }
+  animation: blinkAnim 0.3s ease-in-out 0.6s 2 forwards; }
 
 .showUpGallery {
   animation: fadeUp 0.6s forwards; }
 
 @keyframes blinkAnim {
   0% {
-    opacity: 0.3; }
-  50% {
+    opacity: 0.3;
+    transform: scale(0.95); }
+  75% {
     opacity: 1;
-    transform: scale(1.1); }
+    transform: scale(1); }
   100% {
     opacity: 1; } }
 
@@ -570,17 +571,18 @@
   border-bottom: 2px solid #e2685b; }
 
 .blink {
-  animation: blinkAnim 0.3s 0.3s forwards ease; }
+  animation: blinkAnim 0.3s ease-in-out 0.6s 2 forwards; }
 
 .showUpGallery {
   animation: fadeUp 0.6s forwards; }
 
 @keyframes blinkAnim {
   0% {
-    opacity: 0.3; }
-  50% {
+    opacity: 0.3;
+    transform: scale(0.95); }
+  75% {
     opacity: 1;
-    transform: scale(1.1); }
+    transform: scale(1); }
   100% {
     opacity: 1; } }
 
@@ -1019,17 +1021,18 @@
   border-bottom: 2px solid #e2685b; }
 
 .blink {
-  animation: blinkAnim 0.3s 0.3s forwards ease; }
+  animation: blinkAnim 0.3s ease-in-out 0.6s 2 forwards; }
 
 .showUpGallery {
   animation: fadeUp 0.6s forwards; }
 
 @keyframes blinkAnim {
   0% {
-    opacity: 0.3; }
-  50% {
+    opacity: 0.3;
+    transform: scale(0.95); }
+  75% {
     opacity: 1;
-    transform: scale(1.1); }
+    transform: scale(1); }
   100% {
     opacity: 1; } }
 
@@ -1263,6 +1266,9 @@
   @media (min-width: 600px) {
     .rate__intro--title {
       display: none; } }
+  .rate__intro h2 {
+    color: #d0ad8e;
+    padding: 0 0 1.6rem 0; }
 
 .rate__again,
 .rate__conclusion {
@@ -1309,18 +1315,24 @@
     list-style-type: none; }
 
 .rate__again {
-  grid-template-rows: 0.5fr max-content 0.5fr 0.5fr;
-  padding-bottom: 6.6rem; }
+  grid-template-rows: 0.5fr max-content 1fr;
+  padding-bottom: 6.6rem;
+  grid-gap: 45px; }
   .rate__again h2:nth-of-type(2) {
-    grid-row: 4/5;
-    align-self: end; }
+    grid-row: 3/4;
+    align-self: start; }
   .rate__again .selectedRate {
     color: #e2685b; }
 
 .rate__conclusion h2 {
-  align-self: end;
-  color: #e2685b;
-  font-size: 1.6rem; }
+  align-self: start;
+  color: #d0ad8e; }
+  .rate__conclusion h2 span {
+    color: #e2685b; }
+
+.rate__conclusion h2:nth-of-type(2) {
+  font-size: 1.6rem;
+  align-self: end; }
 
 /* ============================================ */
 /* ================ BADGES ==================== */
@@ -1513,15 +1525,19 @@ textarea {
   opacity: 1; }
 
 .rate__badge--link {
-  transition: all ease 0.6s;
+  transition: all ease 0.3s;
   transform: scale(0.9);
   opacity: 1;
-  filter: grayscale(30%); }
+  filter: grayscale(30%);
+  cursor: pointer; }
 
 .rate__badge--link:hover {
   transform: scale(1);
   opacity: 1;
   filter: grayscale(0%); }
+
+.rate__again h2 span {
+  color: #e2685b; }
 
 /* COLORS */
 /* STYLE ELEMENTS */

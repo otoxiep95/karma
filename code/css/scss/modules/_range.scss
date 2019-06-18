@@ -247,6 +247,10 @@
       display: none;
     }
   }
+  h2 {
+    color: $brown;
+    padding: 0 0 1.6rem 0;
+  }
 }
 .rate__again,
 .rate__conclusion {
@@ -286,11 +290,12 @@
 }
 
 .rate__again {
-  grid-template-rows: 0.5fr max-content 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr max-content 1fr;
   padding-bottom: 6.6rem;
+  grid-gap: 45px;
   h2:nth-of-type(2) {
-    grid-row: 4/5;
-    align-self: end;
+    grid-row: 3/4;
+    align-self: start;
   }
   .selectedRate {
     color: $coral;
@@ -300,9 +305,16 @@
 .rate__conclusion {
   // display: grid;
   h2 {
-    align-self: end;
-    color: $coral;
+    align-self: start;
+    color: $brown;
+
+    span {
+      color: $coral;
+    }
+  }
+  h2:nth-of-type(2) {
     font-size: 1.6rem;
+    align-self: end;
   }
 }
 
@@ -544,14 +556,23 @@ textarea {
 }
 
 .rate__badge--link {
-  transition: all ease 0.6s;
+  transition: all ease 0.3s;
   transform: scale(0.9);
   opacity: 1;
   filter: grayscale(30%);
+  cursor: pointer;
 }
 
 .rate__badge--link:hover {
   transform: scale(1);
   opacity: 1;
   filter: grayscale(0%);
+}
+
+.rate__again {
+  h2 {
+    span {
+      color: $coral;
+    }
+  }
 }
